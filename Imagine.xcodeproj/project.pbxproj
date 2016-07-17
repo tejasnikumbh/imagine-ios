@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC02CED41D3A414E0098B333 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC02CED31D3A414E0098B333 /* rain.mp3 */; };
+		CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E41D3B4CD900050B81 /* OUtils.swift */; };
 		CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */; };
-		CCFFE9801D39CD6600515A24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97F1D39CD6600515A24 /* ViewController.swift */; };
+		CCFFE9801D39CD6600515A24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97F1D39CD6600515A24 /* HomeViewController.swift */; };
 		CCFFE9831D39CD6600515A24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCFFE9811D39CD6600515A24 /* Main.storyboard */; };
 		CCFFE9851D39CD6600515A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFFE9841D39CD6600515A24 /* Assets.xcassets */; };
 		CCFFE9881D39CD6600515A24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCFFE9861D39CD6600515A24 /* LaunchScreen.storyboard */; };
 		CCFFE9931D39CD6600515A24 /* ImagineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE9921D39CD6600515A24 /* ImagineTests.swift */; };
 		CCFFE99E1D39CD6600515A24 /* ImagineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE99D1D39CD6600515A24 /* ImagineUITests.swift */; };
+		CCFFE9AD1D39CE4A00515A24 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE9AC1D39CE4A00515A24 /* LoginViewController.swift */; };
+		CCFFE9B41D39D33300515A24 /* OPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +38,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC02CED31D3A414E0098B333 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
+		CCFCA5E41D3B4CD900050B81 /* OUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUtils.swift; sourceTree = "<group>"; };
 		CCFFE97A1D39CD6600515A24 /* Imagine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagine.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CCFFE97F1D39CD6600515A24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Imagine/AppDelegate.swift; sourceTree = "<group>"; };
+		CCFFE97F1D39CD6600515A24 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CCFFE9821D39CD6600515A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCFFE9841D39CD6600515A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCFFE9871D39CD6600515A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CCFFE9891D39CD6600515A24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCFFE9891D39CD6600515A24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Imagine/Info.plist; sourceTree = "<group>"; };
 		CCFFE98E1D39CD6600515A24 /* ImagineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFFE9921D39CD6600515A24 /* ImagineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagineTests.swift; sourceTree = "<group>"; };
 		CCFFE9941D39CD6600515A24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCFFE9991D39CD6600515A24 /* ImagineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFFE99D1D39CD6600515A24 /* ImagineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagineUITests.swift; sourceTree = "<group>"; };
 		CCFFE99F1D39CD6600515A24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCFFE9AC1D39CE4A00515A24 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPaddedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +82,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC02CED21D3A412B0098B333 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CC02CED31D3A414E0098B333 /* rain.mp3 */,
+			);
+			name = sounds;
+			sourceTree = "<group>";
+		};
+		CCFCA5E31D3B4CC500050B81 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				CCFCA5E41D3B4CD900050B81 /* OUtils.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		CCFFE9711D39CD6600515A24 = {
 			isa = PBXGroup;
 			children = (
+				CCFCA5E31D3B4CC500050B81 /* utils */,
+				CCFFE9AB1D39CE1700515A24 /* supporting */,
 				CCFFE97C1D39CD6600515A24 /* Imagine */,
 				CCFFE9911D39CD6600515A24 /* ImagineTests */,
 				CCFFE99C1D39CD6600515A24 /* ImagineUITests */,
@@ -97,12 +123,10 @@
 		CCFFE97C1D39CD6600515A24 /* Imagine */ = {
 			isa = PBXGroup;
 			children = (
-				CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */,
-				CCFFE97F1D39CD6600515A24 /* ViewController.swift */,
+				CCFFE9B21D39D30900515A24 /* views */,
+				CCFFE9AE1D39CE6600515A24 /* controllers */,
 				CCFFE9811D39CD6600515A24 /* Main.storyboard */,
 				CCFFE9841D39CD6600515A24 /* Assets.xcassets */,
-				CCFFE9861D39CD6600515A24 /* LaunchScreen.storyboard */,
-				CCFFE9891D39CD6600515A24 /* Info.plist */,
 			);
 			path = Imagine;
 			sourceTree = "<group>";
@@ -123,6 +147,34 @@
 				CCFFE99F1D39CD6600515A24 /* Info.plist */,
 			);
 			path = ImagineUITests;
+			sourceTree = "<group>";
+		};
+		CCFFE9AB1D39CE1700515A24 /* supporting */ = {
+			isa = PBXGroup;
+			children = (
+				CC02CED21D3A412B0098B333 /* sounds */,
+				CCFFE9861D39CD6600515A24 /* LaunchScreen.storyboard */,
+				CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */,
+				CCFFE9891D39CD6600515A24 /* Info.plist */,
+			);
+			name = supporting;
+			sourceTree = "<group>";
+		};
+		CCFFE9AE1D39CE6600515A24 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCFFE9AC1D39CE4A00515A24 /* LoginViewController.swift */,
+				CCFFE97F1D39CD6600515A24 /* HomeViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		CCFFE9B21D39D30900515A24 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +284,7 @@
 				CCFFE9881D39CD6600515A24 /* LaunchScreen.storyboard in Resources */,
 				CCFFE9851D39CD6600515A24 /* Assets.xcassets in Resources */,
 				CCFFE9831D39CD6600515A24 /* Main.storyboard in Resources */,
+				CC02CED41D3A414E0098B333 /* rain.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCFFE9801D39CD6600515A24 /* ViewController.swift in Sources */,
+				CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */,
+				CCFFE9B41D39D33300515A24 /* OPaddedTextField.swift in Sources */,
+				CCFFE9AD1D39CE4A00515A24 /* LoginViewController.swift in Sources */,
+				CCFFE9801D39CD6600515A24 /* HomeViewController.swift in Sources */,
 				CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +363,7 @@
 				CCFFE9871D39CD6600515A24 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = Imagine;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -484,6 +541,7 @@
 				CCFFE9A41D39CD6600515A24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCFFE9A51D39CD6600515A24 /* Build configuration list for PBXNativeTarget "ImagineTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +550,7 @@
 				CCFFE9A71D39CD6600515A24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCFFE9A81D39CD6600515A24 /* Build configuration list for PBXNativeTarget "ImagineUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +559,7 @@
 				CCFFE9AA1D39CD6600515A24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
