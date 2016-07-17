@@ -50,10 +50,11 @@ class LoginViewController: UIViewController {
         stopRainSound()
         removeObservers()
     }
-    override func prefersStatusBarHidden() -> Bool
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
     {
-        return true
+        return .LightContent
     }
+    
     
     // MARK:- Setup Methods
     func setupGestureRecognizers()

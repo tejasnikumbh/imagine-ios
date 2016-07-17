@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CC02CED41D3A414E0098B333 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC02CED31D3A414E0098B333 /* rain.mp3 */; };
 		CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E41D3B4CD900050B81 /* OUtils.swift */; };
+		CCFCA5E81D3B5B2300050B81 /* OTypeOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E71D3B5B2300050B81 /* OTypeOneTableViewCell.swift */; };
+		CCFCA5EA1D3B5B3300050B81 /* OTypeTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E91D3B5B3300050B81 /* OTypeTwoTableViewCell.swift */; };
+		CCFCA5EC1D3B5B4200050B81 /* OTypeThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5EB1D3B5B4200050B81 /* OTypeThreeTableViewCell.swift */; };
+		CCFCA5EE1D3B5B4F00050B81 /* OTypeFourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5ED1D3B5B4F00050B81 /* OTypeFourTableViewCell.swift */; };
 		CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */; };
 		CCFFE9801D39CD6600515A24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97F1D39CD6600515A24 /* HomeViewController.swift */; };
 		CCFFE9831D39CD6600515A24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCFFE9811D39CD6600515A24 /* Main.storyboard */; };
@@ -40,6 +44,10 @@
 /* Begin PBXFileReference section */
 		CC02CED31D3A414E0098B333 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
 		CCFCA5E41D3B4CD900050B81 /* OUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUtils.swift; sourceTree = "<group>"; };
+		CCFCA5E71D3B5B2300050B81 /* OTypeOneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTypeOneTableViewCell.swift; sourceTree = "<group>"; };
+		CCFCA5E91D3B5B3300050B81 /* OTypeTwoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTypeTwoTableViewCell.swift; sourceTree = "<group>"; };
+		CCFCA5EB1D3B5B4200050B81 /* OTypeThreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTypeThreeTableViewCell.swift; sourceTree = "<group>"; };
+		CCFCA5ED1D3B5B4F00050B81 /* OTypeFourTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTypeFourTableViewCell.swift; sourceTree = "<group>"; };
 		CCFFE97A1D39CD6600515A24 /* Imagine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Imagine/AppDelegate.swift; sourceTree = "<group>"; };
 		CCFFE97F1D39CD6600515A24 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +104,17 @@
 				CCFCA5E41D3B4CD900050B81 /* OUtils.swift */,
 			);
 			name = utils;
+			sourceTree = "<group>";
+		};
+		CCFCA5E61D3B5AE800050B81 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CCFCA5E71D3B5B2300050B81 /* OTypeOneTableViewCell.swift */,
+				CCFCA5E91D3B5B3300050B81 /* OTypeTwoTableViewCell.swift */,
+				CCFCA5EB1D3B5B4200050B81 /* OTypeThreeTableViewCell.swift */,
+				CCFCA5ED1D3B5B4F00050B81 /* OTypeFourTableViewCell.swift */,
+			);
+			name = cells;
 			sourceTree = "<group>";
 		};
 		CCFFE9711D39CD6600515A24 = {
@@ -172,6 +191,7 @@
 		CCFFE9B21D39D30900515A24 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				CCFCA5E61D3B5AE800050B81 /* cells */,
 				CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */,
 			);
 			name = views;
@@ -311,9 +331,13 @@
 			files = (
 				CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */,
 				CCFFE9B41D39D33300515A24 /* OPaddedTextField.swift in Sources */,
+				CCFCA5EA1D3B5B3300050B81 /* OTypeTwoTableViewCell.swift in Sources */,
+				CCFCA5E81D3B5B2300050B81 /* OTypeOneTableViewCell.swift in Sources */,
+				CCFCA5EC1D3B5B4200050B81 /* OTypeThreeTableViewCell.swift in Sources */,
 				CCFFE9AD1D39CE4A00515A24 /* LoginViewController.swift in Sources */,
 				CCFFE9801D39CD6600515A24 /* HomeViewController.swift in Sources */,
 				CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */,
+				CCFCA5EE1D3B5B4F00050B81 /* OTypeFourTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
