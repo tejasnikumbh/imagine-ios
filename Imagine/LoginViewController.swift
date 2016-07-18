@@ -21,14 +21,14 @@ class LoginViewController: UIViewController {
     // MARK:- IB Actions
     @IBAction func signUpTapped(sender: UIButton)
     {
-        let validEmail = OUtils.checkValidEmail(emailTextField.text!)
+        let validEmail = OUtils.Validate.email(emailTextField.text!)
         if !validEmail { // Guard against invalid email address
-            let dialogBox = OUtils.getDisplayDialogBox(message: "Please enter a valid Email Address")
+            let dialogBox = OUtils.Dialog.displayBox(message: "Please enter a valid Email Address")
             self.presentViewController(dialogBox, animated: true, completion: nil)
             return
         }
         // Start the next view controller in case the email is valid
-        let homeViewController: HomeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
+        let homeViewController: StoryGridViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("StoryGridViewController") as! StoryGridViewController
         homeViewController.modalTransitionStyle = .CrossDissolve
         self.presentViewController(homeViewController, animated: true, completion: nil)
     }
