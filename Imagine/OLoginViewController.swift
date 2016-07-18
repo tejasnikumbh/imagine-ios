@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class LoginViewController: UIViewController {
+class OLoginViewController: UIViewController {
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var emailTextField: OPaddedTextField!
@@ -27,8 +27,11 @@ class LoginViewController: UIViewController {
             self.presentViewController(dialogBox, animated: true, completion: nil)
             return
         }
+        // Setup User Details for within app use
+        OUser.isSignedIn = true
+        OUser.email = emailTextField.text!
         // Start the next view controller in case the email is valid
-        let homeViewController: StoryGridViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("StoryGridViewController") as! StoryGridViewController
+        let homeViewController: OStoryGridViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryGridViewController") as! OStoryGridViewController
         homeViewController.modalTransitionStyle = .CrossDissolve
         self.presentViewController(homeViewController, animated: true, completion: nil)
     }
@@ -37,6 +40,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        setupStoryGridModel()
         setupGestureRecognizers()
         setupObservers()
         playRainSound()
@@ -57,17 +61,21 @@ class LoginViewController: UIViewController {
     
     
     // MARK:- Setup Methods
+    func setupStoryGridModel() {
+        // Do work to fetch stories from server.
+        // Preferably call a fetcher method on the OStoryGrid model
+    }
     func setupGestureRecognizers()
     {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self,
-                                                          action: #selector(LoginViewController.resignKeyboard(_:)))
+                                                          action: #selector(OLoginViewController.resignKeyboard(_:)))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
     }
     func setupObservers()
     {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: self.view.window)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(OLoginViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(OLoginViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: self.view.window)
     }
     func removeObservers()
     {

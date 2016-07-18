@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  OStoryGridViewController.swift
 //  Imagine
 //
 //  Created by Tejas Nikumbh on 7/16/16.
@@ -8,50 +8,28 @@
 
 import UIKit
 
-class StoryGridViewController: UIViewController {
-
-    // Array of story cards models
-    let cardsPerCell = 3
-    var storyCards: [OStoryCard]!
-    var cellTypes: [Int]!
-    
+class OStoryGridViewController: UIViewController {
     // MARK:- View Lifecycle + View Base Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewSettings()
     }
     override func preferredStatusBarStyle() -> UIStatusBarStyle
     {
         return .LightContent
     }
-    
-    // MARK:- Setup Methods
-    func setupViewSettings() {
-        storyCards = OStoryCardFactory.defaultStoryCards()
-        cellTypes = [2, 3, 4, 1, 2, 4, 3]
-        /*
-        var i = 0 // Assuming the story card count is a multiple of 3
-        while i < storyCards.count {
-            // Creates windows of type only 2,3 and 4
-            cellTypes.append(Int(arc4random_uniform(3) + 2))
-            i += cardsPerCell
-        } */
-    }
 }
 
-extension StoryGridViewController: UITableViewDataSource, UITableViewDelegate {
+extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Since each row contains 3 story cards
-        return storyCards.count/cardsPerCell
+        return OStoryGrid.cards.count/OStoryGrid.cardsPerCell
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = getCellForRow(tableView, row: cellTypes[indexPath.row])
-        
+        let cell = getCellForRow(tableView, row: OStoryGrid.cellTypes[indexPath.row])
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return OUtils.StoryGrid.cellHeight(cellTypes[indexPath.row])
+        return OUtils.StoryGrid.cellHeight(OStoryGrid.cellTypes[indexPath.row])
     }
     
     func getCellForRow(tableView: UITableView, row: Int) -> UITableViewCell {

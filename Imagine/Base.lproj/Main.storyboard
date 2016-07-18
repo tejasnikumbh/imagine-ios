@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Imagine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="OLoginViewController" customModule="Imagine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -179,7 +179,7 @@
         <!--Story Grid View Controller-->
         <scene sceneID="dHX-lE-lfx">
             <objects>
-                <viewController storyboardIdentifier="StoryGridViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uga-5c-23J" customClass="StoryGridViewController" customModule="Imagine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OStoryGridViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uga-5c-23J" customClass="OStoryGridViewController" customModule="Imagine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ObX-Y6-bfW"/>
                         <viewControllerLayoutGuide type="bottom" id="KVw-Sn-6F4"/>

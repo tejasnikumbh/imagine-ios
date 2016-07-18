@@ -17,6 +17,8 @@
 import UIKit
 
 class OTypeOneTableViewCell: UITableViewCell {
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

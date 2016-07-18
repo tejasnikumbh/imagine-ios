@@ -10,11 +10,11 @@ import UIKit
 import Foundation
 
 struct OStoryCardFactory {
-    static func defaultStoryCards() -> [OStoryCard]
+    static func defaultCards() -> [OStoryCard]
     {
-        return parseStoryCards()
+        return parseCards()
     }
-    static func parseStoryCards() -> [OStoryCard]
+    static func parseCards() -> [OStoryCard]
     {
         let storyCardsData = [
         [
