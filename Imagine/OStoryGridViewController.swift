@@ -25,15 +25,19 @@ extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
         return OStoryGrid.cards.count/OStoryGrid.cardsPerCell
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = getCellForRow(tableView, row: OStoryGrid.cellTypes[indexPath.row])
+        let cellType = OStoryGrid.cellTypes[indexPath.row]
+        let cell = getCellForRow(tableView, type: cellType)
+        cell.populate([OStoryGrid.cards[3*indexPath.row],
+                    OStoryGrid.cards[3*indexPath.row + 1],
+                    OStoryGrid.cards[3*indexPath.row + 2]])
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return OUtils.StoryGrid.cellHeight(OStoryGrid.cellTypes[indexPath.row])
+        return OUtils.StoryGrid.Cell.height(OStoryGrid.cellTypes[indexPath.row])
     }
     
-    func getCellForRow(tableView: UITableView, row: Int) -> UITableViewCell {
-        switch row {
+    func getCellForRow(tableView: UITableView, type: Int) -> UITableViewCell {
+        switch type {
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("OTypeOne") as! OTypeOneTableViewCell
             return cell
@@ -52,6 +56,5 @@ extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
-    
 }
 

@@ -11,7 +11,7 @@ import Foundation
 
 class OStoryGrid {
     static var cardsPerCell = 3
-    static var cellTypes = [2, 3, 4, 1, 2, 4, 3]
+    static var cellTypes = [2, 3, 4, 3, 2, 4]
     static var cards: [OStoryCard] = OStoryCardFactory.defaultCards()
     
     static func fetchDetailsFromServer() -> Bool

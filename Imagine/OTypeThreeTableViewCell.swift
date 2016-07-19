@@ -30,19 +30,28 @@ class OTypeThreeTableViewCell: UITableViewCell {
             0,
             y: OConstants.StoryGrid.gapWidth*2,
             width: frameWidth*2 + OConstants.StoryGrid.gapWidth*2,
-            height: frameHeight)
+            height: frameHeight,
+            storyThumbnailTag: 1,
+            storyTitleTag: 2,
+            storyAuthorTag: 3)
         
         let secondWindow = OUtils.StoryGrid.window(
             frameWidth*2 + OConstants.StoryGrid.gapWidth*4,
             y: OConstants.StoryGrid.gapWidth*2,
             width: frameWidth,
-            height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*3)
+            height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*3,
+            storyThumbnailTag: 4,
+            storyTitleTag: 5,
+            storyAuthorTag: 6)
         
         let thirdWindow = OUtils.StoryGrid.window(
             frameWidth*2 + OConstants.StoryGrid.gapWidth*4,
             y: frameHeight/2.0 + OConstants.StoryGrid.gapWidth,
             width: frameWidth,
-            height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth)
+            height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth,
+            storyThumbnailTag: 7,
+            storyTitleTag: 8,
+            storyAuthorTag: 9)
         
         self.addSubview(firstWindow)
         self.addSubview(secondWindow)

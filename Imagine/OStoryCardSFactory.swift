@@ -26,137 +26,137 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
+            "image": "g",
+            "title": "Amsterdam",
+            "author": "Sanchar Sharma",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        [
+            "image": "b",
+            "title": "Black Holes",
+            "author": "Stephen Hawking",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        [
+            "image": "e",
+            "title": "Time",
+            "author": "Nina J Lu",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        [
+            "image": "d",
+            "title": "Nature",
+            "author": "Arunima Gupta",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        [
+            "image": "c",
+            "title": "The Ice Bucket",
+            "author": "Chetan Patil",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        [
+            "image": "b",
+            "title": "Gimmick",
+            "author": "Rahul Gandhi",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        [
+            "image": "a",
+            "title": "Main inside the Cupboard",
+            "author": "Phoebe",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        [
+            "image": "g",
+            "title": "Aryan Gods",
+            "author": "Chaudhari",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        [
+            "image": "b",
+            "title": "Memento",
+            "author": "Steven Spielberg",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        [
+            "image": "e",
+            "title": "Hello",
+            "author": "Samantha Truth",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
             "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
+            "title": "Creed",
+            "author": "Roy Gibiano",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
+            "image": "c",
+            "title": "Hotel Suites",
+            "author": "Jill Jackson",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
+            "image": "b",
+            "title": "Troy",
+            "author": "Nick La Rooy",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
+            "image": "a",
+            "title": "Just in Time",
+            "author": "Gaetano",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
+            "image": "d",
+            "title": "Plastic Nutcase",
+            "author": "Romeoro Griffin",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
+            "image": "g",
+            "title": "Tumultous",
+            "author": "God Watson",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Rain Man",
-            "author": "Tejas Nikumbh",
+            "image": "f",
+            "title": "Lordling",
+            "author": "Jon Snow",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"

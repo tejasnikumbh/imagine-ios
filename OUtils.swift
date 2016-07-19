@@ -40,24 +40,31 @@ class OUtils {
     
     
     class StoryGrid {
-        static func cellHeight(type: Int) -> CGFloat
-        {
-            let heights = [
-                OConstants.StoryGrid.typeOneCellHeight,
-                OConstants.StoryGrid.typeTwoCellHeight,
-                OConstants.StoryGrid.typeThreeCellHeight,
-                OConstants.StoryGrid.typeFourCellHeight
-            ]
-            return heights[type - 1]
+        class Cell {
+            static func height(type: Int) -> CGFloat
+            {
+                let heights = [
+                    OConstants.StoryGrid.typeOneCellHeight,
+                    OConstants.StoryGrid.typeTwoCellHeight,
+                    OConstants.StoryGrid.typeThreeCellHeight,
+                    OConstants.StoryGrid.typeFourCellHeight
+                ]
+                return heights[type - 1]
+            }
         }
+        
         static func window(x: CGFloat, y:CGFloat,
-                           width: CGFloat, height: CGFloat) -> UIView
+                           width: CGFloat, height: CGFloat,
+                           storyThumbnailTag: Int? = nil,
+                           storyTitleTag: Int? = nil,
+                           storyAuthorTag: Int? = nil) -> UIView
         {
             let window = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
             // Adding story thumbnail
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
             imageView.image = UIImage(named: "home_back")
             imageView.contentMode = .ScaleAspectFill
+            imageView.tag = storyThumbnailTag!
             // This is at index 0
             window.addSubview(imageView)
             
@@ -71,11 +78,14 @@ class OUtils {
                     x: width*scalingFactorMarginBig,
                     y: 3*height/4.0 + width*scalingFactorMarginBig*0.9,
                     width: width - width*scalingFactorMarginBig*2,
-                    height: height*scalingFactorTitle))
+                    height: height*scalingFactorTitle*1.3))
             storyTitle.font = UIFont(name: "futura", size: height*scalingFactorTitle)
             storyTitle.minimumScaleFactor = 0.5
+            storyTitle.numberOfLines = 0
+            storyTitle.adjustsFontSizeToFitWidth = true
             storyTitle.text = "Rain Man"
             storyTitle.textColor = UIColor.whiteColor()
+            storyTitle.tag = storyTitleTag!
             
             let storyAuthor = UILabel(frame:
                 CGRect(
@@ -87,6 +97,7 @@ class OUtils {
             storyAuthor.minimumScaleFactor = 0.5
             storyAuthor.text = "by Aurther Conan Doyle"
             storyAuthor.textColor = UIColor.whiteColor()
+            storyAuthor.tag = storyAuthorTag!
             
             // This is at index 1
             window.addSubview(storyTitle)

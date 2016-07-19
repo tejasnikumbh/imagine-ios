@@ -27,19 +27,28 @@ class OTypeTwoTableViewCell: UITableViewCell {
             0,
             y: OConstants.StoryGrid.gapWidth,
             width: frameWidth,
-            height: frameHeight)
+            height: frameHeight,
+            storyThumbnailTag: 1,
+            storyTitleTag: 2,
+            storyAuthorTag: 3)
         
         let secondWindow = OUtils.StoryGrid.window(
             frameWidth + OConstants.StoryGrid.gapWidth*2,
             y: OConstants.StoryGrid.gapWidth*2,
             width: frameWidth,
-            height: frameHeight)
+            height: frameHeight,
+            storyThumbnailTag: 4,
+            storyTitleTag: 5,
+            storyAuthorTag: 6)
         
         let thirdWindow = OUtils.StoryGrid.window(
             frameWidth*2 + OConstants.StoryGrid.gapWidth*4,
             y: OConstants.StoryGrid.gapWidth*2,
             width: frameWidth,
-            height: frameHeight)
+            height: frameHeight,
+            storyThumbnailTag: 7,
+            storyTitleTag: 8,
+            storyAuthorTag: 9)
         
         self.addSubview(firstWindow)
         self.addSubview(secondWindow)
