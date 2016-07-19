@@ -26,8 +26,8 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
-            "image": "g",
-            "title": "Amsterdam",
+            "image": "d",
+            "title": "Time",
             "author": "Sanchar Sharma",
             "genre": "Life",
             "sound_name": "rain",
@@ -42,15 +42,15 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
-            "image": "e",
-            "title": "Time",
+            "image": "storm",
+            "title": "Storm's End",
             "author": "Nina J Lu",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "d",
+            "image": "e",
             "title": "Nature",
             "author": "Arunima Gupta",
             "genre": "Life",
@@ -58,8 +58,8 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
-            "image": "c",
-            "title": "The Ice Bucket",
+            "image": "ice_bucket",
+            "title": "Winter",
             "author": "Chetan Patil",
             "genre": "Life",
             "sound_name": "rain",
@@ -75,31 +75,31 @@ struct OStoryCardFactory {
             ],
         [
             "image": "a",
-            "title": "Main inside the Cupboard",
+            "title": "Wineyard",
             "author": "Phoebe",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "g",
-            "title": "Aryan Gods",
-            "author": "Chaudhari",
+            "image": "diagon",
+            "title": "Diagon Alley",
+            "author": "Chaudhari Noam",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
             "image": "b",
-            "title": "Memento",
+            "title": "The Bridge",
             "author": "Steven Spielberg",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "e",
-            "title": "Hello",
+            "image": "burning",
+            "title": "The Burning Train",
             "author": "Samantha Truth",
             "genre": "Life",
             "sound_name": "rain",
@@ -154,8 +154,8 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
-            "image": "f",
-            "title": "Lordling",
+            "image": "storm",
+            "title": "Storm's End",
             "author": "Jon Snow",
             "genre": "Life",
             "sound_name": "rain",

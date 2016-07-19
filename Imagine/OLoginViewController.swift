@@ -12,6 +12,7 @@ import AVFoundation
 
 class OLoginViewController: UIViewController {
     @IBOutlet weak var appName: UILabel!
+    @IBOutlet weak var appNameBackground: UIView!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var emailTextField: OPaddedTextField!
     @IBOutlet weak var signUpButtonBottomConstraint: NSLayoutConstraint!
@@ -136,10 +137,13 @@ class OLoginViewController: UIViewController {
     }
     func fadeInAppName()
     {
-        UIView.animateWithDuration(4, animations: {
+        UIView.animateWithDuration(3, animations: {
             self.appName.alpha = 1.0
         }) { (Bool) in
             self.appName.hidden = false
+            UIView.animateWithDuration(3, animations: {
+                self.appNameBackground.alpha = 0.4
+            })
         }
     }
     

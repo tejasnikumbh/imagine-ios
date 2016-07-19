@@ -25,7 +25,7 @@ class OTypeTwoTableViewCell: UITableViewCell {
         
         let firstWindow = OUtils.StoryGrid.window(
             0,
-            y: OConstants.StoryGrid.gapWidth,
+            y: OConstants.StoryGrid.gapWidth*2,
             width: frameWidth,
             height: frameHeight,
             storyThumbnailTag: 1,
