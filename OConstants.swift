@@ -22,4 +22,25 @@ class OConstants {
         static let typeThreeCellHeight = CGFloat(432.0)
         static let typeFourCellHeight = CGFloat(432.0)
     }
+    struct Window {
+        // Left margin and width are scaled w.r.t Window width
+        // Upper margin and height are scaled w.r.t Window height
+        // Font size is scaled w.r.t Window height
+        struct Scaling {
+            struct Title {
+                static let leftMargin = CGFloat(0.06)
+                static let upperMargin = CGFloat(0.77)
+                static let width = CGFloat(0.88)
+                static let height = CGFloat(0.1105)
+                static let fontSize = CGFloat(0.09)
+            }
+            struct Author {
+                static let leftMargin = CGFloat(0.075)
+                static let upperMargin = CGFloat(0.8835)
+                static let width = CGFloat(0.97)
+                static let height = CGFloat(0.0525)
+                static let fontSize = CGFloat(0.035)
+            }
+        }
+    }
 }

@@ -66,8 +66,8 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
-            "image": "b",
-            "title": "Gimmick",
+            "image": "rainy",
+            "title": "Shower",
             "author": "Rahul Gandhi",
             "genre": "Life",
             "sound_name": "rain",
@@ -138,7 +138,7 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
-            "image": "d",
+            "image": "rainy",
             "title": "Plastic Nutcase",
             "author": "Romeoro Griffin",
             "genre": "Life",

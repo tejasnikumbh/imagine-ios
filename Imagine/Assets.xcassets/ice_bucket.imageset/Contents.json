@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ice_bucket.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "ice_bucket.png",
       "scale" : "2x"
     },
     {

@@ -69,17 +69,14 @@ class OUtils {
             window.addSubview(imageView)
             
             // Adding story name and author
-            let scalingFactorTitle = CGFloat(0.085)
-            let scalingFactorAuthor = CGFloat(0.035)
-            let scalingFactorMarginBig = CGFloat(0.06)
-            let scalingFactorMarginSmall = CGFloat(0.015)
             let storyTitle = UILabel(frame:
                 CGRect(
-                    x: width*scalingFactorMarginBig,
-                    y: 3*height/4.0 + width*scalingFactorMarginBig*0.9,
-                    width: width - width*scalingFactorMarginBig*2,
-                    height: height*scalingFactorTitle*1.3))
-            storyTitle.font = UIFont(name: "futura", size: height*scalingFactorTitle)
+                    x: width*OConstants.Window.Scaling.Title.leftMargin,
+                    y: height*OConstants.Window.Scaling.Title.upperMargin,
+                    width: width*OConstants.Window.Scaling.Title.width,
+                    height: height*OConstants.Window.Scaling.Title.height))
+            storyTitle.font = UIFont(name: "futura",
+                                     size: height*OConstants.Window.Scaling.Title.fontSize)
             storyTitle.minimumScaleFactor = 0.5
             storyTitle.numberOfLines = 0
             storyTitle.adjustsFontSizeToFitWidth = true
@@ -89,11 +86,11 @@ class OUtils {
             
             let storyAuthor = UILabel(frame:
                 CGRect(
-                    x: width*scalingFactorMarginBig*1.25,
-                    y: storyTitle.frame.origin.y + storyTitle.frame.size.height + width*scalingFactorMarginSmall*0.5,
-                    width: width - width*scalingFactorMarginSmall*2,
-                    height: height*scalingFactorAuthor*1.5))
-            storyAuthor.font = UIFont.italicSystemFontOfSize(height*scalingFactorAuthor)
+                    x: width*OConstants.Window.Scaling.Author.leftMargin,
+                    y: height*OConstants.Window.Scaling.Author.upperMargin,
+                    width: width*OConstants.Window.Scaling.Author.width,
+                    height: height*OConstants.Window.Scaling.Author.height))
+            storyAuthor.font = UIFont.italicSystemFontOfSize(height*OConstants.Window.Scaling.Author.fontSize)
             storyAuthor.minimumScaleFactor = 0.5
             storyAuthor.text = "by Aurther Conan Doyle"
             storyAuthor.textColor = UIColor.whiteColor()

@@ -14,6 +14,7 @@
 		CC5260421D3C56F6008C4F38 /* OStoryCardSFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260411D3C56F6008C4F38 /* OStoryCardSFactory.swift */; };
 		CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260451D3CA7A3008C4F38 /* OConstants.swift */; };
 		CC5260481D3CDC21008C4F38 /* OStoryGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */; };
+		CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */; };
 		CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E41D3B4CD900050B81 /* OUtils.swift */; };
 		CCFCA5E81D3B5B2300050B81 /* OTypeOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E71D3B5B2300050B81 /* OTypeOneTableViewCell.swift */; };
 		CCFCA5EA1D3B5B3300050B81 /* OTypeTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E91D3B5B3300050B81 /* OTypeTwoTableViewCell.swift */; };
@@ -55,6 +56,7 @@
 		CC5260411D3C56F6008C4F38 /* OStoryCardSFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryCardSFactory.swift; sourceTree = "<group>"; };
 		CC5260451D3CA7A3008C4F38 /* OConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OConstants.swift; sourceTree = "<group>"; };
 		CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryGrid.swift; sourceTree = "<group>"; };
+		CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterViewController.swift; sourceTree = "<group>"; };
 		CCFCA5E41D3B4CD900050B81 /* OUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUtils.swift; sourceTree = "<group>"; };
 		CCFCA5E71D3B5B2300050B81 /* OTypeOneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTypeOneTableViewCell.swift; sourceTree = "<group>"; };
 		CCFCA5E91D3B5B3300050B81 /* OTypeTwoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTypeTwoTableViewCell.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				CCFFE9AC1D39CE4A00515A24 /* OLoginViewController.swift */,
 				CCFFE97F1D39CD6600515A24 /* OStoryGridViewController.swift */,
+				CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				CC19D4491D3CE03300BE3E2D /* OUser.swift in Sources */,
 				CCFFE9801D39CD6600515A24 /* OStoryGridViewController.swift in Sources */,
 				CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */,
+				CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */,
 				CCFCA5EE1D3B5B4F00050B81 /* OTypeFourTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
