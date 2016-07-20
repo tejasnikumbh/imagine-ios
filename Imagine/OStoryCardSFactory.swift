@@ -163,7 +163,6 @@ struct OStoryCardFactory {
             ],
         
         ]
-        
         let storyCards = storyCardsData.map {
             dict -> OStoryCard in
             return OStoryCard(
@@ -175,8 +174,6 @@ struct OStoryCardFactory {
                 soundType: dict["sound_type"]!
             )
         }
-        
         return storyCards
     }
-
 }
