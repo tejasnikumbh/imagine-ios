@@ -11,10 +11,12 @@ import UIKit
 class CardShinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var duration = 0.4
     var destinationFrame = CGRectZero
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval
+    {
         return duration
     }
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning)
+    {
         let containerView = transitionContext.containerView()!
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
@@ -32,7 +34,8 @@ class CardShinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             duration,
             delay: 0.0,
             options: .CalculationModeCubic,
-            animations: { 
+            animations: {
+                
                 UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1,
                     animations: {
                     fromView.transform = shrinkTransform
@@ -40,10 +43,8 @@ class CardShinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                         x: CGRectGetMidX(finalFrame),
                         y: CGRectGetMidY(finalFrame))
                 })
-                UIView.addKeyframeWithRelativeStartTime(3/4, relativeDuration: 1/4, animations: { 
-                })
             }) { _ in
-                transitionContext.completeTransition(true)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
         }
     }
 }

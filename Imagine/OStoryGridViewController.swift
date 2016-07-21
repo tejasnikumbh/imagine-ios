@@ -11,6 +11,7 @@ import UIKit
 class OStoryGridViewController: UIViewController {
     var selectedWindow: UIView!
     var selectedWindowFrame: CGRect!
+    var interactor = CardShrinkInteractor()
     // MARK:vararw Lifecycle + View Base Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,7 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
         selectedWindowFrame = cardView.superview!.convertRect(cardView.frame, toView: nil)
         let posterViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryPosterViewController") as! OStoryPosterViewController
         posterViewController.card = card
+        posterViewController.interactor = interactor
         let window = Window(x: 0, y: 0,
                             width: OConstants.Screen.width,
                             height: OConstants.Screen.height,
@@ -66,23 +68,26 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = CardExpandAnimator()
-        if selectedWindowFrame.height < OConstants.Screen.width*1.5 {
+        if selectedWindowFrame.width < OConstants.Screen.width*0.5 {
             transition.duration = 0.6
         } else {
-            transition.duration = 0.4
+            transition.duration = 0.5
         }
         transition.originFrame = selectedWindowFrame
         return transition
     }
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = CardShinkAnimator()
-        if selectedWindowFrame.height < OConstants.Screen.width*1.5 {
+        if selectedWindowFrame.width < OConstants.Screen.width*0.5 {
             transition.duration = 0.6
         } else {
-            transition.duration = 0.4
+            transition.duration = 0.5
         }
         transition.destinationFrame = selectedWindowFrame
         return transition
+    }
+    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor: nil
     }
 }
 
