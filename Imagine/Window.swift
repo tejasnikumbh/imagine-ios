@@ -9,6 +9,9 @@ import UIKit
 
 class Window: NSObject {
     var view:UIView! = nil
+    var storyTitle: UILabel! = nil
+    var storyAuthor: UILabel! = nil
+    var storyThumbnail: UIImageView! = nil
     init(x: CGFloat, y:CGFloat,
         width: CGFloat, height: CGFloat,
         card: OStoryCard)
@@ -21,6 +24,7 @@ class Window: NSObject {
         imageView.contentMode = .ScaleAspectFill
         imageView.clipsToBounds = true
         // This is at index 0
+        self.storyThumbnail = imageView
         window.addSubview(imageView)
         
         // Adding story name and author
@@ -50,8 +54,10 @@ class Window: NSObject {
         storyAuthor.textColor = UIColor.whiteColor()
         
         // This is at index 1
+        self.storyTitle = storyTitle
         window.addSubview(storyTitle)
         // This is at index 2
+        self.storyAuthor = storyAuthor
         window.addSubview(storyAuthor)
         
         // Adding gradient

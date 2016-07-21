@@ -38,19 +38,19 @@ class OStoryGridTableViewCell: UITableViewCell {
                 x: 0,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
-                height: frameHeight,
+                height: frameHeight - OConstants.StoryGrid.gapWidth*2,
                 card: cards[0])
             secondWindow = Window(
                 x: frameWidth + OConstants.StoryGrid.gapWidth*2,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
-                height: frameHeight,
+                height: frameHeight - OConstants.StoryGrid.gapWidth*2,
                 card: cards[1])
             thirdWindow = Window(
                 x: frameWidth*2 + OConstants.StoryGrid.gapWidth*4,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
-                height: frameHeight,
+                height: frameHeight - OConstants.StoryGrid.gapWidth*2,
                 card: cards[2])
            break
         case 3: // Big left window small 2 right ones
@@ -58,19 +58,19 @@ class OStoryGridTableViewCell: UITableViewCell {
                 x: 0,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth*2 + OConstants.StoryGrid.gapWidth*2,
-                height: frameHeight,
+                height: frameHeight - OConstants.StoryGrid.gapWidth*2,
                 card: cards[0])
             secondWindow = Window(
                 x: frameWidth*2 + OConstants.StoryGrid.gapWidth*4,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
-                height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*3,
+                height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*2,
                 card: cards[1])
             thirdWindow = Window(
                 x: frameWidth*2 + OConstants.StoryGrid.gapWidth*4,
-                y: frameHeight/2.0 + OConstants.StoryGrid.gapWidth,
+                y: frameHeight/2.0 + OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
-                height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth,
+                height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*2,
                 card: cards[2])
             break
         case 4: // Big right one, small 2 left ones
@@ -78,17 +78,17 @@ class OStoryGridTableViewCell: UITableViewCell {
                 x: 0,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
-                height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*3,
+                height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*2,
                 card: cards[0])
             secondWindow = Window(
                 x: 0,
-                y: frameHeight/2.0 + OConstants.StoryGrid.gapWidth,
+                y: frameHeight/2.0 + OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
-                height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth,
+                height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*2,
                 card: cards[1])
             thirdWindow = Window(
                 x: frameWidth + OConstants.StoryGrid.gapWidth*2,
-                y: OConstants.StoryGrid.gapWidth*2.0,
+                y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth*2.0,
                 height: frameHeight - OConstants.StoryGrid.gapWidth*2,
                 card: cards[2])

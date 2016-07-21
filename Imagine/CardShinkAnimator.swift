@@ -40,6 +40,8 @@ class CardShinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                         x: CGRectGetMidX(finalFrame),
                         y: CGRectGetMidY(finalFrame))
                 })
+                UIView.addKeyframeWithRelativeStartTime(3/4, relativeDuration: 1/4, animations: { 
+                })
             }) { _ in
                 transitionContext.completeTransition(true)
         }

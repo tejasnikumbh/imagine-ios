@@ -312,7 +312,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipu-Hk-yES">
+                            <button opaque="NO" alpha="0.0" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipu-Hk-yES">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="6cv-Uk-hEj">
@@ -368,6 +368,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="ipu-Hk-yES" id="Ch3-5E-H6Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHW-9G-ZFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

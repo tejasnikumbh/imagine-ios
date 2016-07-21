@@ -25,7 +25,7 @@ class CardExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let yScaleFactor = initialFrame.height/finalFrame.height
         
         let scaleTransform = CGAffineTransformMakeScale(xScaleFactor, yScaleFactor)
-        let scaleShrinkTransform = CGAffineTransformMakeScale(xScaleFactor*0.94, yScaleFactor*0.97)
+        let scaleShrinkTransform = CGAffineTransformMakeScale(xScaleFactor*0.92, yScaleFactor*0.96)
         toView.transform = scaleTransform
         toView.center = CGPoint(
             x: CGRectGetMidX(initialFrame),
@@ -43,13 +43,13 @@ class CardExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             delay: 0.0,
             options: .CalculationModeCubic,
             animations: {
-                UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1/4, animations: {
+                UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1/3, animations: {
                     toView.transform = scaleShrinkTransform
                     toView.center = CGPoint(
                         x: CGRectGetMidX(initialFrame),
                         y: CGRectGetMidY(initialFrame))
                 })
-                UIView.addKeyframeWithRelativeStartTime(1/4, relativeDuration: 3/4, animations: {
+                UIView.addKeyframeWithRelativeStartTime(1/3, relativeDuration: 2/3, animations: {
                                         toView.transform = CGAffineTransformIdentity
                     toView.center = CGPoint(
                         x: CGRectGetMidX(finalFrame),

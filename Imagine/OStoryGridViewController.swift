@@ -54,21 +54,33 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
         selectedWindowFrame = cardView.superview!.convertRect(cardView.frame, toView: nil)
         let posterViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryPosterViewController") as! OStoryPosterViewController
         posterViewController.card = card
-        posterViewController.view.addSubview(Window(x: 0, y: 0,
-                                        width: OConstants.Screen.width,
-                                        height: OConstants.Screen.height,
-                                        card: card).view)
+        let window = Window(x: 0, y: 0,
+                            width: OConstants.Screen.width,
+                            height: OConstants.Screen.height,
+                            card: card)
+        posterViewController.window = window
+        posterViewController.view.addSubview(window.view)
         posterViewController.transitioningDelegate = self
         presentViewController(posterViewController, animated: true, completion: nil)
     }
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = CardExpandAnimator()
+        if selectedWindowFrame.height < OConstants.Screen.width*1.5 {
+            transition.duration = 0.6
+        } else {
+            transition.duration = 0.4
+        }
         transition.originFrame = selectedWindowFrame
         return transition
     }
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = CardShinkAnimator()
+        if selectedWindowFrame.height < OConstants.Screen.width*1.5 {
+            transition.duration = 0.6
+        } else {
+            transition.duration = 0.4
+        }
         transition.destinationFrame = selectedWindowFrame
         return transition
     }

@@ -10,8 +10,22 @@ import UIKit
 
 class OStoryPosterViewController: UIViewController {
     var card: OStoryCard!
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    var window: Window!
+    
+    @IBOutlet weak var backButton: UIButton!
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animateWithDuration(
+            0.4) {
+                self.backButton.alpha = 1.0
+        }
+    }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIView.animateWithDuration(
+            0.4) { 
+                self.backButton.alpha = 0.0
+        }
     }
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
