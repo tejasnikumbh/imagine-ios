@@ -10,7 +10,14 @@ import UIKit
 
 class OStoryPosterViewController: UIViewController {
     var card: OStoryCard!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
+    }
+    @IBAction func backButtonTapped(sender: UIButton)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

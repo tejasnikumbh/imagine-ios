@@ -52,10 +52,10 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
         selectedWindow = cardView
         let posterViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryPosterViewController") as! OStoryPosterViewController
         posterViewController.card = card
-        posterViewController.view = Window(x: 0, y: 0,
+        posterViewController.view.addSubview(Window(x: 0, y: 0,
                                         width: OConstants.Screen.width,
                                         height: OConstants.Screen.height,
-                                        card: card).view
+                                        card: card).view)
         posterViewController.transitioningDelegate = self
         presentViewController(posterViewController, animated: true, completion: nil)
     }
