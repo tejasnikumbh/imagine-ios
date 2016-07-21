@@ -10,7 +10,8 @@ import UIKit
 
 class OStoryGridViewController: UIViewController {
     var selectedWindow: UIView!
-    // MARK:- varw Lifecycle + View Base Methods
+    var selectedWindowFrame: CGRect!
+    // MARK:vararw Lifecycle + View Base Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -50,6 +51,7 @@ extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
 extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewControllerTransitioningDelegate {
     func presentStoryPoster(cardView: UIView, card: OStoryCard) {
         selectedWindow = cardView
+        selectedWindowFrame = cardView.superview!.convertRect(cardView.frame, toView: nil)
         let posterViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryPosterViewController") as! OStoryPosterViewController
         posterViewController.card = card
         posterViewController.view.addSubview(Window(x: 0, y: 0,
@@ -62,11 +64,13 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = CardExpandAnimator()
-        transition.originFrame = selectedWindow.superview!.convertRect(selectedWindow.frame, toView: nil)
+        transition.originFrame = selectedWindowFrame
         return transition
     }
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        let transition = CardShinkAnimator()
+        transition.destinationFrame = selectedWindowFrame
+        return transition
     }
 }
 

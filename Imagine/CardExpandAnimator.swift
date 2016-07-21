@@ -25,17 +25,17 @@ class CardExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let yScaleFactor = initialFrame.height/finalFrame.height
         
         let scaleTransform = CGAffineTransformMakeScale(xScaleFactor, yScaleFactor)
-        let scaleShrinkTransform = CGAffineTransformMakeScale(xScaleFactor*0.95, yScaleFactor*0.98)
+        let scaleShrinkTransform = CGAffineTransformMakeScale(xScaleFactor*0.94, yScaleFactor*0.97)
         toView.transform = scaleTransform
         toView.center = CGPoint(
-            x: CGRectGetMidX(originFrame),
-            y: CGRectGetMidY(originFrame)
+            x: CGRectGetMidX(initialFrame),
+            y: CGRectGetMidY(initialFrame)
         )
         toView.clipsToBounds = true
         
         // Add a white view
         containerView.addSubview(UIView.blankView(
-            UIColor.whiteColor(),frame: originFrame))
+            UIColor.whiteColor(),frame: initialFrame))
         containerView.addSubview(toView)
         
         UIView.animateKeyframesWithDuration(

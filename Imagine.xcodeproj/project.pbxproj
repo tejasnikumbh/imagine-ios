@@ -18,6 +18,7 @@
 		CC71A0BC1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */; };
 		CC71A0BF1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */; };
 		CC71A0C21D3FE7A200C85D48 /* CardExpandAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */; };
+		CCB87C901D40EC7000F4DE87 /* CardShinkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C8F1D40EC7000F4DE87 /* CardShinkAnimator.swift */; };
 		CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */; };
 		CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E41D3B4CD900050B81 /* OUtils.swift */; };
 		CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 		CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryGridTableViewCell.swift; sourceTree = "<group>"; };
 		CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterPresentationProtocol.swift; sourceTree = "<group>"; };
 		CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpandAnimator.swift; sourceTree = "<group>"; };
+		CCB87C8F1D40EC7000F4DE87 /* CardShinkAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardShinkAnimator.swift; sourceTree = "<group>"; };
 		CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterViewController.swift; sourceTree = "<group>"; };
 		CCFCA5E41D3B4CD900050B81 /* OUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUtils.swift; sourceTree = "<group>"; };
 		CCFFE97A1D39CD6600515A24 /* Imagine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */,
+				CCB87C8F1D40EC7000F4DE87 /* CardShinkAnimator.swift */,
 			);
 			name = animators;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				CC5260481D3CDC21008C4F38 /* OStoryGrid.swift in Sources */,
 				CC71A0C21D3FE7A200C85D48 /* CardExpandAnimator.swift in Sources */,
 				CCFFE9AD1D39CE4A00515A24 /* OLoginViewController.swift in Sources */,
+				CCB87C901D40EC7000F4DE87 /* CardShinkAnimator.swift in Sources */,
 				CC71A0BC1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift in Sources */,
 				CC19D4491D3CE03300BE3E2D /* OUser.swift in Sources */,
 				CCFFE9801D39CD6600515A24 /* OStoryGridViewController.swift in Sources */,
