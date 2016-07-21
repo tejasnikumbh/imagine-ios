@@ -25,14 +25,14 @@ class OStoryPosterViewController: UIViewController {
         super.viewWillAppear(animated)
         UIView.animateWithDuration(
             0.4) {
-                self.backButton.alpha = 1.0
+            // Fade in audio button
         }
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         UIView.animateWithDuration(
-            0.4) { 
-                self.backButton.alpha = 0.0
+            0.4) {
+            // Fade out audio button
         }
     }
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

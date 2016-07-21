@@ -311,66 +311,8 @@
                     <view key="view" contentMode="scaleToFill" id="ngx-8d-uNt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" alpha="0.0" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipu-Hk-yES">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="6cv-Uk-hEj">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="36"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="48" id="Ss5-bR-Ddg">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="36"/>
-                                    </constraint>
-                                </constraints>
-                                <state key="normal" image="back"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6cv-Uk-hEj"/>
-                                        <exclude reference="Ss5-bR-Ddg"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="6cv-Uk-hEj"/>
-                                        <include reference="Ss5-bR-Ddg"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="backButtonTapped:" destination="uLa-ii-Pc8" eventType="touchUpInside" id="TGd-h0-40A"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ipu-Hk-yES" firstAttribute="top" secondItem="ngx-8d-uNt" secondAttribute="top" id="Uit-Xs-H2H">
-                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
-                            </constraint>
-                            <constraint firstItem="ipu-Hk-yES" firstAttribute="leading" secondItem="ngx-8d-uNt" secondAttribute="leading" id="wjt-xg-xcL">
-                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                            </constraint>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="ipu-Hk-yES"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="Uit-Xs-H2H"/>
-                                <exclude reference="wjt-xg-xcL"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="ipu-Hk-yES"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Uit-Xs-H2H"/>
-                                <include reference="wjt-xg-xcL"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <connections>
-                        <outlet property="backButton" destination="ipu-Hk-yES" id="Ch3-5E-H6Q"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHW-9G-ZFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,7 +320,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="128" height="128"/>
         <image name="home_back" width="300" height="428"/>
     </resources>
 </document>
