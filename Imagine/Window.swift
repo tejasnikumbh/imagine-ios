@@ -46,7 +46,7 @@ class Window: NSObject {
                 height: height*OConstants.Window.Scaling.Author.height))
         storyAuthor.font = UIFont.italicSystemFontOfSize(height*OConstants.Window.Scaling.Author.fontSize)
         storyAuthor.minimumScaleFactor = 0.5
-        storyAuthor.text = card.author
+        storyAuthor.text = "by " + card.author
         storyAuthor.textColor = UIColor.whiteColor()
         
         // This is at index 1
@@ -59,6 +59,7 @@ class Window: NSObject {
         let gradient = OUtils.UX.gradient(bounds, topColor: UIColor.clearColor().CGColor, bottomColor: UIColor.blackColor().CGColor, opacity: 0.8)
         window.layer.insertSublayer(gradient, atIndex: 1) //Index 2
         window.clipsToBounds = true
+        window.userInteractionEnabled = true
         view = window
     }
 }

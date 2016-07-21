@@ -40,13 +40,26 @@ class OUtils {
         class Cell {
             static func height(type: Int) -> CGFloat
             {
+                let frameWidthBi = OConstants.Screen.width/2.0 - OConstants.StoryGrid.gapWidth*2
+                let frameWidthTri = OConstants.Screen.width/3.0
+                let aspectRatio = OConstants.Screen.height/OConstants.Screen.width
                 let heights = [
-                    OConstants.StoryGrid.typeOneCellHeight,
-                    OConstants.StoryGrid.typeTwoCellHeight,
-                    OConstants.StoryGrid.typeThreeCellHeight,
-                    OConstants.StoryGrid.typeFourCellHeight
+                    frameWidthBi*aspectRatio,
+                    frameWidthTri*aspectRatio,
+                    frameWidthTri*aspectRatio*2,
+                    frameWidthTri*aspectRatio*2
                 ]
                 return heights[type - 1]
+            }
+            static func identifier(type: Int) -> String
+            {
+                let identifiers = [
+                    "OStoryGridTableViewCellOne",
+                    "OStoryGridTableViewCellTwo",
+                    "OStoryGridTableViewCellThree",
+                    "OStoryGridTableViewCellFour",
+                ]
+                return identifiers[type - 1]
             }
         }
     }

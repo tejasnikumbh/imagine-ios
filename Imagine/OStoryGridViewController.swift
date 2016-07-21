@@ -30,7 +30,8 @@ extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
                    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cellType = OStoryGrid.cellTypes[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("OStoryGridTableViewCell") as! OStoryGridTableViewCell
+        let cellIdentifier = OUtils.StoryGrid.Cell.identifier(cellType)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! OStoryGridTableViewCell
         cell.type = cellType
         cell.cards = [OStoryGrid.cards[3*indexPath.row],
                     OStoryGrid.cards[3*indexPath.row + 1],
@@ -61,7 +62,6 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = CardExpandAnimator()
-        transition.duration = 0.5
         transition.originFrame = selectedWindow.superview!.convertRect(selectedWindow.frame, toView: nil)
         return transition
     }

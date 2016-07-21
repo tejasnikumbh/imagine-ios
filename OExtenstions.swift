@@ -18,10 +18,10 @@ extension String
     }
 }
 extension UIView {
-    static func whiteView(frame: CGRect) -> UIView
+    static func blankView(color: UIColor, frame: CGRect) -> UIView
     {
         let view = UIView(frame: frame)
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = color
         return view
     }
 }
