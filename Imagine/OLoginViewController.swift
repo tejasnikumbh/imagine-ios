@@ -22,13 +22,13 @@ class OLoginViewController: UIViewController {
     // MARK:- IB Actions
     @IBAction func signUpTapped(sender: UIButton)
     {
-        let validEmail = OUtils.Validate.email(emailTextField.text!)
-        if !validEmail { // Guard against invalid email address
-            let dialogBox = OUtils.Dialog.displayBox(message: "Please enter a valid Email Address")
-            self.presentViewController(dialogBox, animated: true, completion: nil)
-            return
-        }
-        // Setup User Details for within app use
+//        let validEmail = OUtils.Validate.email(emailTextField.text!)
+//        if !validEmail { // Guard against invalid email address
+//            let dialogBox = OUtils.Dialog.displayBox(message: "Please enter a valid Email Address")
+//            self.presentViewController(dialogBox, animated: true, completion: nil)
+//            return
+//        }
+//        // Setup User Details for within app use
         OUser.isSignedIn = true
         OUser.email = emailTextField.text!
         // Start the next view controller in case the email is valid
@@ -36,7 +36,6 @@ class OLoginViewController: UIViewController {
         homeViewController.modalTransitionStyle = .CrossDissolve
         self.presentViewController(homeViewController, animated: true, completion: nil)
     }
-    
     // MARK:- View Lifecycle and other View Controller based methods
     override func viewDidLoad()
     {
@@ -59,8 +58,6 @@ class OLoginViewController: UIViewController {
     {
         return .LightContent
     }
-    
-    
     // MARK:- Setup Methods
     func setupStoryGridModel() {
         // Do work to fetch stories from server.
@@ -83,8 +80,6 @@ class OLoginViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
     }
-    
-    
     // MARK:- Selectors
     func keyboardWillHide(sender: NSNotification)
     {
@@ -117,8 +112,6 @@ class OLoginViewController: UIViewController {
     {
         view.endEditing(true)
     }
-    
-    
     // MARK:- App Effects
     func playRainSound()
     {
@@ -139,14 +132,10 @@ class OLoginViewController: UIViewController {
     {
         UIView.animateWithDuration(3, animations: {
             self.appName.alpha = 1.0
+            self.appNameBackground.alpha = 0.4
         }) { (Bool) in
             self.appName.hidden = false
-            UIView.animateWithDuration(2, animations: {
-                self.appNameBackground.alpha = 0.4
-            })
         }
     }
-    
-    
 }
 

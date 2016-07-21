@@ -9,7 +9,8 @@
 import UIKit
 
 class OStoryGridViewController: UIViewController {
-    // MARK:- View Lifecycle + View Base Methods
+    var selectedWindow: UIView!
+    // MARK:- varw Lifecycle + View Base Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,23 +21,53 @@ class OStoryGridViewController: UIViewController {
 }
 
 extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int
+    {
         return OStoryGrid.cards.count/OStoryGrid.cardsPerCell
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView,
+                   cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         let cellType = OStoryGrid.cellTypes[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("OStoryGridTableViewCell") as! OStoryGridTableViewCell
         cell.type = cellType
         cell.cards = [OStoryGrid.cards[3*indexPath.row],
                     OStoryGrid.cards[3*indexPath.row + 1],
                     OStoryGrid.cards[3*indexPath.row + 2]]
+        cell.actionDelegate = self
         cell.populate()
         return cell
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView,
+                   heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
         return OUtils.StoryGrid.Cell.height(OStoryGrid.cellTypes[indexPath.row])
     }
-    
 }
+
+extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewControllerTransitioningDelegate {
+    func presentStoryPoster(cardView: UIView, card: OStoryCard) {
+        selectedWindow = cardView
+        let posterViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryPosterViewController") as! OStoryPosterViewController
+        posterViewController.card = card
+        posterViewController.view = Window(x: 0, y: 0,
+                                        width: OConstants.Screen.width,
+                                        height: OConstants.Screen.height,
+                                        card: card).view
+        posterViewController.transitioningDelegate = self
+        presentViewController(posterViewController, animated: true, completion: nil)
+    }
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let transition = CardExpandAnimator()
+        transition.duration = 0.5
+        transition.originFrame = selectedWindow.superview!.convertRect(selectedWindow.frame, toView: nil)
+        return transition
+    }
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
+}
+
 

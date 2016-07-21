@@ -9,5 +9,8 @@
 import UIKit
 
 class OStoryPosterViewController: UIViewController {
-
+    var card: OStoryCard!
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
 }

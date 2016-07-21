@@ -17,3 +17,11 @@ extension String
             NSCharacterSet.whitespaceCharacterSet())
     }
 }
+extension UIView {
+    static func whiteView(frame: CGRect) -> UIView
+    {
+        let view = UIView(frame: frame)
+        view.backgroundColor = UIColor.whiteColor()
+        return view
+    }
+}

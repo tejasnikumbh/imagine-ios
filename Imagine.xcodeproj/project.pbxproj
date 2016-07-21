@@ -16,6 +16,8 @@
 		CC5260481D3CDC21008C4F38 /* OStoryGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */; };
 		CC71A0BA1D3FABBA00C85D48 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0B91D3FABBA00C85D48 /* Window.swift */; };
 		CC71A0BC1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */; };
+		CC71A0BF1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */; };
+		CC71A0C21D3FE7A200C85D48 /* CardExpandAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */; };
 		CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */; };
 		CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E41D3B4CD900050B81 /* OUtils.swift */; };
 		CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */; };
@@ -56,6 +58,8 @@
 		CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryGrid.swift; sourceTree = "<group>"; };
 		CC71A0B91D3FABBA00C85D48 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryGridTableViewCell.swift; sourceTree = "<group>"; };
+		CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterPresentationProtocol.swift; sourceTree = "<group>"; };
+		CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpandAnimator.swift; sourceTree = "<group>"; };
 		CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterViewController.swift; sourceTree = "<group>"; };
 		CCFCA5E41D3B4CD900050B81 /* OUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUtils.swift; sourceTree = "<group>"; };
 		CCFFE97A1D39CD6600515A24 /* Imagine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +118,7 @@
 				CC5260451D3CA7A3008C4F38 /* OConstants.swift */,
 			);
 			name = constants;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CC52603D1D3C565F008C4F38 /* models */ = {
@@ -135,6 +140,22 @@
 			name = stores;
 			sourceTree = "<group>";
 		};
+		CC71A0BD1D3FD09B00C85D48 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */,
+			);
+			name = protocols;
+			sourceTree = "<group>";
+		};
+		CC71A0C01D3FE74B00C85D48 /* animators */ = {
+			isa = PBXGroup;
+			children = (
+				CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */,
+			);
+			name = animators;
+			sourceTree = "<group>";
+		};
 		CCFCA5E31D3B4CC500050B81 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,21 +163,12 @@
 				CC19D44A1D3CF3AF00BE3E2D /* OExtenstions.swift */,
 			);
 			name = utils;
-			sourceTree = "<group>";
-		};
-		CCFCA5E61D3B5AE800050B81 /* storygrid */ = {
-			isa = PBXGroup;
-			children = (
-				CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */,
-			);
-			name = storygrid;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CCFFE9711D39CD6600515A24 = {
 			isa = PBXGroup;
 			children = (
-				CC19D44C1D3CF3E500BE3E2D /* constants */,
-				CCFCA5E31D3B4CC500050B81 /* utils */,
 				CCFFE9AB1D39CE1700515A24 /* supporting */,
 				CCFFE97C1D39CD6600515A24 /* Imagine */,
 				CCFFE9911D39CD6600515A24 /* ImagineTests */,
@@ -178,6 +190,10 @@
 		CCFFE97C1D39CD6600515A24 /* Imagine */ = {
 			isa = PBXGroup;
 			children = (
+				CC71A0C01D3FE74B00C85D48 /* animators */,
+				CC71A0BD1D3FD09B00C85D48 /* protocols */,
+				CC19D44C1D3CF3E500BE3E2D /* constants */,
+				CCFCA5E31D3B4CC500050B81 /* utils */,
 				CC52603D1D3C565F008C4F38 /* models */,
 				CCFFE9B21D39D30900515A24 /* views */,
 				CCFFE9AE1D39CE6600515A24 /* controllers */,
@@ -229,7 +245,7 @@
 		CCFFE9B21D39D30900515A24 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				CCFCA5E61D3B5AE800050B81 /* storygrid */,
+				CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */,
 				CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */,
 				CC71A0B91D3FABBA00C85D48 /* Window.swift */,
 			);
@@ -373,8 +389,10 @@
 				CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */,
 				CCFFE9B41D39D33300515A24 /* OPaddedTextField.swift in Sources */,
 				CC5260421D3C56F6008C4F38 /* OStoryCardSFactory.swift in Sources */,
+				CC71A0BF1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift in Sources */,
 				CC19D44B1D3CF3AF00BE3E2D /* OExtenstions.swift in Sources */,
 				CC5260481D3CDC21008C4F38 /* OStoryGrid.swift in Sources */,
+				CC71A0C21D3FE7A200C85D48 /* CardExpandAnimator.swift in Sources */,
 				CCFFE9AD1D39CE4A00515A24 /* OLoginViewController.swift in Sources */,
 				CC71A0BC1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift in Sources */,
 				CC19D4491D3CE03300BE3E2D /* OUser.swift in Sources */,

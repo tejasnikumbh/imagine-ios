@@ -9,11 +9,11 @@ import UIKit
 
 class Window: NSObject {
     var view:UIView! = nil
-    
     init(x: CGFloat, y:CGFloat,
-                       width: CGFloat, height: CGFloat,
-                       card: OStoryCard)
+        width: CGFloat, height: CGFloat,
+        card: OStoryCard)
     {
+        super.init()
         let window = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
         // Adding story thumbnail
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
