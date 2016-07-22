@@ -21,6 +21,7 @@ class OUtils {
             return gradient
         }
     }
+    
     class Dialog {
         static func displayBox(title: String? = "Once Upon a Time",
                                         message: String?) -> UIAlertController
