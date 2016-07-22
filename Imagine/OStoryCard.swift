@@ -13,6 +13,7 @@ struct OStoryCard {
     let image: UIImage
     let title: String
     let author: String
+    let summary: String
     let genre: String
     let soundName: String
     let soundType: String

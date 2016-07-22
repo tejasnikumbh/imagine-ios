@@ -11,7 +11,8 @@ import Foundation
 
 class OUtils {
     class UX {
-        static func gradient(bounds: CGRect, topColor: CGColor, bottomColor: CGColor ,opacity: Float? = 0.25) -> CAGradientLayer
+        static func gradient(bounds: CGRect, topColor: CGColor,
+                             bottomColor: CGColor ,opacity: Float? = 0.25) -> CAGradientLayer
         {
             let gradient: CAGradientLayer = CAGradientLayer()
             gradient.frame = bounds

@@ -10,17 +10,29 @@ import UIKit
 import Foundation
 
 class OConstants {
+    struct Margin {
+        static let smallLeft = CGFloat(4.0)
+        static let smallRight = CGFloat(4.0)
+        static let smallTop = CGFloat(4.0)
+        static let smallBottom = CGFloat(4.0)
+        static let mediumLeft = CGFloat(8.0)
+        static let mediumRight = CGFloat(8.0)
+        static let mediumTop = CGFloat(8.0)
+        static let mediumBottom = CGFloat(8.0)
+        static let bigLeft = CGFloat(16.0)
+        static let bigRight = CGFloat(16.0)
+        static let bigTop = CGFloat(16.0)
+        static let bigBottom = CGFloat(16.0)
+    }
     struct Screen {
         static let bounds = UIScreen.mainScreen().bounds
         static let width = UIScreen.mainScreen().bounds.size.width
         static let height = UIScreen.mainScreen().bounds.size.height
+        static let aspectRatioHeightToWidth =
+            UIScreen.mainScreen().bounds.size.height/UIScreen.mainScreen().bounds.size.width
     }
     struct StoryGrid {
         static let gapWidth = CGFloat(1.0)
-        static let typeOneCellHeight = CGFloat(216.0)
-        static let typeTwoCellHeight = CGFloat(166.0)
-        static let typeThreeCellHeight = CGFloat(432.0)
-        static let typeFourCellHeight = CGFloat(432.0)
     }
     struct Window {
         // Left margin and width are scaled w.r.t Window width
@@ -33,6 +45,7 @@ class OConstants {
                 static let width = CGFloat(0.88)
                 static let height = CGFloat(0.1105)
                 static let fontSize = CGFloat(0.09)
+                static let slideUpOnCardExpand = CGFloat(0.2)
             }
             struct Author {
                 static let leftMargin = CGFloat(0.075)
@@ -40,6 +53,14 @@ class OConstants {
                 static let width = CGFloat(0.97)
                 static let height = CGFloat(0.0525)
                 static let fontSize = CGFloat(0.035)
+                static let slideUpOnCardExpand = CGFloat(0.2)
+            }
+            struct Summary {
+                static let height = CGFloat(0.3)
+            }
+            struct Duration {
+                static let smallWindow = 0.6
+                static let bigWindow = 0.5
             }
         }
     }

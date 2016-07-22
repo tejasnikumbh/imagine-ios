@@ -69,9 +69,9 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = CardExpandAnimator()
         if selectedWindowFrame.width < OConstants.Screen.width*0.5 {
-            transition.duration = 0.6
+            transition.duration = OConstants.Window.Scaling.Duration.smallWindow
         } else {
-            transition.duration = 0.5
+            transition.duration = OConstants.Window.Scaling.Duration.bigWindow
         }
         transition.originFrame = selectedWindowFrame
         return transition
@@ -79,9 +79,9 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let transition = CardShinkAnimator()
         if selectedWindowFrame.width < OConstants.Screen.width*0.5 {
-            transition.duration = 0.6
+            transition.duration = OConstants.Window.Scaling.Duration.smallWindow
         } else {
-            transition.duration = 0.5
+            transition.duration = OConstants.Window.Scaling.Duration.bigWindow
         }
         transition.destinationFrame = selectedWindowFrame
         return transition

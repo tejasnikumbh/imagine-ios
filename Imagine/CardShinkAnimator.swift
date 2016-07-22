@@ -21,6 +21,7 @@ class CardShinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         
+        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)! as! OStoryPosterViewController
         let initialFrame = fromView.frame
         let finalFrame = destinationFrame
         
@@ -35,14 +36,18 @@ class CardShinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             delay: 0.0,
             options: .CalculationModeCubic,
             animations: {
-                
                 UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1,
                     animations: {
                     fromView.transform = shrinkTransform
                     fromView.center = CGPoint(
                         x: CGRectGetMidX(finalFrame),
                         y: CGRectGetMidY(finalFrame))
+                    fromViewController.window.storyTitle.frame.origin.y += OConstants.Screen.height*OConstants.Window.Scaling.Title.slideUpOnCardExpand
+                    fromViewController.window.storyAuthor.frame.origin.y += OConstants.Screen.height*OConstants.Window.Scaling.Author.slideUpOnCardExpand
+                    fromViewController.summaryLabel.frame.origin.y += OConstants.Screen.height*OConstants.Window.Scaling.Summary.height
+                        
                 })
+                
             }) { _ in
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
         }

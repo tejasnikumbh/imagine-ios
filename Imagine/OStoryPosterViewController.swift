@@ -12,35 +12,23 @@ class OStoryPosterViewController: UIViewController {
     var card: OStoryCard!
     var window: Window!
     var interactor: CardShrinkInteractor? = nil
-    
-    @IBOutlet weak var backButton: UIButton!
+    var summaryVisible = false
+    var summaryLabel: UILabel! = nil
+    override func awakeFromNib() {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pan = UIPanGestureRecognizer(
-            target: self, action: #selector(OStoryPosterViewController.handleGesture(_:)))
-        self.view.addGestureRecognizer(pan)
-        self.view.userInteractionEnabled = true
+        addPanGesture()
     }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        UIView.animateWithDuration(
-            0.4) {
-            // Fade in audio button
-        }
-    }
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        UIView.animateWithDuration(
-            0.4) {
-            // Fade out audio button
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if !summaryVisible {
+            slideInSummaryFromBottom()
         }
     }
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
-    }
-    @IBAction func backButtonTapped(sender: UIButton)
-    {
-        dismissViewControllerAnimated(true, completion: nil)
     }
     func handleGesture(sender: UIPanGestureRecognizer) {
         let percentThreshold:CGFloat = 0.08
@@ -71,5 +59,40 @@ class OStoryPosterViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    func slideInSummaryFromBottom() {
+        // Creating the summary label
+        let summaryLabel = UILabel(frame: CGRect(
+            x: OConstants.Margin.bigLeft,
+            y: view.frame.size.height,
+            width: view.frame.size.width - 32,
+            height: view.frame.size.width*OConstants.Screen.aspectRatioHeightToWidth*OConstants.Window.Scaling.Summary.height))
+        summaryLabel.text = card.summary
+        summaryLabel.textColor = UIColor.whiteColor()
+        summaryLabel.numberOfLines = 0
+        summaryLabel.minimumScaleFactor = 0.5
+        summaryLabel.adjustsFontSizeToFitWidth = true
+        view.addSubview(summaryLabel)
+        self.summaryLabel = summaryLabel
+        
+        // Animating Summary label
+        UIView.animateWithDuration(
+        0.4, animations: {
+            self.summaryLabel.frame.origin.y -= OConstants.Screen.height*OConstants.Window.Scaling.Summary.height
+            self.window.storyTitle.frame.origin.y -= OConstants.Screen.height*OConstants.Window.Scaling.Title.slideUpOnCardExpand
+            self.window.storyAuthor.frame.origin.y -= OConstants.Screen.height*OConstants.Window.Scaling.Author.slideUpOnCardExpand
+        }, completion: { _ in
+            self.summaryVisible = true
+        })
+       
+        
+        
+    }
+    func addPanGesture() {
+        let pan = UIPanGestureRecognizer(
+            target: self, action: #selector(OStoryPosterViewController.handleGesture(_:)))
+        self.view.addGestureRecognizer(pan)
+        self.view.userInteractionEnabled = true
     }
 }

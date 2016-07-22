@@ -61,9 +61,12 @@ class Window: NSObject {
         window.addSubview(storyAuthor)
         
         // Adding gradient
-        let bounds = CGRect(x: 0, y: height/2.0, width: width, height: height/2.0)
-        let gradient = OUtils.UX.gradient(bounds, topColor: UIColor.clearColor().CGColor, bottomColor: UIColor.blackColor().CGColor, opacity: 0.8)
-        window.layer.insertSublayer(gradient, atIndex: 1) //Index 2
+        let startPoint = CGFloat(0.30)
+        let bounds = CGRect(x: 0, y: height*startPoint,
+                            width: width, height: height*(1.0 - startPoint))
+        let gradient = OUtils.UX.gradient(bounds, topColor: UIColor.clearColor().CGColor,
+                                          bottomColor: UIColor.blackColor().CGColor, opacity: 0.8)
+        window.layer.insertSublayer(gradient, atIndex: 1) //Index 1
         window.clipsToBounds = true
         window.userInteractionEnabled = true
         view = window
