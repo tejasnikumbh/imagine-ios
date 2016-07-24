@@ -24,7 +24,7 @@ class OLoginViewController: UIViewController {
     {
 //        let validEmail = OUtils.Validate.email(emailTextField.text!)
 //        if !validEmail { // Guard against invalid email address
-//            let dialogBox = OUtils.Dialog.displayBox(message: "Please enter a valid Email Address")
+//            let dialogBox = OUtils.UI.Dialog.displayBox(message: "Please enter a valid Email Address")
 //            self.presentViewController(dialogBox, animated: true, completion: nil)
 //            return
 //        }

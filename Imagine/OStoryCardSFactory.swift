@@ -21,7 +21,7 @@ struct OStoryCardFactory {
             "image": "home_back",
             "title": "Rain Man",
             "author": "Tejas Nikumbh",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country",
+            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"

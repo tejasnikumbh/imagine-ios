@@ -75,7 +75,6 @@ class OStoryPosterViewController: UIViewController {
         summaryLabel.adjustsFontSizeToFitWidth = true
         view.addSubview(summaryLabel)
         self.summaryLabel = summaryLabel
-        
         // Animating Summary label
         UIView.animateWithDuration(
         0.4, animations: {
@@ -84,10 +83,33 @@ class OStoryPosterViewController: UIViewController {
             self.window.storyAuthor.frame.origin.y -= OConstants.Screen.height*OConstants.Window.Scaling.Author.slideUpOnCardExpand
         }, completion: { _ in
             self.summaryVisible = true
+            // Start the loader here
+            //let ovalLayer = OvalLayer()
+            //ovalLayer.ovalPath = UIBezierPath(ovalInRect:
+            //    CGRect(x: 0, y: 0, width: 50, height: 50))
+            //self.view.layer.addSublayer(ovalLayer)
+            let authorWidth = CGFloat((self.window.storyAuthor.text?.characters.count)!)
+                                    * self.window.storyAuthor.font.pointSize
+            
+            let ovalLoader = ThreeOvalLoader()
+            ovalLoader.frame = CGRect(
+                x: self.window.storyAuthor.frame.origin.x,
+                y: self.window.storyAuthor.frame.origin.y +
+                   OConstants.Margin.mediumTop,
+                width: OConstants.Loader.width,
+                height: OConstants.Loader.height)
+            ovalLoader.center = CGPoint(
+                x: CGRectGetMidX(self.window.storyTitle.frame),
+                y: CGRectGetMidY(self.window.storyTitle.frame) -
+                   self.window.storyTitle.frame.height)
+            self.view.addSubview(ovalLoader)
+            ovalLoader.startAnimating()
+            OStory.fetchDetailsFromServer({
+                // Stop loader here in completion block
+                // Also ask to make the pull up button visible
+                //ovalLayer.contract()
+            })
         })
-       
-        
-        
     }
     func addPanGesture() {
         let pan = UIPanGestureRecognizer(

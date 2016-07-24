@@ -10,7 +10,8 @@ import UIKit
 import Foundation
 
 class OUtils {
-    class UX {
+    
+    class UI {
         static func gradient(bounds: CGRect, topColor: CGColor,
                              bottomColor: CGColor ,opacity: Float? = 0.25) -> CAGradientLayer
         {
@@ -20,24 +21,26 @@ class OUtils {
             gradient.opacity = opacity!
             return gradient
         }
-    }
-    
-    class Dialog {
-        static func displayBox(title: String? = "Once Upon a Time",
-                                        message: String?) -> UIAlertController
-        {
-            let alertDialog = UIAlertController(
-                title: title,
-                message: message,
-                preferredStyle: UIAlertControllerStyle.Alert)
-            let okAction = UIAlertAction(
-                title: "OK",
-                style: UIAlertActionStyle.Default,
-                handler: nil)
-            alertDialog.addAction(okAction)
-            return alertDialog
+        class Loader {
+            
+        }
+        class Dialog {
+            static func displayBox(title: String? = "Once Upon a Time", message: String?) -> UIAlertController
+            {
+                let alertDialog = UIAlertController(
+                    title: title,
+                    message: message,
+                    preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(
+                    title: "OK",
+                    style: UIAlertActionStyle.Default,
+                    handler: nil)
+                alertDialog.addAction(okAction)
+                return alertDialog
+            }
         }
     }
+    
     class StoryGrid {
         class Cell {
             static func height(type: Int) -> CGFloat
@@ -65,6 +68,7 @@ class OUtils {
             }
         }
     }
+    
     class Validate {
         static func email(email: String) -> Bool
         {

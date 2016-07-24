@@ -22,6 +22,9 @@
 		CCB87C931D410DD200F4DE87 /* CardShrinkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C921D410DD200F4DE87 /* CardShrinkInteractor.swift */; };
 		CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */; };
 		CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E41D3B4CD900050B81 /* OUtils.swift */; };
+		CCFEEA271D425B3300C5CC4D /* OStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA261D425B3300C5CC4D /* OStory.swift */; };
+		CCFEEA2B1D43646500C5CC4D /* OvalLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA2A1D43646500C5CC4D /* OvalLayer.swift */; };
+		CCFEEA2D1D43866600C5CC4D /* ThreeOvalLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA2C1D43866600C5CC4D /* ThreeOvalLoader.swift */; };
 		CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */; };
 		CCFFE9801D39CD6600515A24 /* OStoryGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97F1D39CD6600515A24 /* OStoryGridViewController.swift */; };
 		CCFFE9831D39CD6600515A24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCFFE9811D39CD6600515A24 /* Main.storyboard */; };
@@ -66,6 +69,9 @@
 		CCB87C921D410DD200F4DE87 /* CardShrinkInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardShrinkInteractor.swift; sourceTree = "<group>"; };
 		CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterViewController.swift; sourceTree = "<group>"; };
 		CCFCA5E41D3B4CD900050B81 /* OUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUtils.swift; sourceTree = "<group>"; };
+		CCFEEA261D425B3300C5CC4D /* OStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStory.swift; sourceTree = "<group>"; };
+		CCFEEA2A1D43646500C5CC4D /* OvalLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalLayer.swift; sourceTree = "<group>"; };
+		CCFEEA2C1D43866600C5CC4D /* ThreeOvalLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeOvalLoader.swift; sourceTree = "<group>"; };
 		CCFFE97A1D39CD6600515A24 /* Imagine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Imagine/AppDelegate.swift; sourceTree = "<group>"; };
 		CCFFE97F1D39CD6600515A24 /* OStoryGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OStoryGridViewController.swift; sourceTree = "<group>"; };
@@ -128,10 +134,11 @@
 		CC52603D1D3C565F008C4F38 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				CCFEEA281D425B5300C5CC4D /* structs */,
 				CC5260401D3C56BF008C4F38 /* stores */,
-				CC52603E1D3C5672008C4F38 /* OStoryCard.swift */,
 				CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */,
 				CC19D4481D3CE03300BE3E2D /* OUser.swift */,
+				CCFEEA261D425B3300C5CC4D /* OStory.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -177,6 +184,22 @@
 			);
 			name = utils;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		CCFEEA281D425B5300C5CC4D /* structs */ = {
+			isa = PBXGroup;
+			children = (
+				CC52603E1D3C5672008C4F38 /* OStoryCard.swift */,
+			);
+			name = structs;
+			sourceTree = "<group>";
+		};
+		CCFEEA291D43645700C5CC4D /* layers */ = {
+			isa = PBXGroup;
+			children = (
+				CCFEEA2A1D43646500C5CC4D /* OvalLayer.swift */,
+			);
+			name = layers;
 			sourceTree = "<group>";
 		};
 		CCFFE9711D39CD6600515A24 = {
@@ -259,9 +282,11 @@
 		CCFFE9B21D39D30900515A24 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				CCFEEA291D43645700C5CC4D /* layers */,
 				CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */,
 				CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */,
 				CC71A0B91D3FABBA00C85D48 /* Window.swift */,
+				CCFEEA2C1D43866600C5CC4D /* ThreeOvalLoader.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -400,8 +425,10 @@
 			files = (
 				CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */,
 				CC52603F1D3C5672008C4F38 /* OStoryCard.swift in Sources */,
+				CCFEEA271D425B3300C5CC4D /* OStory.swift in Sources */,
 				CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */,
 				CCFFE9B41D39D33300515A24 /* OPaddedTextField.swift in Sources */,
+				CCFEEA2B1D43646500C5CC4D /* OvalLayer.swift in Sources */,
 				CC5260421D3C56F6008C4F38 /* OStoryCardSFactory.swift in Sources */,
 				CC71A0BF1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift in Sources */,
 				CC19D44B1D3CF3AF00BE3E2D /* OExtenstions.swift in Sources */,
@@ -412,6 +439,7 @@
 				CC71A0BC1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift in Sources */,
 				CC19D4491D3CE03300BE3E2D /* OUser.swift in Sources */,
 				CCFFE9801D39CD6600515A24 /* OStoryGridViewController.swift in Sources */,
+				CCFEEA2D1D43866600C5CC4D /* ThreeOvalLoader.swift in Sources */,
 				CC71A0BA1D3FABBA00C85D48 /* Window.swift in Sources */,
 				CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */,
 				CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */,

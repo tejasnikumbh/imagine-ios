@@ -31,6 +31,10 @@ class OConstants {
         static let aspectRatioHeightToWidth =
             UIScreen.mainScreen().bounds.size.height/UIScreen.mainScreen().bounds.size.width
     }
+    struct Loader {
+        static let height = UIScreen.mainScreen().bounds.size.height * 0.02
+        static let width = UIScreen.mainScreen().bounds.size.height * 0.06
+    }
     struct StoryGrid {
         static let gapWidth = CGFloat(1.0)
     }
