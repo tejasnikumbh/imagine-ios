@@ -48,7 +48,9 @@ class Window: NSObject {
                 y: height*OConstants.Window.Scaling.Author.upperMargin,
                 width: width*OConstants.Window.Scaling.Author.width,
                 height: height*OConstants.Window.Scaling.Author.height))
-        storyAuthor.font = UIFont.italicSystemFontOfSize(height*OConstants.Window.Scaling.Author.fontSize)
+        //storyAuthor.font = UIFont.italicSystemFontOfSize(height*OConstants.Window.Scaling.Author.fontSize)
+        storyAuthor.font = UIFont(name: "Futura-MediumItalic",
+                                  size: height * OConstants.Window.Scaling.Author.fontSize)
         storyAuthor.minimumScaleFactor = 0.5
         storyAuthor.text = "by " + card.author
         storyAuthor.textColor = UIColor.whiteColor()

@@ -16,8 +16,7 @@ class OStoryGridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    override func preferredStatusBarStyle() -> UIStatusBarStyle
-    {
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
 }
@@ -50,7 +49,8 @@ extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewControllerTransitioningDelegate {
-    func presentStoryPoster(cardView: UIView, card: OStoryCard) {
+    func presentStoryPoster(cardView: UIView, card: OStoryCard)
+    {
         selectedWindow = cardView
         selectedWindowFrame = cardView.superview!.convertRect(cardView.frame, toView: nil)
         let posterViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryPosterViewController") as! OStoryPosterViewController
@@ -65,8 +65,8 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
         posterViewController.transitioningDelegate = self
         presentViewController(posterViewController, animated: true, completion: nil)
     }
-    
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    {
         let transition = CardExpandAnimator()
         if selectedWindowFrame.width < OConstants.Screen.width*0.5 {
             transition.duration = OConstants.Window.Scaling.Duration.smallWindow
@@ -76,7 +76,8 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
         transition.originFrame = selectedWindowFrame
         return transition
     }
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    {
         let transition = CardShinkAnimator()
         if selectedWindowFrame.width < OConstants.Screen.width*0.5 {
             transition.duration = OConstants.Window.Scaling.Duration.smallWindow
@@ -86,7 +87,8 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
         transition.destinationFrame = selectedWindowFrame
         return transition
     }
-    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) ->UIViewControllerInteractiveTransitioning?
+    {
         return interactor.hasStarted ? interactor: nil
     }
 }

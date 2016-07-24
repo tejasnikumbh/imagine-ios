@@ -36,6 +36,9 @@ class CardShinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             delay: 0.0,
             options: .CalculationModeCubic,
             animations: {
+                UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1/4, animations: { 
+                    fromViewController.pullUpView.frame.origin.y += fromViewController.pullUpView.frame.height
+                })
                 UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1,
                     animations: {
                     fromView.transform = shrinkTransform
@@ -48,6 +51,7 @@ class CardShinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 })
                 UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 3/4, animations: {
                     fromViewController.summaryLabel.alpha = 0.0
+                    fromViewController.pullUpView.alpha = 0.0
                 })
                 
             }) { _ in

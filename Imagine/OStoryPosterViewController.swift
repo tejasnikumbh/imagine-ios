@@ -9,14 +9,18 @@
 import UIKit
 
 class OStoryPosterViewController: UIViewController {
+    
     var card: OStoryCard!
     var window: Window!
     var interactor: CardShrinkInteractor? = nil
     var summaryVisible = false
     var summaryLabel: UILabel! = nil
-    override func awakeFromNib() {
-        
-    }
+    var oval:ThreeOvalLoader! = nil
+    var loaderLabel: UILabel! = nil
+    
+    @IBOutlet weak var pullUpView: UIView!
+    @IBOutlet weak var pullUpViewBottomConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addPanGesture()
@@ -67,7 +71,11 @@ class OStoryPosterViewController: UIViewController {
             x: OConstants.Margin.bigLeft,
             y: view.frame.size.height,
             width: view.frame.size.width - 32,
-            height: view.frame.size.width*OConstants.Screen.aspectRatioHeightToWidth*OConstants.Window.Scaling.Summary.height))
+            height: view.frame.size.width
+                * OConstants.Screen.aspectRatioHeightToWidth
+                * OConstants.Window.Scaling.Summary.height))
+        summaryLabel.font = UIFont(name: "AppleSDGothicNeo-Regular",
+                                   size: 17.0)
         summaryLabel.text = card.summary
         summaryLabel.textColor = UIColor.whiteColor()
         summaryLabel.numberOfLines = 0
@@ -78,38 +86,68 @@ class OStoryPosterViewController: UIViewController {
         // Animating Summary label
         UIView.animateWithDuration(
         0.4, animations: {
-            self.summaryLabel.frame.origin.y -= OConstants.Screen.height*OConstants.Window.Scaling.Summary.height
-            self.window.storyTitle.frame.origin.y -= OConstants.Screen.height*OConstants.Window.Scaling.Title.slideUpOnCardExpand
-            self.window.storyAuthor.frame.origin.y -= OConstants.Screen.height*OConstants.Window.Scaling.Author.slideUpOnCardExpand
+            self.summaryLabel.frame.origin.y -=
+                OConstants.Screen.height * OConstants.Window.Scaling.Summary.height
+            self.window.storyTitle.frame.origin.y -=
+                OConstants.Screen.height * OConstants.Window.Scaling.Title.slideUpOnCardExpand
+            self.window.storyAuthor.frame.origin.y -=
+                OConstants.Screen.height * OConstants.Window.Scaling.Author.slideUpOnCardExpand
         }, completion: { _ in
             self.summaryVisible = true
             // Start the loader here
-            //let ovalLayer = OvalLayer()
-            //ovalLayer.ovalPath = UIBezierPath(ovalInRect:
-            //    CGRect(x: 0, y: 0, width: 50, height: 50))
-            //self.view.layer.addSublayer(ovalLayer)
-            let authorWidth = CGFloat((self.window.storyAuthor.text?.characters.count)!)
-                                    * self.window.storyAuthor.font.pointSize
-            
             let ovalLoader = ThreeOvalLoader()
             ovalLoader.frame = CGRect(
-                x: self.window.storyAuthor.frame.origin.x,
-                y: self.window.storyAuthor.frame.origin.y +
-                   OConstants.Margin.mediumTop,
+                x: 0, y: 0,
                 width: OConstants.Loader.width,
                 height: OConstants.Loader.height)
             ovalLoader.center = CGPoint(
-                x: CGRectGetMidX(self.window.storyTitle.frame),
+                x: CGRectGetMidX(self.view.frame),
                 y: CGRectGetMidY(self.window.storyTitle.frame) -
                    self.window.storyTitle.frame.height)
+            let loadingText = UILabel(frame: CGRect(
+                x: 0, y:0,
+                width: OConstants.Loader.width,
+                height: OConstants.Loader.height))
+            loadingText.text = "...Fetching Story..."
+            loadingText.font = UIFont(name: "AppleSDGothicNeo-Semibold",
+                size: 17.0)
+            loadingText.textColor = UIColor.whiteColor()
+            loadingText.sizeToFit()
+            loadingText.center = CGPoint(
+                x: CGRectGetMidX(ovalLoader.frame),
+                y: CGRectGetMidY(ovalLoader.frame) - ovalLoader.frame.height - OConstants.Margin.mediumTop)
+            loadingText.alpha = 0.0
+            
+            self.view.addSubview(loadingText)
             self.view.addSubview(ovalLoader)
+            
+            UIView.animateWithDuration(ovalLoader.animationDuration * 0.5,
+                animations: { 
+                    loadingText.alpha = 1.0
+            })
             ovalLoader.startAnimating()
+            self.oval = ovalLoader
+            self.loaderLabel = loadingText
+
             OStory.fetchDetailsFromServer({
                 // Stop loader here in completion block
+                NSTimer.scheduledTimerWithTimeInterval(5.0, target: self,
+                    selector: #selector(OStoryPosterViewController.storyFetched),
+                    userInfo: nil, repeats: false)
                 // Also ask to make the pull up button visible
-                //ovalLayer.contract()
             })
+            
         })
+    }
+    func storyFetched() {
+        self.oval.stopAnimating()
+        // Setup and pull up the read view
+        pullUpView.roundCorners([.TopLeft, .TopRight], radius: 10)
+        self.pullUpViewBottomConstraint.constant = 0
+        UIView.animateWithDuration(0.3) {
+            self.view.layoutIfNeeded()
+            self.loaderLabel.alpha = 0.0
+        }
     }
     func addPanGesture() {
         let pan = UIPanGestureRecognizer(

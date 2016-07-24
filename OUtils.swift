@@ -25,7 +25,8 @@ class OUtils {
             
         }
         class Dialog {
-            static func displayBox(title: String? = "Once Upon a Time", message: String?) -> UIAlertController
+            static func displayBox(title: String? = "Once Upon a Time",
+                                   message: String?) -> UIAlertController
             {
                 let alertDialog = UIAlertController(
                     title: title,

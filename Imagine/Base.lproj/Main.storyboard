@@ -311,8 +311,77 @@
                     <view key="view" contentMode="scaleToFill" id="ngx-8d-uNt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ql-MQ-kmu">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="READ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYF-Qj-NnC">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="BaD-jP-WnP"/>
+                                    <constraint firstAttribute="height" constant="40" id="DEZ-5u-VF7"/>
+                                    <constraint firstItem="iYF-Qj-NnC" firstAttribute="centerY" secondItem="3ql-MQ-kmu" secondAttribute="centerY" id="YgY-PX-cnJ"/>
+                                    <constraint firstItem="iYF-Qj-NnC" firstAttribute="centerX" secondItem="3ql-MQ-kmu" secondAttribute="centerX" id="gYk-Al-ns1"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="iYF-Qj-NnC"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="BaD-jP-WnP"/>
+                                        <exclude reference="DEZ-5u-VF7"/>
+                                        <exclude reference="YgY-PX-cnJ"/>
+                                        <exclude reference="gYk-Al-ns1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="iYF-Qj-NnC"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="BaD-jP-WnP"/>
+                                        <include reference="DEZ-5u-VF7"/>
+                                        <include reference="YgY-PX-cnJ"/>
+                                        <include reference="gYk-Al-ns1"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rGp-jt-plv" firstAttribute="top" secondItem="3ql-MQ-kmu" secondAttribute="bottom" id="6mY-oR-D8N">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-40"/>
+                            </constraint>
+                            <constraint firstItem="3ql-MQ-kmu" firstAttribute="centerX" secondItem="ngx-8d-uNt" secondAttribute="centerX" id="czg-tB-KwZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3ql-MQ-kmu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="czg-tB-KwZ"/>
+                                <exclude reference="6mY-oR-D8N"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="3ql-MQ-kmu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="czg-tB-KwZ"/>
+                                <include reference="6mY-oR-D8N"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="pullUpView" destination="3ql-MQ-kmu" id="ytv-fD-7de"/>
+                        <outlet property="pullUpViewBottomConstraint" destination="6mY-oR-D8N" id="moN-XL-mLc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHW-9G-ZFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

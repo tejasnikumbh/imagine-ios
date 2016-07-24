@@ -9,9 +9,16 @@
 import UIKit
 
 class ThreeOvalLoader: UIView {
+    
+    var animationDuration = 0.9
+    
     var firstOvalLayer: OvalLayer? = nil
     var secondOvalLayer: OvalLayer? = nil
     var thirdOvalLayer: OvalLayer? = nil
+    
+    var timerFirst: NSTimer? = nil
+    var timerSecond: NSTimer? = nil
+    var timerThird: NSTimer? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,7 +28,32 @@ class ThreeOvalLoader: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addOvals() {
+    func startAnimating() {
+        timerFirst = NSTimer.scheduledTimerWithTimeInterval(
+            0, target: self,
+            selector: #selector(ThreeOvalLoader.animateFirst),
+            userInfo: nil, repeats: false)
+        timerSecond = NSTimer.scheduledTimerWithTimeInterval(
+            0.225, target: self,
+            selector: #selector(ThreeOvalLoader.animateSecond),
+            userInfo: nil, repeats: false)
+        timerThird = NSTimer.scheduledTimerWithTimeInterval(
+            0.45, target: self,
+            selector: #selector(ThreeOvalLoader.animateThird),
+            userInfo: nil, repeats: false)
+    }
+    func stopAnimating() {
+        UIView.animateWithDuration(0.4, animations: {
+            self.alpha = 0.0
+            }, completion: { _ in
+                self.hidden = true
+                self.timerFirst?.invalidate()
+                self.timerSecond?.invalidate()
+                self.timerThird?.invalidate()
+        })
+    }
+    
+    private func addOvals() {
         let firstOvalLayer = OvalLayer()
         firstOvalLayer.ovalPath = UIBezierPath(ovalInRect:
             CGRect(x: 0, y: 0,
@@ -29,7 +61,6 @@ class ThreeOvalLoader: UIView {
                 height: OConstants.Loader.height))
         self.layer.addSublayer(firstOvalLayer)
         self.firstOvalLayer = firstOvalLayer
-        
         let secondOvalLayer = OvalLayer()
         secondOvalLayer.ovalPath = UIBezierPath(ovalInRect:
             CGRect(
@@ -38,7 +69,6 @@ class ThreeOvalLoader: UIView {
                 height: OConstants.Loader.height))
         self.layer.addSublayer(secondOvalLayer)
         self.secondOvalLayer = secondOvalLayer
-        
         let thirdOvalLayer = OvalLayer()
         thirdOvalLayer.ovalPath = UIBezierPath(ovalInRect:
             CGRect(x: OConstants.Loader.width * 0.66, y: 0,
@@ -47,18 +77,13 @@ class ThreeOvalLoader: UIView {
         self.layer.addSublayer(thirdOvalLayer)
         self.thirdOvalLayer = thirdOvalLayer
     }
-    func startAnimating() {
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0, target: self, selector: #selector(ThreeOvalLoader.animateFirst), userInfo: nil, repeats: false)
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.225, target: self, selector: #selector(ThreeOvalLoader.animateSecond), userInfo: nil, repeats: false)
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.45, target: self, selector: #selector(ThreeOvalLoader.animateThird), userInfo: nil, repeats: false)
-    }
-    func animateFirst() {
+    @objc private func animateFirst() {
         firstOvalLayer?.startAnimating()
     }
-    func animateSecond() {
+    @objc private func animateSecond() {
         secondOvalLayer?.startAnimating()
     }
-    func animateThird() {
+    @objc private func animateThird() {
         thirdOvalLayer?.startAnimating()
     }
 }
