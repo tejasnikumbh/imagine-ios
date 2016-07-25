@@ -61,7 +61,6 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
                             height: OConstants.Screen.height,
                             card: card)
         posterViewController.window = window
-        posterViewController.view.addSubview(window.view)
         posterViewController.transitioningDelegate = self
         presentViewController(posterViewController, animated: true, completion: nil)
     }

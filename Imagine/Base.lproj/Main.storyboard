@@ -312,6 +312,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyJ-j8-6Fo">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </scrollView>
                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ql-MQ-kmu">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
@@ -357,30 +360,45 @@
                             <constraint firstItem="rGp-jt-plv" firstAttribute="top" secondItem="3ql-MQ-kmu" secondAttribute="bottom" id="6mY-oR-D8N">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-40"/>
                             </constraint>
+                            <constraint firstItem="KyJ-j8-6Fo" firstAttribute="width" secondItem="ngx-8d-uNt" secondAttribute="width" id="Ove-0H-KwO"/>
+                            <constraint firstItem="KyJ-j8-6Fo" firstAttribute="height" secondItem="ngx-8d-uNt" secondAttribute="height" id="Wpn-b0-PFZ"/>
                             <constraint firstItem="3ql-MQ-kmu" firstAttribute="centerX" secondItem="ngx-8d-uNt" secondAttribute="centerX" id="czg-tB-KwZ"/>
+                            <constraint firstItem="KyJ-j8-6Fo" firstAttribute="centerX" secondItem="ngx-8d-uNt" secondAttribute="centerX" id="jkb-uk-ZiN"/>
+                            <constraint firstItem="KyJ-j8-6Fo" firstAttribute="centerY" secondItem="ngx-8d-uNt" secondAttribute="centerY" id="vqr-fF-R3K"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="KyJ-j8-6Fo"/>
                                 <exclude reference="3ql-MQ-kmu"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="czg-tB-KwZ"/>
+                                <exclude reference="Ove-0H-KwO"/>
+                                <exclude reference="Wpn-b0-PFZ"/>
+                                <exclude reference="jkb-uk-ZiN"/>
+                                <exclude reference="vqr-fF-R3K"/>
                                 <exclude reference="6mY-oR-D8N"/>
+                                <exclude reference="czg-tB-KwZ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="KyJ-j8-6Fo"/>
                                 <include reference="3ql-MQ-kmu"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="czg-tB-KwZ"/>
+                                <include reference="Ove-0H-KwO"/>
+                                <include reference="Wpn-b0-PFZ"/>
+                                <include reference="jkb-uk-ZiN"/>
+                                <include reference="vqr-fF-R3K"/>
                                 <include reference="6mY-oR-D8N"/>
+                                <include reference="czg-tB-KwZ"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="pullUpView" destination="3ql-MQ-kmu" id="ytv-fD-7de"/>
                         <outlet property="pullUpViewBottomConstraint" destination="6mY-oR-D8N" id="moN-XL-mLc"/>
+                        <outlet property="storyCoverScrollView" destination="KyJ-j8-6Fo" id="7p8-OU-icy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHW-9G-ZFr" userLabel="First Responder" sceneMemberID="firstResponder"/>

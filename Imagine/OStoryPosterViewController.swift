@@ -20,8 +20,10 @@ class OStoryPosterViewController: UIViewController {
     
     @IBOutlet weak var pullUpView: UIView!
     @IBOutlet weak var pullUpViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var storyCoverScrollView: UIScrollView!
     
     override func viewDidLoad() {
+        self.storyCoverScrollView.addSubview(window.view)
         super.viewDidLoad()
         addPanGesture()
     }
