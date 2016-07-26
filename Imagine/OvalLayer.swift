@@ -9,13 +9,12 @@
 import UIKit
 
 class OvalLayer: CAShapeLayer {
-    
     private var timer: NSTimer! = nil
     private var isAnimating = false
-    
-    var animationDuration: CFTimeInterval = 0.45
     private var ovalPathSmall: UIBezierPath! = nil
     private var ovalPathLarge: UIBezierPath! = nil
+    
+    var animationDuration: CFTimeInterval = 0.45
     var ovalPath: UIBezierPath {
         get {
             return self.ovalPath
@@ -29,13 +28,6 @@ class OvalLayer: CAShapeLayer {
                 width: newValue.bounds.size.width*0.3,
                 height: newValue.bounds.size.height*0.3))
         }
-    }
-    override init() {
-        super.init()
-        fillColor = UIColor.whiteColor().CGColor
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func startAnimating() {
@@ -51,12 +43,20 @@ class OvalLayer: CAShapeLayer {
             isAnimating = false
         }
     }
-    func animate() {
+    
+    override init() {
+        super.init()
+        fillColor = UIColor.whiteColor().CGColor
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func animate() {
         self.expand({
             self.contract(nil)
         })
     }
-    
     private func expand(completion: EmptyCompletionBlock?) {
         CATransaction.begin()
         CATransaction.setCompletionBlock({

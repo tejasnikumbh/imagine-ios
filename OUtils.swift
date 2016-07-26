@@ -21,9 +21,6 @@ class OUtils {
             gradient.opacity = opacity!
             return gradient
         }
-        class Loader {
-            
-        }
         class Dialog {
             static func displayBox(title: String? = "Once Upon a Time",
                                    message: String?) -> UIAlertController

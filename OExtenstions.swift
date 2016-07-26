@@ -24,12 +24,29 @@ extension UIView {
         view.backgroundColor = color
         return view
     }
-    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) -> Void
+    {
         let path = UIBezierPath(roundedRect: self.bounds,
                                 byRoundingCorners: corners,
                                 cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.CGPath
         self.layer.mask = mask
+    }
+    func takeSnapshot() -> UIImage
+    {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.mainScreen().scale)
+        drawViewHierarchyInRect(self.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    func bringToLife(duration: NSTimeInterval? = 0.4) -> Void
+    {
+        dispatch_async(dispatch_get_main_queue()) {
+            UIView.animateWithDuration(duration!, animations: {
+                self.alpha = 1.0
+            })
+        }
     }
 }

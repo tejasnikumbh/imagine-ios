@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardShinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class CardShrinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var duration = 0.4
     var destinationFrame = CGRectZero
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval

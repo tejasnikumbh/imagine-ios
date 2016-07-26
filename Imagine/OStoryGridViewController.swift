@@ -37,8 +37,8 @@ extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
         cell.cards = [OStoryGrid.cards[3*indexPath.row],
                     OStoryGrid.cards[3*indexPath.row + 1],
                     OStoryGrid.cards[3*indexPath.row + 2]]
-        cell.actionDelegate = self
         cell.populate()
+        cell.actionDelegate = self
         return cell
     }
     func tableView(tableView: UITableView,
@@ -56,7 +56,7 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
         let posterViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryPosterViewController") as! OStoryPosterViewController
         posterViewController.card = card
         posterViewController.interactor = interactor
-        let window = Window(x: 0, y: 0,
+        let window = OWindow(x: 0, y: 0,
                             width: OConstants.Screen.width,
                             height: OConstants.Screen.height,
                             card: card)
@@ -77,7 +77,7 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
     }
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
-        let transition = CardShinkAnimator()
+        let transition = CardShrinkAnimator()
         if selectedWindowFrame.width < OConstants.Screen.width*0.5 {
             transition.duration = OConstants.Window.Scaling.Duration.smallWindow
         } else {

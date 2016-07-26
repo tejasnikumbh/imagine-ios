@@ -198,6 +198,24 @@
             </objects>
             <point key="canvasLocation" x="420" y="321.75"/>
         </scene>
+        <!--Story Container View Controller-->
+        <scene sceneID="efe-ul-Xvt">
+            <objects>
+                <viewController storyboardIdentifier="OStoryContainerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bef-eJ-WMF" customClass="OStoryContainerViewController" customModule="Imagine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nQX-aB-ePU"/>
+                        <viewControllerLayoutGuide type="bottom" id="S94-if-ETh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AJQ-Wc-Le5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92253476879999996" green="0.92253476879999996" blue="0.92253476879999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ORi-lJ-C45" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2622" y="321.75"/>
+        </scene>
         <!--Story Grid View Controller-->
         <scene sceneID="dHX-lE-lfx">
             <objects>
@@ -312,7 +330,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyJ-j8-6Fo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KyJ-j8-6Fo">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </scrollView>
                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ql-MQ-kmu">
@@ -372,12 +390,12 @@
                                 <exclude reference="3ql-MQ-kmu"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6mY-oR-D8N"/>
+                                <exclude reference="czg-tB-KwZ"/>
                                 <exclude reference="Ove-0H-KwO"/>
                                 <exclude reference="Wpn-b0-PFZ"/>
                                 <exclude reference="jkb-uk-ZiN"/>
                                 <exclude reference="vqr-fF-R3K"/>
-                                <exclude reference="6mY-oR-D8N"/>
-                                <exclude reference="czg-tB-KwZ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -386,12 +404,12 @@
                                 <include reference="3ql-MQ-kmu"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="6mY-oR-D8N"/>
+                                <include reference="czg-tB-KwZ"/>
                                 <include reference="Ove-0H-KwO"/>
                                 <include reference="Wpn-b0-PFZ"/>
                                 <include reference="jkb-uk-ZiN"/>
                                 <include reference="vqr-fF-R3K"/>
-                                <include reference="6mY-oR-D8N"/>
-                                <include reference="czg-tB-KwZ"/>
                             </mask>
                         </variation>
                     </view>

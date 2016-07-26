@@ -16,7 +16,6 @@ class OStory {
     {
         // Fetching details for stories from server task.
         // Do this asynchronously
-        
         // Call Completion block
         completion!()
         return true

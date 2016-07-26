@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class Window: NSObject {
+class OWindow: NSObject {
     var view:UIView! = nil
     var storyTitle: UILabel! = nil
     var storyAuthor: UILabel! = nil
@@ -45,7 +45,7 @@ class Window: NSObject {
         let storyAuthor = UILabel(frame:
             CGRect(
                 x: width*OConstants.Window.Scaling.Author.leftMargin,
-                y: height*OConstants.Window.Scaling.Author.upperMargin,
+                y: height*OConstants.Window.Scaling.Author.upperMargin*0.98,
                 width: width*OConstants.Window.Scaling.Author.width,
                 height: height*OConstants.Window.Scaling.Author.height))
         //storyAuthor.font = UIFont.italicSystemFontOfSize(height*OConstants.Window.Scaling.Author.fontSize)

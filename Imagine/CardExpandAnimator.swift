@@ -11,10 +11,12 @@ import UIKit
 class CardExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var duration = 0.4
     var originFrame = CGRectZero
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval
+    {
         return duration
     }
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning)
+    {
         let containerView = transitionContext.containerView()!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         
@@ -32,7 +34,6 @@ class CardExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             y: CGRectGetMidY(initialFrame)
         )
         toView.clipsToBounds = true
-        
         // Add a white view
         containerView.addSubview(UIView.blankView(
             UIColor.whiteColor(),frame: initialFrame))

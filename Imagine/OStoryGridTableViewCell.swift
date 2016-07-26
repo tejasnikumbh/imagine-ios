@@ -21,6 +21,7 @@ class OStoryGridTableViewCell: UITableViewCell {
         self.addGestureRecognizer(tap)
     }
     
+    //MARK:- Interface Methods
     func populate() {
         // Adding white background
         let white = UIView(frame: self.contentView.bounds)
@@ -29,24 +30,24 @@ class OStoryGridTableViewCell: UITableViewCell {
         // Creating a particular window
         let frameWidth = OConstants.Screen.width/3.0
         let frameHeight = OUtils.StoryGrid.Cell.height(type!)
-        var firstWindow: Window! = nil
-        var secondWindow: Window! = nil
-        var thirdWindow: Window! = nil
+        var firstWindow: OWindow! = nil
+        var secondWindow: OWindow! = nil
+        var thirdWindow: OWindow! = nil
         switch type! {
         case 2: // Three Equi width windows Layout
-            firstWindow = Window(
+            firstWindow = OWindow(
                 x: 0,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
                 height: frameHeight - OConstants.StoryGrid.gapWidth*2,
                 card: cards[0])
-            secondWindow = Window(
+            secondWindow = OWindow(
                 x: frameWidth + OConstants.StoryGrid.gapWidth*2,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
                 height: frameHeight - OConstants.StoryGrid.gapWidth*2,
                 card: cards[1])
-            thirdWindow = Window(
+            thirdWindow = OWindow(
                 x: frameWidth*2 + OConstants.StoryGrid.gapWidth*4,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
@@ -54,19 +55,19 @@ class OStoryGridTableViewCell: UITableViewCell {
                 card: cards[2])
            break
         case 3: // Big left window small 2 right ones
-            firstWindow = Window(
+            firstWindow = OWindow(
                 x: 0,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth*2 + OConstants.StoryGrid.gapWidth*2,
                 height: frameHeight - OConstants.StoryGrid.gapWidth*2,
                 card: cards[0])
-            secondWindow = Window(
+            secondWindow = OWindow(
                 x: frameWidth*2 + OConstants.StoryGrid.gapWidth*4,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
                 height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*2,
                 card: cards[1])
-            thirdWindow = Window(
+            thirdWindow = OWindow(
                 x: frameWidth*2 + OConstants.StoryGrid.gapWidth*4,
                 y: frameHeight/2.0 + OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
@@ -74,19 +75,19 @@ class OStoryGridTableViewCell: UITableViewCell {
                 card: cards[2])
             break
         case 4: // Big right one, small 2 left ones
-            firstWindow = Window(
+            firstWindow = OWindow(
                 x: 0,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
                 height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*2,
                 card: cards[0])
-            secondWindow = Window(
+            secondWindow = OWindow(
                 x: 0,
                 y: frameHeight/2.0 + OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth,
                 height: frameHeight/2.0 - OConstants.StoryGrid.gapWidth*2,
                 card: cards[1])
-            thirdWindow = Window(
+            thirdWindow = OWindow(
                 x: frameWidth + OConstants.StoryGrid.gapWidth*2,
                 y: OConstants.StoryGrid.gapWidth*2,
                 width: frameWidth*2.0,
@@ -103,7 +104,9 @@ class OStoryGridTableViewCell: UITableViewCell {
         self.contentView.addSubview(secondWindow.view)
         self.contentView.addSubview(thirdWindow.view)
     }
-    func cellTapped(gestureRecognizer: UITapGestureRecognizer) {
+    
+    // MARK:- Private Methods
+    @objc private func cellTapped(gestureRecognizer: UITapGestureRecognizer) {
         let touchPoint = gestureRecognizer.locationInView(self)
         for v in (gestureRecognizer.view?.subviews[0].subviews)! {
             if v.tag == 1 && v.frame.contains(touchPoint){
