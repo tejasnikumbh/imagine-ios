@@ -9,15 +9,42 @@
 import UIKit
 
 class OStoryContainerViewController: UIViewController {
+    var card: OStoryCard? = nil
     var activate = false
     var interactor: PercentInteractor? = nil
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentScrollView: UIScrollView!
+    @IBOutlet weak var storyTitle: UILabel!
+    @IBOutlet weak var storyContent: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        addStory()
         addPanDownGesture()
     }
-    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let margins = CGFloat(32.0 + 16.0)
+        let height = storyContent.bounds.height + storyTitle.bounds.height + margins
+        contentViewHeightConstraint.constant = height
+    }
+    func addStory() {
+        guard let card = card else { return }
+        storyTitle.text = card.title
+        // Dummy Method to create loads of text
+        let text = createDummyText(card.summary)
+        storyContent.text = text
+        storyContent.font = UIFont(name: "AppleSDGothicNeo-Regular",
+                                   size: OConstants.Screen.width * 0.048)
+    }
+    func createDummyText(text: String) -> String {
+        var result = ""
+        for _ in Range(0..<24) {
+            result += text
+            result += "\n \n"
+        }
+        return result
+    }
     func addPanDownGesture() {
         let pan = UIPanGestureRecognizer(
             target: self, action: #selector(OStoryContainerViewController.panDownGesture(_:)))
@@ -57,10 +84,12 @@ class OStoryContainerViewController: UIViewController {
 }
 
 extension OStoryContainerViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    {
         return true
     }
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
+    {
         return contentScrollView.contentOffset.y <= 0
     }
 }

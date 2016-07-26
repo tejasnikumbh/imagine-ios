@@ -12,7 +12,7 @@ class OStoryGridViewController: UIViewController {
     var selectedWindow: UIView!
     var selectedWindowFrame: CGRect!
     var interactor = PercentInteractor()
-    // MARK:vararw Lifecycle + View Base Methods
+    // MARK:- View Lifecycle + View Base Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }

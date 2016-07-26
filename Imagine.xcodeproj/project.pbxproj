@@ -11,7 +11,7 @@
 		CC19D4491D3CE03300BE3E2D /* OUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D4481D3CE03300BE3E2D /* OUser.swift */; };
 		CC19D44B1D3CF3AF00BE3E2D /* OExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D44A1D3CF3AF00BE3E2D /* OExtenstions.swift */; };
 		CC52603F1D3C5672008C4F38 /* OStoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52603E1D3C5672008C4F38 /* OStoryCard.swift */; };
-		CC5260421D3C56F6008C4F38 /* OStoryCardSFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260411D3C56F6008C4F38 /* OStoryCardSFactory.swift */; };
+		CC5260421D3C56F6008C4F38 /* OStoryCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260411D3C56F6008C4F38 /* OStoryCardFactory.swift */; };
 		CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260451D3CA7A3008C4F38 /* OConstants.swift */; };
 		CC5260481D3CDC21008C4F38 /* OStoryGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */; };
 		CC71A0BA1D3FABBA00C85D48 /* OWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0B91D3FABBA00C85D48 /* OWindow.swift */; };
@@ -61,7 +61,7 @@
 		CC19D4481D3CE03300BE3E2D /* OUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUser.swift; sourceTree = "<group>"; };
 		CC19D44A1D3CF3AF00BE3E2D /* OExtenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OExtenstions.swift; sourceTree = "<group>"; };
 		CC52603E1D3C5672008C4F38 /* OStoryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryCard.swift; sourceTree = "<group>"; };
-		CC5260411D3C56F6008C4F38 /* OStoryCardSFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryCardSFactory.swift; sourceTree = "<group>"; };
+		CC5260411D3C56F6008C4F38 /* OStoryCardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryCardFactory.swift; sourceTree = "<group>"; };
 		CC5260451D3CA7A3008C4F38 /* OConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OConstants.swift; sourceTree = "<group>"; };
 		CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryGrid.swift; sourceTree = "<group>"; };
 		CC71A0B91D3FABBA00C85D48 /* OWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWindow.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		CC5260401D3C56BF008C4F38 /* stores */ = {
 			isa = PBXGroup;
 			children = (
-				CC5260411D3C56F6008C4F38 /* OStoryCardSFactory.swift */,
+				CC5260411D3C56F6008C4F38 /* OStoryCardFactory.swift */,
 			);
 			name = stores;
 			sourceTree = "<group>";
@@ -446,7 +446,7 @@
 				CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */,
 				CCFFE9B41D39D33300515A24 /* OPaddedTextField.swift in Sources */,
 				CCFEEA2B1D43646500C5CC4D /* OvalLayer.swift in Sources */,
-				CC5260421D3C56F6008C4F38 /* OStoryCardSFactory.swift in Sources */,
+				CC5260421D3C56F6008C4F38 /* OStoryCardFactory.swift in Sources */,
 				CC71A0BF1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift in Sources */,
 				CCFEEA2F1D467A9500C5CC4D /* OStoryContainerViewController.swift in Sources */,
 				CC19D44B1D3CF3AF00BE3E2D /* OExtenstions.swift in Sources */,

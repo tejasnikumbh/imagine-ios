@@ -143,6 +143,7 @@ class OStoryPosterViewController: UIViewController {
             interactor.hasStarted = true
             let storyContainerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryContainerViewController")
                 as! OStoryContainerViewController
+            storyContainerViewController.card = card
             storyContainerViewController.transitioningDelegate = self
             storyContainerViewController.interactor = panUpInteractor
             presentViewController(storyContainerViewController, animated: true, completion: nil)
