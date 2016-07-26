@@ -41,11 +41,31 @@ extension UIView {
         UIGraphicsEndImageContext()
         return image
     }
-    func bringToLife(duration: NSTimeInterval? = 0.4) -> Void
+    func bringToLife(duration: NSTimeInterval? = 0.4, completion: EmptyCompletionBlock? = nil) -> Void
     {
         dispatch_async(dispatch_get_main_queue()) {
-            UIView.animateWithDuration(duration!, animations: {
-                self.alpha = 1.0
+            UIView.animateWithDuration(
+                duration!,
+                animations: {
+                    self.alpha = 1.0
+                },
+                completion: { _ in
+                    guard let completion = completion else { return }
+                    completion()
+            })
+        }
+    }
+    func kill(duration: NSTimeInterval? = 0.4, completion: EmptyCompletionBlock? = nil) -> Void
+    {
+        dispatch_async(dispatch_get_main_queue()) { 
+            UIView.animateWithDuration(
+                duration!,
+                animations: {
+                    self.alpha = 0.0
+                },
+                completion: { _ in
+                    guard let completion = completion else  { return }
+                    completion()
             })
         }
     }

@@ -11,6 +11,21 @@ import Foundation
 
 class OUtils {
     
+    class General {
+        static func createDummyText(text: String) -> String
+        {
+            var result = text
+            result += "\n \n"
+            result += text
+            result += text
+            for _ in Range(0..<6) {
+                result += text
+                result += "\n \n"
+            }
+            return result
+        }
+    }
+    
     class UI {
         static func gradient(bounds: CGRect, topColor: CGColor,
                              bottomColor: CGColor ,opacity: Float? = 0.25) -> CAGradientLayer

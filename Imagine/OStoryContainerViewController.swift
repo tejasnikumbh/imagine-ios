@@ -21,6 +21,7 @@ class OStoryContainerViewController: UIViewController {
         super.viewDidLoad()
         addStory()
         addPanDownGesture()
+        addLongPressGesture()
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -32,21 +33,17 @@ class OStoryContainerViewController: UIViewController {
         guard let card = card else { return }
         storyTitle.text = card.title
         // Dummy Method to create loads of text
-        let text = createDummyText(card.summary)
+        let text = OUtils.General.createDummyText(card.summary)
         storyContent.text = text
         storyContent.font = UIFont(name: "AppleSDGothicNeo-Regular",
                                    size: OConstants.Screen.width * 0.048)
     }
-    func createDummyText(text: String) -> String {
-        var result = text
-        result += "\n \n"
-        result += text
-        result += text
-        for _ in Range(0..<6) {
-            result += text
-            result += "\n \n"
-        }
-        return result
+    
+    func addLongPressGesture() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.longPressGesture(_:)))
+        longPress.delegate = self
+        storyContent.addGestureRecognizer(longPress)
+        storyContent.userInteractionEnabled = true
     }
     func addPanDownGesture() {
         let pan = UIPanGestureRecognizer(
@@ -54,8 +51,30 @@ class OStoryContainerViewController: UIViewController {
         pan.delegate = self
         contentView.addGestureRecognizer(pan)
     }
-    
-    func panDownGesture(sender: UIPanGestureRecognizer) {
+    func longPressGesture(sender: UILongPressGestureRecognizer)
+    {
+        switch sender.state {
+        case .Began:
+            let scene = UIImageView(frame: self.view.frame)
+            scene.image = card?.image
+            scene.contentMode = .ScaleAspectFill
+            scene.alpha = 0.0
+            scene.userInteractionEnabled = true
+            view.addSubview(scene)
+            scene.bringToLife()
+            break
+        case .Ended:
+            let scene = view.subviews.last
+            scene!.kill(0.4, completion: {
+                scene!.removeFromSuperview()
+            })
+            break
+        default:
+            break
+        }
+    }
+    func panDownGesture(sender: UIPanGestureRecognizer)
+    {
         let percentThreshold:CGFloat = 0.4
         // convert y-position to downward pull progress (percentage)
         let translation = sender.translationInView(view)
@@ -93,6 +112,10 @@ extension OStoryContainerViewController: UIGestureRecognizerDelegate {
     }
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
     {
-        return contentScrollView.contentOffset.y <= 0
+        if gestureRecognizer.isKindOfClass(UILongPressGestureRecognizer) {
+            return true
+        } else { // Pan Down Gesture Recognizer
+            return contentScrollView.contentOffset.y <= 0
+        }
     }
 }
