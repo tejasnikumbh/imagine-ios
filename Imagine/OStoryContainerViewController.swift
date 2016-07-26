@@ -24,7 +24,7 @@ class OStoryContainerViewController: UIViewController {
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let margins = CGFloat(32.0 + 16.0)
+        let margins = CGFloat(32.0 + 16.0 + 32.0)
         let height = storyContent.bounds.height + storyTitle.bounds.height + margins
         contentViewHeightConstraint.constant = height
     }
@@ -38,8 +38,11 @@ class OStoryContainerViewController: UIViewController {
                                    size: OConstants.Screen.width * 0.048)
     }
     func createDummyText(text: String) -> String {
-        var result = ""
-        for _ in Range(0..<24) {
+        var result = text
+        result += "\n \n"
+        result += text
+        result += text
+        for _ in Range(0..<6) {
             result += text
             result += "\n \n"
         }
