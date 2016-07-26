@@ -45,18 +45,18 @@ class OConstants {
                 static let width = CGFloat(0.88)
                 static let height = CGFloat(0.1105)
                 static let fontSize = CGFloat(0.09)
-                static let slideUpOnCardExpand = CGFloat(0.2)
+                static let slideUpOnCardExpand = CGFloat(0.225)
             }
             struct Author {
                 static let leftMargin = CGFloat(0.075)
-                static let upperMargin = CGFloat(0.88)
+                static let upperMargin = CGFloat(0.882)
                 static let width = CGFloat(0.97)
                 static let height = CGFloat(0.0525)
                 static let fontSize = CGFloat(0.0325)
-                static let slideUpOnCardExpand = CGFloat(0.2)
+                static let slideUpOnCardExpand = CGFloat(0.225)
             }
             struct Summary {
-                static let height = CGFloat(0.35)
+                static let height = CGFloat(0.38)
             }
             struct Duration {
                 static let smallWindow = 0.6

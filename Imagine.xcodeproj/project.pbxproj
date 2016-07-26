@@ -19,14 +19,13 @@
 		CC71A0BF1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */; };
 		CC71A0C21D3FE7A200C85D48 /* CardExpandAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */; };
 		CCB87C901D40EC7000F4DE87 /* CardShrinkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C8F1D40EC7000F4DE87 /* CardShrinkAnimator.swift */; };
-		CCB87C931D410DD200F4DE87 /* CardShrinkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C921D410DD200F4DE87 /* CardShrinkInteractor.swift */; };
+		CCB87C931D410DD200F4DE87 /* PercentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C921D410DD200F4DE87 /* PercentInteractor.swift */; };
 		CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */; };
 		CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E41D3B4CD900050B81 /* OUtils.swift */; };
 		CCFEEA271D425B3300C5CC4D /* OStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA261D425B3300C5CC4D /* OStory.swift */; };
 		CCFEEA2B1D43646500C5CC4D /* OvalLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA2A1D43646500C5CC4D /* OvalLayer.swift */; };
 		CCFEEA2D1D43866600C5CC4D /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA2C1D43866600C5CC4D /* Loader.swift */; };
 		CCFEEA2F1D467A9500C5CC4D /* OStoryContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA2E1D467A9500C5CC4D /* OStoryContainerViewController.swift */; };
-		CCFEEA311D467F0600C5CC4D /* PullUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA301D467F0600C5CC4D /* PullUpInteractor.swift */; };
 		CCFEEA331D4684A400C5CC4D /* PullUpAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA321D4684A400C5CC4D /* PullUpAnimator.swift */; };
 		CCFEEA351D46874E00C5CC4D /* PullDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFEEA341D46874E00C5CC4D /* PullDownAnimator.swift */; };
 		CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */; };
@@ -70,14 +69,13 @@
 		CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterPresentationProtocol.swift; sourceTree = "<group>"; };
 		CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpandAnimator.swift; sourceTree = "<group>"; };
 		CCB87C8F1D40EC7000F4DE87 /* CardShrinkAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardShrinkAnimator.swift; sourceTree = "<group>"; };
-		CCB87C921D410DD200F4DE87 /* CardShrinkInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardShrinkInteractor.swift; sourceTree = "<group>"; };
+		CCB87C921D410DD200F4DE87 /* PercentInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentInteractor.swift; sourceTree = "<group>"; };
 		CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterViewController.swift; sourceTree = "<group>"; };
 		CCFCA5E41D3B4CD900050B81 /* OUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUtils.swift; sourceTree = "<group>"; };
 		CCFEEA261D425B3300C5CC4D /* OStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStory.swift; sourceTree = "<group>"; };
 		CCFEEA2A1D43646500C5CC4D /* OvalLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalLayer.swift; sourceTree = "<group>"; };
 		CCFEEA2C1D43866600C5CC4D /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		CCFEEA2E1D467A9500C5CC4D /* OStoryContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryContainerViewController.swift; sourceTree = "<group>"; };
-		CCFEEA301D467F0600C5CC4D /* PullUpInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullUpInteractor.swift; sourceTree = "<group>"; };
 		CCFEEA321D4684A400C5CC4D /* PullUpAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullUpAnimator.swift; sourceTree = "<group>"; };
 		CCFEEA341D46874E00C5CC4D /* PullDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullDownAnimator.swift; sourceTree = "<group>"; };
 		CCFFE97A1D39CD6600515A24 /* Imagine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imagine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,8 +179,7 @@
 		CCB87C911D410DBC00F4DE87 /* interactors */ = {
 			isa = PBXGroup;
 			children = (
-				CCB87C921D410DD200F4DE87 /* CardShrinkInteractor.swift */,
-				CCFEEA301D467F0600C5CC4D /* PullUpInteractor.swift */,
+				CCB87C921D410DD200F4DE87 /* PercentInteractor.swift */,
 			);
 			name = interactors;
 			sourceTree = "<group>";
@@ -443,7 +440,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCFEEA311D467F0600C5CC4D /* PullUpInteractor.swift in Sources */,
 				CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */,
 				CC52603F1D3C5672008C4F38 /* OStoryCard.swift in Sources */,
 				CCFEEA271D425B3300C5CC4D /* OStory.swift in Sources */,
@@ -467,7 +463,7 @@
 				CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */,
 				CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */,
 				CCFEEA351D46874E00C5CC4D /* PullDownAnimator.swift in Sources */,
-				CCB87C931D410DD200F4DE87 /* CardShrinkInteractor.swift in Sources */,
+				CCB87C931D410DD200F4DE87 /* PercentInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

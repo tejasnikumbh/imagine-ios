@@ -11,7 +11,7 @@ import UIKit
 class OStoryGridViewController: UIViewController {
     var selectedWindow: UIView!
     var selectedWindowFrame: CGRect!
-    var interactor = CardShrinkInteractor()
+    var interactor = PercentInteractor()
     // MARK:vararw Lifecycle + View Base Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,22 +48,7 @@ extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewControllerTransitioningDelegate {
-    func presentStoryPoster(cardView: UIView, card: OStoryCard)
-    {
-        selectedWindow = cardView
-        selectedWindowFrame = cardView.superview!.convertRect(cardView.frame, toView: nil)
-        let posterViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryPosterViewController") as! OStoryPosterViewController
-        posterViewController.card = card
-        posterViewController.interactor = interactor
-        let window = OWindow(x: 0, y: 0,
-                            width: OConstants.Screen.width,
-                            height: OConstants.Screen.height,
-                            card: card)
-        posterViewController.window = window
-        posterViewController.transitioningDelegate = self
-        presentViewController(posterViewController, animated: true, completion: nil)
-    }
+extension OStoryGridViewController: UIViewControllerTransitioningDelegate {
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
         let transition = CardExpandAnimator()
@@ -92,4 +77,21 @@ extension OStoryGridViewController: OStoryPosterPresentationProtocol, UIViewCont
     }
 }
 
+extension OStoryGridViewController: OStoryPosterPresentationProtocol {
+    func presentStoryPoster(cardView: UIView, card: OStoryCard)
+    {
+        selectedWindow = cardView
+        selectedWindowFrame = cardView.superview!.convertRect(cardView.frame, toView: nil)
+        let posterViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryPosterViewController") as! OStoryPosterViewController
+        posterViewController.card = card
+        posterViewController.panDownInteractor = interactor
+        let window = OWindow(x: 0, y: 0,
+                             width: OConstants.Screen.width,
+                             height: OConstants.Screen.height,
+                             card: card)
+        posterViewController.window = window
+        posterViewController.transitioningDelegate = self
+        presentViewController(posterViewController, animated: true, completion: nil)
+    }
+}
 

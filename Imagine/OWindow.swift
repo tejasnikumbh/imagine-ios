@@ -45,7 +45,7 @@ class OWindow: NSObject {
         let storyAuthor = UILabel(frame:
             CGRect(
                 x: width*OConstants.Window.Scaling.Author.leftMargin,
-                y: height*OConstants.Window.Scaling.Author.upperMargin*0.98,
+                y: height*OConstants.Window.Scaling.Author.upperMargin,
                 width: width*OConstants.Window.Scaling.Author.width,
                 height: height*OConstants.Window.Scaling.Author.height))
         //storyAuthor.font = UIFont.italicSystemFontOfSize(height*OConstants.Window.Scaling.Author.fontSize)

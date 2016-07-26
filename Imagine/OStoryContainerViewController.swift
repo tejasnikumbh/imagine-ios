@@ -9,22 +9,24 @@
 import UIKit
 
 class OStoryContainerViewController: UIViewController {
-    var interactor: PullUpInteractor? = nil
-    
+    var activate = false
+    var interactor: PercentInteractor? = nil
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentScrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        addPanGesture()
-    }
-    func addPanGesture() {
-        let pan = UIPanGestureRecognizer(
-            target: self, action: #selector(OStoryContainerViewController.handleGesture(_:)))
-        self.view.addGestureRecognizer(pan)
-        self.view.userInteractionEnabled = true
+        addPanDownGesture()
     }
     
-    func handleGesture(sender: UIPanGestureRecognizer) {
+    func addPanDownGesture() {
+        let pan = UIPanGestureRecognizer(
+            target: self, action: #selector(OStoryContainerViewController.panDownGesture(_:)))
+        pan.delegate = self
+        contentView.addGestureRecognizer(pan)
+    }
+    
+    func panDownGesture(sender: UIPanGestureRecognizer) {
         let percentThreshold:CGFloat = 0.4
-        
         // convert y-position to downward pull progress (percentage)
         let translation = sender.translationInView(view)
         let verticalMovement = translation.y / view.bounds.height
@@ -51,5 +53,14 @@ class OStoryContainerViewController: UIViewController {
         default:
             break
         }
+    }
+}
+
+extension OStoryContainerViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        return contentScrollView.contentOffset.y <= 0
     }
 }

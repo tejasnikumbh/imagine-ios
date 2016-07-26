@@ -1,14 +1,14 @@
 //
-//  PullUpInteractor.swift
+//  PercentInteractor.swift
 //  Imagine
 //
-//  Created by Tejas Nikumbh on 7/25/16.
+//  Created by Tejas Nikumbh on 7/21/16.
 //  Copyright © 2016 Personal. All rights reserved.
 //
 
 import UIKit
 
-class PullUpInteractor: UIPercentDrivenInteractiveTransition {
+class PercentInteractor: UIPercentDrivenInteractiveTransition {
     var hasStarted = false
     var shouldFinish = false
 }
