@@ -34,6 +34,19 @@ class OStoryGridTableViewCell: UITableViewCell {
         var secondWindow: OWindow! = nil
         var thirdWindow: OWindow! = nil
         switch type! {
+        case 1: // Two equiwidth windows
+            firstWindow = OWindow(
+                x: 0,
+                y: OConstants.StoryGrid.gapWidth*2,
+                width: frameWidth * 1.5,
+                height: frameHeight - OConstants.StoryGrid.gapWidth*2,
+                card: cards[0])
+            secondWindow = OWindow(
+                x: frameWidth * 1.5 + OConstants.StoryGrid.gapWidth*2,
+                y: OConstants.StoryGrid.gapWidth*2,
+                width: frameWidth * 1.5,
+                height: frameHeight - OConstants.StoryGrid.gapWidth*2,
+                card: cards[1])
         case 2: // Three Equi width windows Layout
             firstWindow = OWindow(
                 x: 0,
@@ -99,10 +112,12 @@ class OStoryGridTableViewCell: UITableViewCell {
         }
         firstWindow.view.tag = 1
         secondWindow.view.tag = 2
-        thirdWindow.view.tag = 3
         self.contentView.addSubview(firstWindow.view)
         self.contentView.addSubview(secondWindow.view)
-        self.contentView.addSubview(thirdWindow.view)
+        if type! != 1 {
+            thirdWindow.view.tag = 3
+            self.contentView.addSubview(thirdWindow.view)
+        }
     }
     
     // MARK:- Private Methods

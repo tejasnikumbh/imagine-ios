@@ -32,9 +32,8 @@ class OStoryContainerViewController: UIViewController {
     func addStory() {
         guard let card = card else { return }
         storyTitle.text = card.title
-        // Dummy Method to create loads of text
-        let text = OUtils.General.createDummyText(card.summary)
-        storyContent.text = text
+        let story = OStoryFactory.fetchStory(card.storyId, completion: nil)
+        storyContent.text = story.text()
         storyContent.font = UIFont(name: "AppleSDGothicNeo-Regular",
                                    size: OConstants.Screen.width * 0.048)
     }

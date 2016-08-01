@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 
+typealias EmptyCompletionBlock = ()->()
+
 class OConstants {
     struct Margin {
         static let smallLeft = CGFloat(4.0)
@@ -32,7 +34,7 @@ class OConstants {
             UIScreen.mainScreen().bounds.size.height/UIScreen.mainScreen().bounds.size.width
     }
     struct StoryGrid {
-        static let gapWidth = CGFloat(1.0)
+        static let gapWidth = CGFloat(0.5)
     }
     struct Window {
         // Left margin and width are scaled w.r.t Window width

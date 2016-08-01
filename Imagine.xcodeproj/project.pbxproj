@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC02CED41D3A414E0098B333 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC02CED31D3A414E0098B333 /* rain.mp3 */; };
+		CC0428301D4ED15F005457A8 /* OStoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC04282F1D4ED15F005457A8 /* OStoryFactory.swift */; };
 		CC19D4491D3CE03300BE3E2D /* OUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D4481D3CE03300BE3E2D /* OUser.swift */; };
 		CC19D44B1D3CF3AF00BE3E2D /* OExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC19D44A1D3CF3AF00BE3E2D /* OExtenstions.swift */; };
 		CC52603F1D3C5672008C4F38 /* OStoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC52603E1D3C5672008C4F38 /* OStoryCard.swift */; };
@@ -37,6 +38,7 @@
 		CCFFE99E1D39CD6600515A24 /* ImagineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE99D1D39CD6600515A24 /* ImagineUITests.swift */; };
 		CCFFE9AD1D39CE4A00515A24 /* OLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE9AC1D39CE4A00515A24 /* OLoginViewController.swift */; };
 		CCFFE9B41D39D33300515A24 /* OPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */; };
+		F40CA875EFCBFECD20FB8650 /* Pods_Imagine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8799D06AFC85A22713155BB1 /* Pods_Imagine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F1CACDDC642B424FCE8651D /* Pods-Imagine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Imagine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Imagine/Pods-Imagine.debug.xcconfig"; sourceTree = "<group>"; };
+		8799D06AFC85A22713155BB1 /* Pods_Imagine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Imagine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9996899B31AF726BA925AD6 /* Pods-Imagine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Imagine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Imagine/Pods-Imagine.release.xcconfig"; sourceTree = "<group>"; };
 		CC02CED31D3A414E0098B333 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
+		CC04282F1D4ED15F005457A8 /* OStoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryFactory.swift; sourceTree = "<group>"; };
 		CC19D4481D3CE03300BE3E2D /* OUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUser.swift; sourceTree = "<group>"; };
 		CC19D44A1D3CF3AF00BE3E2D /* OExtenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OExtenstions.swift; sourceTree = "<group>"; };
 		CC52603E1D3C5672008C4F38 /* OStoryCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryCard.swift; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40CA875EFCBFECD20FB8650 /* Pods_Imagine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D2494E9DE6D8489E5A3AD58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F1CACDDC642B424FCE8651D /* Pods-Imagine.debug.xcconfig */,
+				A9996899B31AF726BA925AD6 /* Pods-Imagine.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CC02CED21D3A412B0098B333 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +160,6 @@
 				CC5260401D3C56BF008C4F38 /* stores */,
 				CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */,
 				CC19D4481D3CE03300BE3E2D /* OUser.swift */,
-				CCFEEA261D425B3300C5CC4D /* OStory.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -152,6 +167,7 @@
 		CC5260401D3C56BF008C4F38 /* stores */ = {
 			isa = PBXGroup;
 			children = (
+				CC04282F1D4ED15F005457A8 /* OStoryFactory.swift */,
 				CC5260411D3C56F6008C4F38 /* OStoryCardFactory.swift */,
 			);
 			name = stores;
@@ -197,6 +213,7 @@
 		CCFEEA281D425B5300C5CC4D /* structs */ = {
 			isa = PBXGroup;
 			children = (
+				CCFEEA261D425B3300C5CC4D /* OStory.swift */,
 				CC52603E1D3C5672008C4F38 /* OStoryCard.swift */,
 			);
 			name = structs;
@@ -226,6 +243,8 @@
 				CCFFE9911D39CD6600515A24 /* ImagineTests */,
 				CCFFE99C1D39CD6600515A24 /* ImagineUITests */,
 				CCFFE97B1D39CD6600515A24 /* Products */,
+				9D2494E9DE6D8489E5A3AD58 /* Pods */,
+				EC3FA4813B1483EC6244D970 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -308,6 +327,14 @@
 			name = views;
 			sourceTree = "<group>";
 		};
+		EC3FA4813B1483EC6244D970 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8799D06AFC85A22713155BB1 /* Pods_Imagine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,9 +342,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCFFE9A21D39CD6600515A24 /* Build configuration list for PBXNativeTarget "Imagine" */;
 			buildPhases = (
+				F3644A524FC906B3D5E5FCCC /* Check Pods Manifest.lock */,
 				CCFFE9761D39CD6600515A24 /* Sources */,
 				CCFFE9771D39CD6600515A24 /* Frameworks */,
 				CCFFE9781D39CD6600515A24 /* Resources */,
+				80DD0BD7DD03ACD55E8DE8DE /* Embed Pods Frameworks */,
+				11AC4F0B5501555D34C8305E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -435,6 +465,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11AC4F0B5501555D34C8305E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Imagine/Pods-Imagine-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80DD0BD7DD03ACD55E8DE8DE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Imagine/Pods-Imagine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3644A524FC906B3D5E5FCCC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CCFFE9761D39CD6600515A24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -462,6 +540,7 @@
 				CC71A0BA1D3FABBA00C85D48 /* OWindow.swift in Sources */,
 				CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */,
 				CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */,
+				CC0428301D4ED15F005457A8 /* OStoryFactory.swift in Sources */,
 				CCFEEA351D46874E00C5CC4D /* PullDownAnimator.swift in Sources */,
 				CCB87C931D410DD200F4DE87 /* PercentInteractor.swift in Sources */,
 			);
@@ -606,6 +685,7 @@
 		};
 		CCFFE9A31D39CD6600515A24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F1CACDDC642B424FCE8651D /* Pods-Imagine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Imagine/Info.plist;
@@ -617,6 +697,7 @@
 		};
 		CCFFE9A41D39CD6600515A24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9996899B31AF726BA925AD6 /* Pods-Imagine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Imagine/Info.plist;

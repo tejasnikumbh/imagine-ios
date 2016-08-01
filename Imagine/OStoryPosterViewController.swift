@@ -63,7 +63,7 @@ class OStoryPosterViewController: UIViewController {
             ovalLoader.bringToLife(0.3)
             ovalLoader.startAnimating()
             self.loader = ovalLoader
-            OStory.fetchDetailsFromServer({
+            OStoryFactory.storyWithId("1", completion: {
                 // Stop loader here in completion block
                 NSTimer.scheduledTimerWithTimeInterval(5.0, target: self,
                     selector: #selector(OStoryPosterViewController.storyFetched),

@@ -7,17 +7,20 @@
 //
 
 import UIKit
-import Foundation
+import SwiftyJSON
 
-typealias EmptyCompletionBlock = ()->()
-
-class OStory {
-    static func fetchDetailsFromServer(completion: EmptyCompletionBlock?) -> Bool
-    {
-        // Fetching details for stories from server task.
-        // Do this asynchronously
-        // Call Completion block
-        completion!()
-        return true
+struct OStory {
+    let id: String
+    let images: [UIImage]
+    let paras: [String]
+    let paraImageMap: [String:String]
+    
+    func text() -> String{
+        var content = "          " + paras[0]
+        for i in Range(1..<paras.count) {
+            content += "\n\n           " + paras[i]
+        }
+        content += "\n\n"
+        return content
     }
 }

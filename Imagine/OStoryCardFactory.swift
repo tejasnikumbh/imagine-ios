@@ -12,30 +12,34 @@ import Foundation
 struct OStoryCardFactory {
     static func defaultCards() -> [OStoryCard]
     {
-        return parseCards()
+        return fetchCards()
     }
-    static func parseCards() -> [OStoryCard]
+    static func fetchCards() -> [OStoryCard]
     {
         let storyCardsData = [
         [
-            "image": "home_back",
-            "title": "Rain Man",
+            "story_id": "0",
+            "image": "time_hop",
+            "title": "Time Hop",
             "author": "Tejas Nikumbh",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
+            "summary": "        There is something off about the day. Jose is a creative person whose life consists of paintings and imagination. Have a peek into Jose's life while he wonders what is so off about his day, and enjoys his coffee.",
+            "genre": "Life",
+            "sound_name": "rain",
+            "sound_type": "mp3"
+            ],
+        
+        [
+            "story_id": "1",
+            "image": "storm",
+            "title": "Storm's End",
+            "author": "Nina J Lu",
+            "summary": "        Billy is a paranoid genius amongst a flock of happy go lucky but foolish sheep. Billy envisions himself as a hero, who has both courage and foresight to make it big. Join Billy on his adventure as he tries to warn the sheep of impending doom.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "d",
-            "title": "Time",
-            "author": "Sanchar Sharma",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
+            "story_id": "2",
             "image": "b",
             "title": "Black Holes",
             "author": "Stephen Hawking",
@@ -45,17 +49,19 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
-            "image": "storm",
-            "title": "Storm's End",
-            "author": "Nina J Lu",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
+            "story_id": "3",
+            "image": "billy_bravado",
+            "title": "Billy's Bravado",
+            "author": "Sanchar Sharma",
+            "summary": "        Billy is a paranoid genius amongst a flock of happy go lucky but foolish sheep. Billy envisions himself as a hero, who has both courage and foresight to make it big. Join Billy on his adventure of a lifetime.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
         [
-            "image": "e",
-            "title": "Nature",
+            "story_id": "4",
+            "image": "c",
+            "title": "Hotel Suites",
             "author": "Arunima Gupta",
             "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
             "genre": "Life",
@@ -63,6 +69,7 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
+            "story_id": "5",
             "image": "ice_bucket",
             "title": "Winter's Bone",
             "author": "Chetan Patil",
@@ -72,8 +79,9 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
+            "story_id": "6",
             "image": "rainy",
-            "title": "Shower",
+            "title": "Rain Man",
             "author": "Rahul Gandhi",
             "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
             "genre": "Life",
@@ -81,6 +89,7 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
+            "story_id": "7",
             "image": "a",
             "title": "Wineyard",
             "author": "Phoebe",
@@ -90,6 +99,7 @@ struct OStoryCardFactory {
             "sound_type": "mp3"
             ],
         [
+            "story_id": "8",
             "image": "diagon",
             "title": "Diagon Alley",
             "author": "Chaudhari Noam",
@@ -97,93 +107,13 @@ struct OStoryCardFactory {
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
-            ],
-        [
-            "image": "b",
-            "title": "The Bridge",
-            "author": "Steven Spielberg",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "burning",
-            "title": "The Burning Train",
-            "author": "Samantha Truth",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "home_back",
-            "title": "Creed",
-            "author": "Roy Gibiano",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "c",
-            "title": "Hotel Suites",
-            "author": "Jill Jackson",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "b",
-            "title": "Troy",
-            "author": "Nick La Rooy",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "a",
-            "title": "Just in Time",
-            "author": "Gaetano",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "rainy",
-            "title": "Plastic Nutcase",
-            "author": "Romeoro Griffin",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "g",
-            "title": "Tumultous",
-            "author": "God Watson",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
-        [
-            "image": "storm",
-            "title": "Storm's End",
-            "author": "Jon Snow",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
-            "genre": "Life",
-            "sound_name": "rain",
-            "sound_type": "mp3"
-            ],
+            ]
         
         ]
         let storyCards = storyCardsData.map {
             dict -> OStoryCard in
             return OStoryCard(
+                storyId: dict["story_id"]!,
                 image: UIImage(named:dict["image"]!)!,
                 title: dict["title"]!,
                 author: dict["author"]!,

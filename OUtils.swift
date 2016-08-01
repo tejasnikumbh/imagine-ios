@@ -10,7 +10,6 @@ import UIKit
 import Foundation
 
 class OUtils {
-    
     class General {
         static func createDummyText(text: String) -> String
         {
@@ -25,7 +24,6 @@ class OUtils {
             return result
         }
     }
-    
     class UI {
         static func gradient(bounds: CGRect, topColor: CGColor,
                              bottomColor: CGColor ,opacity: Float? = 0.25) -> CAGradientLayer
@@ -53,7 +51,6 @@ class OUtils {
             }
         }
     }
-    
     class StoryGrid {
         class Cell {
             static func height(type: Int) -> CGFloat
@@ -81,7 +78,6 @@ class OUtils {
             }
         }
     }
-    
     class Validate {
         static func email(email: String) -> Bool
         {

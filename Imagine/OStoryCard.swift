@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 
 struct OStoryCard {
+    let storyId: String
     let image: UIImage
     let title: String
     let author: String
