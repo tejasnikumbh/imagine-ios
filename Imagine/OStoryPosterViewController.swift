@@ -13,6 +13,8 @@ class OStoryPosterViewController: UIViewController {
     var window: OWindow!
     var panDownInteractor: PercentInteractor? = nil
     var panUpInteractor = PercentInteractor()
+    var currentInteractor: PercentInteractor? = nil
+    var nextInteractor: PercentInteractor? = nil
     var readEnabled = false
     var summaryVisible = false
     var summaryLabel: UILabel! = nil
@@ -33,6 +35,7 @@ class OStoryPosterViewController: UIViewController {
     {
         super.viewDidAppear(animated)
         if !summaryVisible {
+            self.view.userInteractionEnabled = false
             slideInSummaryFromBottom()
         }
     }
@@ -67,12 +70,11 @@ class OStoryPosterViewController: UIViewController {
             self.view.addSubview(ovalLoader)
             
             ovalLoader.bringToLife(0.3)
-            self.view.userInteractionEnabled = false
             ovalLoader.startAnimating()
             self.loader = ovalLoader
             OStoryFactory.storyWithId("1", completion: {
                 // Stop loader here in completion block
-                NSTimer.scheduledTimerWithTimeInterval(5.0, target: self,
+                NSTimer.scheduledTimerWithTimeInterval(2.5, target: self,
                     selector: #selector(OStoryPosterViewController.storyFetched),
                     userInfo: nil, repeats: false)
                 // Also ask to make the pull up button visible
@@ -110,7 +112,7 @@ class OStoryPosterViewController: UIViewController {
             })
     }
     func panGesture(sender: UIPanGestureRecognizer) {
-        let percentThreshold:CGFloat = 0.3
+        let percentThreshold:CGFloat = 0.1
         // convert y-position to downward pull progress (percentage)
         let translation = sender.translationInView(view)
         let verticalMovement = translation.y / view.bounds.height
@@ -122,13 +124,38 @@ class OStoryPosterViewController: UIViewController {
         let upwardMovementPercent = fminf(upwardMovement, 1.0)
         let uProgress = CGFloat(upwardMovementPercent)
         
+        let pannedUp = uProgress > dProgress
         guard let panDownInteractor = panDownInteractor else { return }
         
-        let pannedUp = uProgress > dProgress
+        
         let interactor = pannedUp && readEnabled ? panUpInteractor : panDownInteractor
+        currentInteractor = nextInteractor
+        nextInteractor = interactor
         let progress = pannedUp && readEnabled ? uProgress : dProgress
         
-        switch sender.state {
+        if currentInteractor != nextInteractor {
+            if let currentInteractor = currentInteractor {
+                if let nextInteractor = nextInteractor {
+                    runInteraction(.Ended, interactor: currentInteractor, pannedUp: pannedUp, progress: progress, percentThreshold: percentThreshold, completion: {
+                        self.runInteraction(.Began, interactor: nextInteractor, pannedUp: pannedUp, progress: progress, percentThreshold: percentThreshold)
+                    })
+                }
+            } else {
+                runInteraction(sender.state, interactor: nextInteractor!, pannedUp: pannedUp,
+                               progress: progress, percentThreshold: percentThreshold)
+            }
+            return
+        }
+
+        runInteraction(sender.state, interactor: interactor, pannedUp: pannedUp,
+                       progress: progress, percentThreshold: percentThreshold)
+    }
+    
+    func runInteraction(
+        state: UIGestureRecognizerState, interactor: PercentInteractor,
+        pannedUp: Bool, progress: CGFloat, percentThreshold: CGFloat, completion: EmptyCompletionBlock? = nil)
+    {
+        switch state {
         case .Began:
             interactor.hasStarted = true
             if pannedUp && readEnabled {
@@ -154,6 +181,9 @@ class OStoryPosterViewController: UIViewController {
                 : interactor.cancelInteractiveTransition()
         default:
             break
+        }
+        if let completion = completion {
+            completion()
         }
     }
     func addPanGesture() {

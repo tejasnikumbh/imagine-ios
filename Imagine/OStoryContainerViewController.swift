@@ -74,7 +74,7 @@ class OStoryContainerViewController: UIViewController {
     }
     func panDownGesture(sender: UIPanGestureRecognizer)
     {
-        let percentThreshold:CGFloat = 0.4
+        let percentThreshold:CGFloat = 0.1
         // convert y-position to downward pull progress (percentage)
         let translation = sender.translationInView(view)
         let verticalMovement = translation.y / view.bounds.height
