@@ -72,12 +72,13 @@ class OStoryPosterViewController: UIViewController {
             ovalLoader.bringToLife(0.3)
             ovalLoader.startAnimating()
             self.loader = ovalLoader
-            OStoryFactory.storyWithId("1", completion: {
+            OStoryFactory.storyWithId(self.card.storyId, completion: {
                 // Stop loader here in completion block
                 NSTimer.scheduledTimerWithTimeInterval(2.5, target: self,
                     selector: #selector(OStoryPosterViewController.storyFetched),
                     userInfo: nil, repeats: false)
                 // Also ask to make the pull up button visible
+                // Store the story somewhere [after it was fetched from server]
             })
         })
     }
@@ -89,7 +90,7 @@ class OStoryPosterViewController: UIViewController {
             height: view.frame.size.width
                 * OConstants.Screen.aspectRatioHeightToWidth
                 * OConstants.Window.Scaling.Summary.height))
-        summaryLabel.font = UIFont(name: "AppleSDGothicNeo-Regular",
+        summaryLabel.font = UIFont(name: OConstants.Fonts.appleSDGothicNeoRegular,
                                    size: 17.0)
         summaryLabel.text = card.summary
         summaryLabel.textColor = UIColor.whiteColor()
@@ -127,7 +128,6 @@ class OStoryPosterViewController: UIViewController {
         let pannedUp = uProgress > dProgress
         guard let panDownInteractor = panDownInteractor else { return }
         
-        
         let interactor = pannedUp && readEnabled ? panUpInteractor : panDownInteractor
         currentInteractor = nextInteractor
         nextInteractor = interactor
@@ -141,12 +141,10 @@ class OStoryPosterViewController: UIViewController {
                     })
                 }
             } else {
-                runInteraction(sender.state, interactor: nextInteractor!, pannedUp: pannedUp,
-                               progress: progress, percentThreshold: percentThreshold)
+                runInteraction(sender.state, interactor: nextInteractor!, pannedUp: pannedUp, progress: progress, percentThreshold: percentThreshold)
             }
             return
         }
-
         runInteraction(sender.state, interactor: interactor, pannedUp: pannedUp,
                        progress: progress, percentThreshold: percentThreshold)
     }

@@ -84,12 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Imagine/LiquidFloatingActionButton.framework"
   install_framework "Pods-Imagine/Realm.framework"
   install_framework "Pods-Imagine/RealmSwift.framework"
+  install_framework "Pods-Imagine/SnapKit.framework"
   install_framework "Pods-Imagine/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Imagine/LiquidFloatingActionButton.framework"
   install_framework "Pods-Imagine/Realm.framework"
   install_framework "Pods-Imagine/RealmSwift.framework"
+  install_framework "Pods-Imagine/SnapKit.framework"
   install_framework "Pods-Imagine/SwiftyJSON.framework"
 fi

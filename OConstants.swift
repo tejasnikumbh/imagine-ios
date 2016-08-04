@@ -12,7 +12,12 @@ import Foundation
 typealias EmptyCompletionBlock = ()->()
 
 class OConstants {
-    struct ViewTags {
+    struct Fonts {
+        static let appleSDGothicNeoRegular = "AppleSDGothicNeo-Regular"
+    }
+    struct LiquidButton {
+        static let width = (60/320.0)*UIScreen.mainScreen().bounds.size.width
+        static let height = (60/320.0)*UIScreen.mainScreen().bounds.size.width
     }
     struct Margin {
         static let smallLeft = CGFloat(4.0)
@@ -27,6 +32,10 @@ class OConstants {
         static let bigRight = CGFloat(16.0)
         static let bigTop = CGFloat(16.0)
         static let bigBottom = CGFloat(16.0)
+        static let extraBigTop = CGFloat(32.0)
+        static let extraBigLeft = CGFloat(32.0)
+        static let extraBigRight = CGFloat(32.0)
+        static let extraBigBottom = CGFloat(32.0)
     }
     struct Screen {
         static let bounds = UIScreen.mainScreen().bounds

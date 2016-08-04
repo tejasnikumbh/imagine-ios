@@ -1,18 +1,24 @@
 PODS:
+  - LiquidFloatingActionButton (1.2.0)
   - Realm (1.0.2):
     - Realm/Headers (= 1.0.2)
   - Realm/Headers (1.0.2)
   - RealmSwift (1.0.2):
     - Realm (= 1.0.2)
+  - SnapKit (0.21.1)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - LiquidFloatingActionButton
   - RealmSwift
+  - SnapKit
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  LiquidFloatingActionButton: 9c28961915754e08cf596ea6bdd60f9cd949f172
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
+  SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

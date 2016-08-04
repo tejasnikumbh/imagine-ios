@@ -7,48 +7,78 @@
 //
 
 import UIKit
+import LiquidFloatingActionButton
 
 class OStoryContainerViewController: UIViewController {
+    
     var card: OStoryCard? = nil
     var activate = false
     var interactor: PercentInteractor? = nil
+    
+    var liquidButton: LiquidFloatingActionButton!
+    var liquidButtonCells: [LiquidFloatingCell] = []
+    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var storyTitle: UILabel!
     @IBOutlet weak var storyContent: UILabel!
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         addStory()
         addPanDownGesture()
         addLongPressGesture()
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool)
+    {
         super.viewDidAppear(animated)
-        let margins = CGFloat(32.0 + 16.0 + 32.0)
+        if liquidButton == nil {
+            addLiquidButton()
+        }
+        let margins = OConstants.Margin.extraBigTop + OConstants.Margin.bigTop + OConstants.Margin.extraBigBottom
         let height = storyContent.bounds.height + storyTitle.bounds.height + margins
         contentViewHeightConstraint.constant = height
     }
-    func addStory() {
+    
+    func addStory()
+    {
         guard let card = card else { return }
         guard let story = OStoryFactory.fetchStory(card.storyId, completion: nil) else { return }
         storyTitle.text = card.title
         storyContent.text = story.text()
-        storyContent.font = UIFont(name: "AppleSDGothicNeo-Regular",
+        storyContent.font = UIFont(name: OConstants.Fonts.appleSDGothicNeoRegular,
                                    size: OConstants.Screen.width * 0.048)
     }
-    
-    func addLongPressGesture() {
+    func addLiquidButton()
+    {
+        addLiquidButtonCells()
+        let frame = CGRect(
+            x: OConstants.Margin.bigLeft,
+            y: view.frame.height - OConstants.LiquidButton.height - OConstants.Margin.bigBottom,
+            width: OConstants.LiquidButton.width, height: OConstants.LiquidButton.height)
+        liquidButton = LiquidButtonViewUtils.createButton(frame, style: .Right, color: UIColor.linkedInBlue(), image: UIImage(named: "share")!, datasource: self, delegate: self)
+        liquidButton.alpha = 0.0
+        view.addSubview(liquidButton)
+    }
+    func addLiquidButtonCells()
+    {
+        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("insta"))
+        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("fb"))
+    }
+    func addPanDownGesture()
+    {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.panDownGesture(_:)))
+        pan.delegate = self
+        contentView.addGestureRecognizer(pan)
+    }
+    func addLongPressGesture()
+    {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.longPressGesture(_:)))
         longPress.delegate = self
         storyContent.addGestureRecognizer(longPress)
         storyContent.userInteractionEnabled = true
-    }
-    func addPanDownGesture() {
-        let pan = UIPanGestureRecognizer(
-            target: self, action: #selector(OStoryContainerViewController.panDownGesture(_:)))
-        pan.delegate = self
-        contentView.addGestureRecognizer(pan)
     }
     func longPressGesture(sender: UILongPressGestureRecognizer)
     {
@@ -82,7 +112,6 @@ class OStoryContainerViewController: UIViewController {
         let downwardMovementPercent = fminf(downwardMovement, 1.0)
         let progress = CGFloat(downwardMovementPercent)
         guard let interactor = interactor else { return }
-        print (progress)
         switch sender.state {
         case .Began:
             interactor.hasStarted = true
@@ -105,9 +134,8 @@ class OStoryContainerViewController: UIViewController {
 }
 
 extension OStoryContainerViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(
-        gestureRecognizer: UIGestureRecognizer,
-        shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    // MARK:- UIGestureRecognizer Delegate Methods
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer,shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
     {
         return true
     }
@@ -118,5 +146,41 @@ extension OStoryContainerViewController: UIGestureRecognizerDelegate {
         } else { // Pan Down Gesture Recognizer
             return contentScrollView.contentOffset.y <= 0
         }
+    }
+}
+
+extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate {
+    // MARK:- Liquid Floating Action Button Datasource methods
+    func cellForIndex(index: Int) -> LiquidFloatingCell
+    {
+        return liquidButtonCells[index]
+    }
+    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int
+    {
+        return liquidButtonCells.count
+    }
+    // MARK:- Liquid Floating Action Button Delegate Methods
+    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int)
+    {
+
+    }
+}
+
+extension OStoryContainerViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        guard let liquidButton = liquidButton else { return }
+        let contentOffSet = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let screenHeight = view.frame.height
+        let fadeInRange = CGFloat(150.0)
+        if contentOffSet < fadeInRange {
+            liquidButton.alpha = fmin(contentOffSet/fadeInRange, 1.0)
+            return
+        }
+        if contentOffSet + screenHeight > contentHeight - fadeInRange {
+            liquidButton.alpha = fmin((contentHeight - contentOffSet - screenHeight)/fadeInRange, 1.0)
+            return
+        }
+        liquidButton.alpha = 1.0
     }
 }

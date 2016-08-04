@@ -6,6 +6,8 @@ use_frameworks!
 target 'Imagine' do
 	pod 'SwiftyJSON'
 	pod 'RealmSwift'
+	pod "LiquidFloatingActionButton"
+	pod "SnapKit"
 end
 
 target 'ImagineTests' do

@@ -70,3 +70,17 @@ extension UIView {
         }
     }
 }
+extension UIColor {
+    static func airbnbPink() -> UIColor {
+        return UIColor(red: 253/255.0, green: 92/255.0, blue: 99/255.0, alpha: 1.0)
+    }
+    static func paperGray() -> UIColor {
+        return UIColor(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1.0)
+    }
+    static func algaeGreen() -> UIColor {
+        return UIColor(red: 105/255.0, green: 210/255.0, blue: 153/255.0, alpha: 1.0)
+    }
+    static func linkedInBlue() -> UIColor {
+        return UIColor(red: 0/255.0, green: 115/255.0, blue: 179/255.0, alpha: 1.0)
+    }
+}

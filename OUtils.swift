@@ -11,6 +11,22 @@ import Foundation
 
 class OUtils {
     class General {
+        static func resizeImage(image: UIImage, scale: CGFloat) -> UIImage
+        {
+            let newWidth = image.size.width * scale
+            let newHeight = image.size.height * scale
+            let newSize = CGSizeMake(newWidth, newHeight)
+            let newRect = CGRectIntegral(CGRectMake(0,0, newSize.width, newSize.height))
+            UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+            let context = UIGraphicsGetCurrentContext()
+            CGContextSetInterpolationQuality(context, .High)
+            let flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, newSize.height)
+            CGContextConcatCTM(context, flipVertical)
+            CGContextDrawImage(context, newRect, image.CGImage)
+            let newImage = UIImage(CGImage: CGBitmapContextCreateImage(context)!)
+            UIGraphicsEndImageContext()
+            return newImage
+        }
         static func createDummyText(text: String) -> String
         {
             var result = text
