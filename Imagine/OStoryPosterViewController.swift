@@ -122,8 +122,10 @@ class OStoryPosterViewController: UIViewController {
         let upwardMovementPercent = fminf(upwardMovement, 1.0)
         let uProgress = CGFloat(upwardMovementPercent)
         
+        guard let panDownInteractor = panDownInteractor else { return }
+        
         let pannedUp = uProgress > dProgress
-        let interactor = pannedUp && readEnabled ? panUpInteractor : panDownInteractor!
+        let interactor = pannedUp && readEnabled ? panUpInteractor : panDownInteractor
         let progress = pannedUp && readEnabled ? uProgress : dProgress
         
         switch sender.state {
