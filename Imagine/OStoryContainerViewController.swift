@@ -31,8 +31,8 @@ class OStoryContainerViewController: UIViewController {
     }
     func addStory() {
         guard let card = card else { return }
+        guard let story = OStoryFactory.fetchStory(card.storyId, completion: nil) else { return }
         storyTitle.text = card.title
-        let story = OStoryFactory.fetchStory(card.storyId, completion: nil)
         storyContent.text = story.text()
         storyContent.font = UIFont(name: "AppleSDGothicNeo-Regular",
                                    size: OConstants.Screen.width * 0.048)
@@ -105,7 +105,9 @@ class OStoryContainerViewController: UIViewController {
 }
 
 extension OStoryContainerViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    func gestureRecognizer(
+        gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
     {
         return true
     }

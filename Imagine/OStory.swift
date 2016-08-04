@@ -18,6 +18,11 @@ struct OStory {
     func text() -> String{
         var content = "          " + paras[0]
         for i in Range(1..<paras.count) {
+            // Guard for the period characters
+            if paras[i] == "@@_@@DotChar@@_@@" {
+                content += "\n\n..."
+                continue
+            }
             content += "\n\n           " + paras[i]
         }
         content += "\n\n"

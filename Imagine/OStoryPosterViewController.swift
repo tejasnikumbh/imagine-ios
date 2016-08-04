@@ -16,6 +16,7 @@ class OStoryPosterViewController: UIViewController {
     var summaryVisible = false
     var summaryLabel: UILabel! = nil
     var loader:Loader! = nil
+    var blankViewForStoryPoster: UIView! = nil
     
     @IBOutlet weak var pullUpView: UIView!
     @IBOutlet weak var pullUpViewBottomConstraint: NSLayoutConstraint!

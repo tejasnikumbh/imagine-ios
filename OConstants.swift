@@ -12,6 +12,8 @@ import Foundation
 typealias EmptyCompletionBlock = ()->()
 
 class OConstants {
+    struct ViewTags {
+    }
     struct Margin {
         static let smallLeft = CGFloat(4.0)
         static let smallRight = CGFloat(4.0)

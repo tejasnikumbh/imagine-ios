@@ -5,10 +5,11 @@ use_frameworks!
 
 target 'Imagine' do
 	pod 'SwiftyJSON'
+	pod 'RealmSwift'
 end
 
 target 'ImagineTests' do
-
+	pod 'RealmSwift'
 end
 
 target 'ImagineUITests' do
