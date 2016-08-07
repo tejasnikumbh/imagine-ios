@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Photos
+import AssetsLibrary
 import LiquidFloatingActionButton
 
 class OStoryContainerViewController: UIViewController {
     
+    var posterSnapshot: UIImage? = nil
     var card: OStoryCard? = nil
     var activate = false
     var interactor: PercentInteractor? = nil
@@ -58,7 +61,7 @@ class OStoryContainerViewController: UIViewController {
             x: OConstants.Margin.bigLeft,
             y: view.frame.height - OConstants.LiquidButton.height - OConstants.Margin.bigBottom,
             width: OConstants.LiquidButton.width, height: OConstants.LiquidButton.height)
-        liquidButton = LiquidButtonViewUtils.createButton(frame, style: .Right, color: UIColor.linkedInBlue(), image: UIImage(named: "share")!, datasource: self, delegate: self)
+        liquidButton = LiquidButtonViewUtils.createButton(frame, style: .Up, color: UIColor.linkedInBlue(), image: UIImage(named: "share")!, datasource: self, delegate: self)
         liquidButton.alpha = 0.0
         view.addSubview(liquidButton)
     }
@@ -66,6 +69,7 @@ class OStoryContainerViewController: UIViewController {
     {
         liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("insta"))
         liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("fb"))
+        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("twitter"))
     }
     func addPanDownGesture()
     {
@@ -162,12 +166,17 @@ extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, L
     // MARK:- Liquid Floating Action Button Delegate Methods
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int)
     {
-
+        guard let posterSnapshot = posterSnapshot else { return }
+        if index == 0 { self.shareToInstagram(posterSnapshot) }
+        if index == 1 { self.shareToFacebook(posterSnapshot) }
+        if index == 2 { self.shareToTwitter(posterSnapshot) }
     }
+    
 }
 
 extension OStoryContainerViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(scrollView: UIScrollView)
+    {
         guard let liquidButton = liquidButton else { return }
         let contentOffSet = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height

@@ -32,25 +32,19 @@ struct OStoryFactory {
                         
                         "The night was close. Jose started looking at the starry night sky. He thanked God for blessing him with the mind that he had, with the skill that he had, and with the life that he had. The sky had a lot of secrets, he thought. “Oh how insignificant am I, sitting on the terrace of this calm bungalow at the outskirts of the city, amidst nature, on a tiny little dot called earth”, he thought. Just then, out of the blue, he saw a shooting star. “These are very rare”, he thought. Jose was excited. “Let’s make a wish”, he said to himself. Foolish as though it might sound to the rational mind, Jose thought magic exists.  “Oh lord”, he said, “Let all days be like this one. And let me be happy forever”, Jose said, as he wished nothing more in life. With a smile on his face, Jose went off to sleep.",
                         
-                        "Jose woke up the next morning. Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…",
-                
-                        "Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…"],
+                        "Jose woke up the next morning. Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…"],
                 "map": ["0": "0"],
             ],
             [
                 "id": "1",
-                "images": ["time_hop"],
-                "paragraphs": ["Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’. The clock with it’s shiny glass surface showed a weird time. Or so it felt. The hands were aligned perfectly together, as if hinting towards something singular. Was the clock trying to say something? Inanimate things don’t speak. Jose was well aware of this. But then again, Jose was a hopeless creative. He always liked imagining things.",
-                        
-                    "Off he went to make his morning cup of black coffee. It raised his metabolism, it would help him be slim. Jose knew exactly where the cup would be, it was washed and kept at exactly the place it should have been. It was almost as if Jose’s hand knew where to find it. “Routine, meh” Jose justified, though a weird part of his brain was spiking off yet again, trying to find hidden meaning in the uncanny perfectness of the organization of this process. It almost seemed as though it had been ages since he had tried something different.",
-                        
-                    "Off he went, the swing was stationary. Jose was fancy. His front yard had a lot of big trees and a swing. Jose often enjoyed sitting on it. Yet again though, Jose had forgotten to put the sheets on the swing’s seat, and it was wet. “When would I get accustomed to putting the sheets on every night?”, he asked his inner self.",
-                        
-                    "The day went by and Jose decided to start off on his work again. “The client would want this to be over in a week”, he reminded himself. He looked at the painting with an examining eye. Somehow he exactly knew what part to paint today. He had a very clear picture of what it would look like when it was over, and this was partly due to skill, partly due to his imagination. Jose was proud of himself, when he finished with the day’s work and the part looked exactly as he had pictured it in his head. He was a genius at this. Or so he felt.",
-                        
-                    "The night was close. Jose started looking at the starry night sky. He thanked God for blessing him with the mind that he had, with the skill that he had, and with the Life that he had. The sky had a lot of secrets, he thought. “Oh how insignificant I am, sitting on the terrace of this calm Bungalow at the outskirts of the city, amidst nature, on a tiny little dot called earth”, he thought. Just then, out of the blue, he saw a shooting star. “These are very rare”, he thought. Jose was excited. “Let’s make a wish”, he said to himself. Foolish as though it might sound to the rational mind, Jose thought magic exists.  “Oh lord”, he said, “Let all days be like this one. And let me be happy forever”, Jose said, as he wished nothing more in life. With a smile on his face, Jose went off to sleep.",
-                        
-                    "Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…"],
+                "images": ["him_her"],
+                "paragraphs": ["She was arguing with him again. Their weekly squabbles had a taken a turn wherein they would end up fighting like cats and dogs, every single day. She was beginning to feel that it was breaking apart. Although they were madly in love with each other, somehow, something wasn’t working. Something didn’t feel right.",
+                    
+                    "Their fights at night would not let him sleep now. Raging thoughts and disturbances ran through his mind like a storm. This was also affecting his performance at work. David was pissed off now. Half his mind said quit it, the other half wanted it to work.",
+        
+                    "One fateful night, as they were squabbling yet again, she got off the bed, and stormed off. The bedroom door shut with a loud ‘THUD’. David pondered what he’d done this time. This wasn’t needed, he thought. He convinced himself to get up and convince her this time. He wanted to make it all right.",
+        
+                    "He got off the bed, and as he began walking towards the door. Suddenly, David heard a whimpering noise coming out of the space underneath the bed. He thought it was some sort of an animal. As he picked up the sheet to look beneath, he was horrified. There she was, his wife, scared as a mouse. He could hear her squealing… “W-Wh-Who was she?”"],
                     "map": ["0": "0"],
                 ],
                 [
@@ -88,18 +82,24 @@ struct OStoryFactory {
         
                 [
                     "id": "4",
-                    "images": ["time_hop"],
-                    "paragraphs": ["Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’. The clock with it’s shiny glass surface showed a weird time. Or so it felt. The hands were aligned perfectly together, as if hinting towards something singular. Was the clock trying to say something? Inanimate things don’t speak. Jose was well aware of this. But then again, Jose was a hopeless creative. He always liked imagining things.",
+                    "images": ["wine_dine"],
+                    "paragraphs": ["Raymond woke up to a busy morning. He had little time left before the meeting. Today was a big day for him. He was supposed to lead his team into the meeting with their morale’s at an all time high. This was important for them. He had to convince the client of their prowess, this contract could change their life.",
                         
-                        "Off he went to make his morning cup of black coffee. It raised his metabolism, it would help him be slim. Jose knew exactly where the cup would be, it was washed and kept at exactly the place it should have been. It was almost as if Jose’s hand knew where to find it. “Routine, meh” Jose justified, though a weird part of his brain was spiking off yet again, trying to find hidden meaning in the uncanny perfectness of the organization of this process. It almost seemed as though it had been ages since he had tried something different.",
+                        "The meeting was to happen at a fancy restaurant, overlooking the London Bridge. He ordered the finest of wines for his clients. With his sunglasses off, he looked like one of the men from the super secret spy society, all chic and ready to roll.",
                         
-                        "Off he went, the swing was stationary. Jose was fancy. His front yard had a lot of big trees and a swing. Jose often enjoyed sitting on it. Yet again though, Jose had forgotten to put the sheets on the swing’s seat, and it was wet. “When would I get accustomed to putting the sheets on every night?”, he asked his inner self.",
+                        "As he began explaining their approach to the problem and resources at hand, he noticed something weird, the page with the technical capabilities of the team was missing. Raymond was furious. This was an important part of his presentation. Not having this would mean that the meeting could go down in flames. And it very well did.",
                         
-                        "The day went by and Jose decided to start off on his work again. “The client would want this to be over in a week”, he reminded himself. He looked at the painting with an examining eye. Somehow he exactly knew what part to paint today. He had a very clear picture of what it would look like when it was over, and this was partly due to skill, partly due to his imagination. Jose was proud of himself, when he finished with the day’s work and the part looked exactly as he had pictured it in his head. He was a genius at this. Or so he felt.",
+                        "The client was pissed off at the incompetency of the team to handle something as simple as having all the documents in place. The company lost a contract, Raymond lost his job. The incompetent person didn’t. This was not his fault. Raymond ended up realizing he depended too much on someone else, and should have done it himself, since the project was this important. He should have realized this while reviewing the brochure, he thought. And rightly so.",
                         
-                        "The night was close. Jose started looking at the starry night sky. He thanked God for blessing him with the mind that he had, with the skill that he had, and with the Life that he had. The sky had a lot of secrets, he thought. “Oh how insignificant I am, sitting on the terrace of this calm Bungalow at the outskirts of the city, amidst nature, on a tiny little dot called earth”, he thought. Just then, out of the blue, he saw a shooting star. “These are very rare”, he thought. Jose was excited. “Let’s make a wish”, he said to himself. Foolish as though it might sound to the rational mind, Jose thought magic exists.  “Oh lord”, he said, “Let all days be like this one. And let me be happy forever”, Jose said, as he wished nothing more in life. With a smile on his face, Jose went off to sleep.",
+                        "But this story is not about the contract. Raymond had a mortgage to pay, and being out of a job didn’t help. He’d decided to move into his parent’s house for some time, since it was time for him to save up a bit.",
                         
-                        "Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…"],
+                        "To his disappointment , however, he realized that he wasn’t wanted there. His girlfriend dumped him, his friends started hanging out less with him. He was beginning to feel alone. He somehow felt that all the relationships he’d formed through his life were very artificial.",
+                        
+                        "He left his parent’s house and began living in his car. He would go to the nearby gym to shower and brush. This was awkward and new, but it was better than the other options, Raymond thought.",
+                        
+                        "As he was brushing his teeth, looking at the mirror, Raymond thought, why did all of this happen? What happened to all those relationships I’d formed over the years? Why aren’t they worked out? Why is it that when he needs them the most, all the important people in his life have backed out of helping him? He was trying to recollect ONE person who would help him in this time of need. Someone who was a guardian angel. Someone who thought he mattered and was important enough to be taken care of.",
+                        
+                        "Just then, he realized something important. He stared deep into the mirror, and smiled with a wide grin on his face. The Man in the Mirror grinned back. He’d found his guardian angel."],
                     "map": ["0": "0"],
                 ],
                 [

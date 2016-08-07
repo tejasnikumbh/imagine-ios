@@ -12,6 +12,10 @@ import Foundation
 typealias EmptyCompletionBlock = ()->()
 
 class OConstants {
+    struct Sharing {
+        static let shareTextTwitter = "Short Story on Imagine App"
+        static let shareTextFacebook = "Short Story on Imagine App"
+    }
     struct Fonts {
         static let appleSDGothicNeoRegular = "AppleSDGothicNeo-Regular"
     }

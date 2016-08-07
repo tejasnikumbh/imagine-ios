@@ -30,10 +30,10 @@ struct OStoryCardFactory {
         
         [
             "story_id": "1",
-            "image": "storm",
-            "title": "Storm's End",
+            "image": "him_her",
+            "title": "Her",
             "author": "Nina J Lu",
-            "summary": "        Billy is a paranoid genius amongst a flock of happy go lucky but foolish sheep. Billy envisions himself as a hero, who has both courage and foresight to make it big. Join Billy on his adventure as he tries to warn the sheep of impending doom.",
+            "summary": "        Their relationship has come to a breaking point. Him and her are always fighting. Their fight comes to a breaking point but he tries to give it one last shot. Read on for what happens next.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
@@ -60,10 +60,10 @@ struct OStoryCardFactory {
             ],
         [
             "story_id": "4",
-            "image": "c",
-            "title": "Hotel Suites",
-            "author": "Arunima Gupta",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
+            "image": "wine_dine",
+            "title": "The Man in the Mirror",
+            "author": "Tejas Nikumbh",
+            "summary": "        Raymond is confused as to why what happened, happened. He tries to reconsider his decisions in life as he makes a life changing discovery. A story of self realization of an important fact of life.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
@@ -81,7 +81,7 @@ struct OStoryCardFactory {
         [
             "story_id": "6",
             "image": "binary_black",
-            "title": "Binary & Black",
+            "title": "Binary Black",
             "author": "Rumi",
             "summary": "        Jan Kadlecky is a mathematical genius who sees patterns in everyday life. Join him as he sails through life experiencing his first few years in the finance world, where his genius is put to test every single day.",
             "genre": "Life",
@@ -90,7 +90,7 @@ struct OStoryCardFactory {
             ],
         [
             "story_id": "7",
-            "image": "a",
+            "image": "wine_dine",
             "title": "Wineyard",
             "author": "Phoebe",
             "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",

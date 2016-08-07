@@ -64,7 +64,7 @@ class OStoryPosterViewController: UIViewController {
             ovalLoader.alpha = 0.0
             ovalLoader.frame = CGRect(
                 x: CGRectGetMidX(self.view.frame) - ovalLoader.width * 0.5,
-                y: CGRectGetMidY(self.view.frame) - ovalLoader.height * 0.5,
+                y: CGRectGetMidY(self.view.frame) * 0.75 - ovalLoader.height * 0.5,
                 width: ovalLoader.width ,
                 height: ovalLoader.height)
             self.view.addSubview(ovalLoader)
@@ -162,6 +162,7 @@ class OStoryPosterViewController: UIViewController {
                 storyContainerViewController.card = card
                 storyContainerViewController.transitioningDelegate = self
                 storyContainerViewController.interactor = panUpInteractor
+                storyContainerViewController.posterSnapshot = view.takeSnapshot()
                 presentViewController(storyContainerViewController, animated: true, completion: nil)
             } else {
                 dismissViewControllerAnimated(true, completion: nil)

@@ -28,18 +28,20 @@ class OWindow: NSObject {
         window.addSubview(imageView)
         
         // Adding story name and author
+        let titleWidth = width * OConstants.Window.Scaling.Title.width
+        let text = card.title
+        let font = UIFont(name: "futura",
+                                 size: height*OConstants.Window.Scaling.Title.fontSize)
+        let titleHeight = UILabel.heightForView(text, font: font!, width: titleWidth)
         let storyTitle = UILabel(frame:
             CGRect(
-                x: width*OConstants.Window.Scaling.Title.leftMargin,
-                y: height*OConstants.Window.Scaling.Title.upperMargin,
-                width: width*OConstants.Window.Scaling.Title.width,
-                height: height*OConstants.Window.Scaling.Title.height))
-        storyTitle.font = UIFont(name: "futura",
-                                 size: height*OConstants.Window.Scaling.Title.fontSize)
-        storyTitle.minimumScaleFactor = 0.5
+                x: width * OConstants.Window.Scaling.Title.leftMargin,
+                y: height * OConstants.Window.Scaling.Author.upperMargin - titleHeight,
+                width: titleWidth,
+                height: titleHeight))
+        storyTitle.text = text
+        storyTitle.font = font
         storyTitle.numberOfLines = 0
-        storyTitle.adjustsFontSizeToFitWidth = true
-        storyTitle.text = card.title
         storyTitle.textColor = UIColor.whiteColor()
         
         let storyAuthor = UILabel(frame:
