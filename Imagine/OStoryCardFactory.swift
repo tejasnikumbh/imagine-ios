@@ -90,9 +90,9 @@ struct OStoryCardFactory {
             ],
         [
             "story_id": "7",
-            "image": "wine_dine",
-            "title": "Wineyard",
-            "author": "Phoebe",
+            "image": "agauda",
+            "title": "Fortified remains of glory",
+            "author": "Rumi",
             "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
             "genre": "Life",
             "sound_name": "rain",

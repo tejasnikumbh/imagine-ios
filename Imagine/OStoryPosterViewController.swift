@@ -102,7 +102,6 @@ class OStoryPosterViewController: UIViewController {
     func storyFetched() {
         loader.stopAnimating()
         view.userInteractionEnabled = true
-        
         // Setup and pull up the read view
         pullUpView.roundCorners([.TopLeft, .TopRight], radius: 10)
         self.pullUpViewBottomConstraint.constant = 0
@@ -113,7 +112,8 @@ class OStoryPosterViewController: UIViewController {
             })
     }
     func panGesture(sender: UIPanGestureRecognizer) {
-        let percentThreshold:CGFloat = 0.1
+        let percentThresholdForPanDown:CGFloat = 0.25
+        let percentThresholdForPanUp: CGFloat = 0.1
         // convert y-position to downward pull progress (percentage)
         let translation = sender.translationInView(view)
         let verticalMovement = translation.y / view.bounds.height
@@ -125,28 +125,30 @@ class OStoryPosterViewController: UIViewController {
         let upwardMovementPercent = fminf(upwardMovement, 1.0)
         let uProgress = CGFloat(upwardMovementPercent)
         
-        let pannedUp = uProgress > dProgress
+        let pannedUp = uProgress >= dProgress
         guard let panDownInteractor = panDownInteractor else { return }
         
         let interactor = pannedUp && readEnabled ? panUpInteractor : panDownInteractor
         currentInteractor = nextInteractor
         nextInteractor = interactor
         let progress = pannedUp && readEnabled ? uProgress : dProgress
-        
+        let percentThreshold = pannedUp && readEnabled ? percentThresholdForPanUp : percentThresholdForPanDown
         if currentInteractor != nextInteractor {
             if let currentInteractor = currentInteractor {
                 if let nextInteractor = nextInteractor {
                     runInteraction(.Ended, interactor: currentInteractor, pannedUp: pannedUp, progress: progress, percentThreshold: percentThreshold, completion: {
                         self.runInteraction(.Began, interactor: nextInteractor, pannedUp: pannedUp, progress: progress, percentThreshold: percentThreshold)
                     })
+                    return
                 }
             } else {
                 runInteraction(sender.state, interactor: nextInteractor!, pannedUp: pannedUp, progress: progress, percentThreshold: percentThreshold)
+                return
             }
-            return
         }
         runInteraction(sender.state, interactor: interactor, pannedUp: pannedUp,
                        progress: progress, percentThreshold: percentThreshold)
+        return
     }
     
     func runInteraction(
@@ -169,6 +171,7 @@ class OStoryPosterViewController: UIViewController {
             }
         case .Changed:
             interactor.shouldFinish = progress > percentThreshold
+            //moveAccordingToPan()
             interactor.updateInteractiveTransition(progress)
         case .Cancelled:
             interactor.hasStarted = false
@@ -191,6 +194,7 @@ class OStoryPosterViewController: UIViewController {
         self.view.addGestureRecognizer(pan)
         self.view.userInteractionEnabled = true
     }
+    func moveAccordingToPan() {}
 }
 
 extension OStoryPosterViewController: UIViewControllerTransitioningDelegate {

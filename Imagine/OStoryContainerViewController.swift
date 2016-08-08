@@ -173,7 +173,6 @@ extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, L
         if index == 2 { self.shareToFacebook(posterSnapshot) }
         if index == 3 { self.shareToTwitter(posterSnapshot) }
     }
-    
 }
 
 extension OStoryContainerViewController: UIScrollViewDelegate {
