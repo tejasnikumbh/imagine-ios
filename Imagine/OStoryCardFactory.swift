@@ -91,9 +91,9 @@ struct OStoryCardFactory {
         [
             "story_id": "7",
             "image": "agauda",
-            "title": "Fortified remains of glory",
+            "title": "Fortified remains",
             "author": "Rumi",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
+            "summary": "        Romaltus stands at a pivotal point in his life. He wants to save his legacy, his army, his people. The Golcondas have a huge Navy, and it's might is very visible. Will the Malins survive?",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"

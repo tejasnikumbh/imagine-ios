@@ -122,7 +122,7 @@ struct OStoryFactory {
                 ],
                 [
                     "id": "6",
-                    "images": ["time_hop"],
+                    "images": ["binary_black"],
                     "paragraphs": ["With a weird beat in the backdrop, Jan was deep in thought. Numbers ran through Jan’s mind like pearls falling off a necklace’s string. Only he knew exactly where they would land, before they could, since he couldn’t help estimating it.",
                         
                         "There was something weird about Jan, everybody knew it. A normal person saw the symbols for 23 and 13 and a multiplication sign when they were asked - “What is 23 times 13 ?”. Jan saw images. Superimposed images. 3 plus 3 was not 6 for him. It was a star with 6 sides. 2 triangles superimposed on one another with opposite orientations.",
@@ -152,18 +152,18 @@ struct OStoryFactory {
                 ],
                 [
                     "id": "7",
-                    "images": ["time_hop"],
-                    "paragraphs": ["Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’. The clock with it’s shiny glass surface showed a weird time. Or so it felt. The hands were aligned perfectly together, as if hinting towards something singular. Was the clock trying to say something? Inanimate things don’t speak. Jose was well aware of this. But then again, Jose was a hopeless creative. He always liked imagining things.",
+                    "images": ["agauda"],
+                    "paragraphs": ["The battle would go down in history as one of the most fierce ones on the costal lines. The Navy was huge, the ships sailing with all their might. This would be the end, Romaltus thought. He’d defended the fort for a long time. His lineage resided here. He wasn’t going to let go so easily. They would fight with all their might. He knew it. His army of guards, although small, was as fierce as the mightiest men.",
                         
-                        "Off he went to make his morning cup of black coffee. It raised his metabolism, it would help him be slim. Jose knew exactly where the cup would be, it was washed and kept at exactly the place it should have been. It was almost as if Jose’s hand knew where to find it. “Routine, meh” Jose justified, though a weird part of his brain was spiking off yet again, trying to find hidden meaning in the uncanny perfectness of the organization of this process. It almost seemed as though it had been ages since he had tried something different.",
+                        "The big tower overlooked the sea like a guardian. It could protect them against the might of the Navy today. Romaltus drew the Malin sigil on a little brick at the bottom of the tower. He placed it inside a carefully crafted socket, so as to secure it tightly at the foot of the tower. A secret. A superstition. As long as the brick stays hidden with the sigil on it, the clan lives. Or so the Malins thought.",
                         
-                        "Off he went, the swing was stationary. Jose was fancy. His front yard had a lot of big trees and a swing. Jose often enjoyed sitting on it. Yet again though, Jose had forgotten to put the sheets on the swing’s seat, and it was wet. “When would I get accustomed to putting the sheets on every night?”, he asked his inner self.",
+                        "Everyone had their hearts pounding heavily. They would fight hard tonight. They were here to make history. Romaltus had a strategy in place should the army invade. They would lure them inside the fort into the open grounds. Romaltus’ army would stand on the high platform to kill them with spears. This should dampen their spirits, he thought.",
                         
-                        "The day went by and Jose decided to start off on his work again. “The client would want this to be over in a week”, he reminded himself. He looked at the painting with an examining eye. Somehow he exactly knew what part to paint today. He had a very clear picture of what it would look like when it was over, and this was partly due to skill, partly due to his imagination. Jose was proud of himself, when he finished with the day’s work and the part looked exactly as he had pictured it in his head. He was a genius at this. Or so he felt.",
+                        "The first of their ships hit the shores with a loud thud. Out came hundreds of men, with the finest of armor and battle gear. They were thirsty for blood. One could see it in their eyes and war cries. Romaltus gathered his finest men and secured the gates. The strongest of gates couldn’t hold the men with their huge Battering Rams. The gate was broken wide open. The army gushed inside through the narrow entrance.",
                         
-                        "The night was close. Jose started looking at the starry night sky. He thanked God for blessing him with the mind that he had, with the skill that he had, and with the Life that he had. The sky had a lot of secrets, he thought. “Oh how insignificant I am, sitting on the terrace of this calm Bungalow at the outskirts of the city, amidst nature, on a tiny little dot called earth”, he thought. Just then, out of the blue, he saw a shooting star. “These are very rare”, he thought. Jose was excited. “Let’s make a wish”, he said to himself. Foolish as though it might sound to the rational mind, Jose thought magic exists.  “Oh lord”, he said, “Let all days be like this one. And let me be happy forever”, Jose said, as he wished nothing more in life. With a smile on his face, Jose went off to sleep.",
-                        
-                        "Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…"],
+                        "The plan was to get to the high platform now. May be this could work, Romaltus thought. “Oh Lord, save us all tonight. We shall serve you with all our might”, he prayed. God had other plans for the Malins. The Navy crushed the Malins, and took the fort. Romaltus died with no tears in his eyes. He was the bravest of the Malins. But there was only so much he could do.",
+                    
+                        "It almost felt as if he’d woken up from a dream. Ron quickly lifted his hand off the brick. The Malin sigil lit up. The Malins were right. The clan had lived. The brick had a story to tell."],
                     "map": ["0": "0"],
                 ],
  
