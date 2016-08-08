@@ -98,6 +98,13 @@ extension UIColor {
     }
 }
 extension UIViewController {
+    func openShareSheet(image: UIImage) {
+        let objectsToShare: [AnyObject] = [image]
+        let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        activityViewController.excludedActivityTypes = [UIActivityTypeAirDrop]
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
     func shareToTwitter(image: UIImage) {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
             let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)

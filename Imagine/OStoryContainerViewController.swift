@@ -67,6 +67,7 @@ class OStoryContainerViewController: UIViewController {
     }
     func addLiquidButtonCells()
     {
+        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("share"))
         liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("insta"))
         liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("fb"))
         liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("twitter"))
@@ -167,9 +168,10 @@ extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, L
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int)
     {
         guard let posterSnapshot = posterSnapshot else { return }
-        if index == 0 { self.shareToInstagram(posterSnapshot) }
-        if index == 1 { self.shareToFacebook(posterSnapshot) }
-        if index == 2 { self.shareToTwitter(posterSnapshot) }
+        if index == 0 { self.openShareSheet(posterSnapshot) }
+        if index == 1 { self.shareToInstagram(posterSnapshot) }
+        if index == 2 { self.shareToFacebook(posterSnapshot) }
+        if index == 3 { self.shareToTwitter(posterSnapshot) }
     }
     
 }

@@ -33,12 +33,14 @@ extension OStoryGridViewController: UITableViewDataSource, UITableViewDelegate {
         let cellType = OStoryGrid.cellTypes[indexPath.row]
         let cellIdentifier = OUtils.StoryGrid.Cell.identifier(cellType)
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! OStoryGridTableViewCell
-        cell.type = cellType
-        cell.cards = [OStoryGrid.cards[3*indexPath.row],
-                    OStoryGrid.cards[3*indexPath.row + 1],
-                    OStoryGrid.cards[3*indexPath.row + 2]]
-        cell.populate()
-        cell.actionDelegate = self
+        dispatch_async(dispatch_get_main_queue()) {
+            cell.type = cellType
+            cell.cards = [OStoryGrid.cards[3*indexPath.row],
+                          OStoryGrid.cards[3*indexPath.row + 1],
+                          OStoryGrid.cards[3*indexPath.row + 2]]
+            cell.populate()
+            cell.actionDelegate = self
+        }
         return cell
     }
     func tableView(tableView: UITableView,

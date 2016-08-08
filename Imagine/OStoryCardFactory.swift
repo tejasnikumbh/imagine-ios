@@ -33,7 +33,7 @@ struct OStoryCardFactory {
             "image": "him_her",
             "title": "Her",
             "author": "Nina J Lu",
-            "summary": "        Their relationship has come to a breaking point. Him and her are always fighting. Their fight comes to a breaking point but he tries to give it one last shot. Read on for what happens next.",
+            "summary": "        Their relationship has come to a breaking point. Him and Her are always fighting. He tries to give it one last shot. An everyday story not for the faint of heart.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
@@ -70,10 +70,10 @@ struct OStoryCardFactory {
             ],
         [
             "story_id": "5",
-            "image": "ice_bucket",
-            "title": "Winter's Bone",
-            "author": "Chetan Patil",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
+            "image": "rye_lane",
+            "title": "Rye Lane",
+            "author": "Old Woman",
+            "summary": "        Jimmy and Ron are the best of friends. On a chilly Winter afternoon, they decide to take a walk on their favorite part of the neighborhood, Rye Lane. Watch them live their ordinary life. Or not.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
@@ -101,7 +101,7 @@ struct OStoryCardFactory {
         [
             "story_id": "8",
             "image": "purple",
-            "title": "Purple Alley",
+            "title": "Purple",
             "author": "Chaudhari Noam",
             "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
             "genre": "Life",

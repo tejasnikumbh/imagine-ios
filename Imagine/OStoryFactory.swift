@@ -104,21 +104,22 @@ struct OStoryFactory {
                 ],
                 [
                     "id": "5",
-                    "images": ["time_hop"],
-                    "paragraphs": ["Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’. The clock with it’s shiny glass surface showed a weird time. Or so it felt. The hands were aligned perfectly together, as if hinting towards something singular. Was the clock trying to say something? Inanimate things don’t speak. Jose was well aware of this. But then again, Jose was a hopeless creative. He always liked imagining things.",
+                    "images": ["rye_lane"],
+                    "paragraphs": ["Jimmy was strolling down the the boulevard. He had his best friend with him, Ron. Jimmy lived a laid back life. So did Ron. Everybody was happy. It was a fine little world they had for themselves. Sometimes, Jimmy would feel sad. He wasn’t very attracted to the mediocre life he lived. He did not want it to be this way, but he did not think much. He loved his friends. A stroll down Peckham’s Rye Lane would always calm his mind.",
                         
-                        "Off he went to make his morning cup of black coffee. It raised his metabolism, it would help him be slim. Jose knew exactly where the cup would be, it was washed and kept at exactly the place it should have been. It was almost as if Jose’s hand knew where to find it. “Routine, meh” Jose justified, though a weird part of his brain was spiking off yet again, trying to find hidden meaning in the uncanny perfectness of the organization of this process. It almost seemed as though it had been ages since he had tried something different.",
-                        
-                        "Off he went, the swing was stationary. Jose was fancy. His front yard had a lot of big trees and a swing. Jose often enjoyed sitting on it. Yet again though, Jose had forgotten to put the sheets on the swing’s seat, and it was wet. “When would I get accustomed to putting the sheets on every night?”, he asked his inner self.",
-                        
-                        "The day went by and Jose decided to start off on his work again. “The client would want this to be over in a week”, he reminded himself. He looked at the painting with an examining eye. Somehow he exactly knew what part to paint today. He had a very clear picture of what it would look like when it was over, and this was partly due to skill, partly due to his imagination. Jose was proud of himself, when he finished with the day’s work and the part looked exactly as he had pictured it in his head. He was a genius at this. Or so he felt.",
-                        
-                        "The night was close. Jose started looking at the starry night sky. He thanked God for blessing him with the mind that he had, with the skill that he had, and with the Life that he had. The sky had a lot of secrets, he thought. “Oh how insignificant I am, sitting on the terrace of this calm Bungalow at the outskirts of the city, amidst nature, on a tiny little dot called earth”, he thought. Just then, out of the blue, he saw a shooting star. “These are very rare”, he thought. Jose was excited. “Let’s make a wish”, he said to himself. Foolish as though it might sound to the rational mind, Jose thought magic exists.  “Oh lord”, he said, “Let all days be like this one. And let me be happy forever”, Jose said, as he wished nothing more in life. With a smile on his face, Jose went off to sleep.",
-                        
-                        "Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…"],
+                        "It was a cold winter afternoon. Jimmy could see the trees moving in tandem with the wind. His jacket couldn’t hold the wind. Jimmy was feeling cold. Ron had a thick overcoat on, he seemed pretty comfortable. Jimmy knew, deep down inside, Ron had something to tell Jimmy.",
+                    
+                        "“Spill it out”, he said. “Nothing”, blurted Ron. “Oh come on now.”, insisted Jimmy. Ron knew this was it, he was going to spill it out now, no matter how hard he tried. “She said no.”, Ron said, with a deep sense of sadness in his voice.",
+                    
+                        "“Well, shit happens. She’s not the only one”, said Jimmy. The lane was pretty empty today. The pathway was clear, and it felt good to be lonely in the streets somehow. Jimmy began feeling good about himself. He began enjoying the whistling sound the winds produced.",
+                    
+                        "He saw a can of beer straight up ahead. Jimmy gave it a small nudge. Out came a beetle. Or some insect that looked like a beetle. “Look at it”, Jimmy said. “Do you think it is happy? It was living in a fucking can. Do you think these things matter to it at all?  Sometime I wonder, if animals have better lives than us. Less things to think about, less worries.”",
+                    
+                        "“True”, said Ron. But I’m not a beetle and I really liked her. “Fuck it Jimmy , you won’t understand. ” Ron felt like Jimmy was not able to understand him at all. He was not at all consoling and Ron thought Jimmy was in a way happy about what had happened to him.",
+                    
+                        "“Fuck you, Jimmy”. Ron said. An older woman passed by. “Who are you talking to, young man?”, she said."],
                     "map": ["0": "0"],
                 ],
-        
                 [
                     "id": "6",
                     "images": ["time_hop"],
