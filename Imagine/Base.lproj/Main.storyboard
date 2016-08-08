@@ -266,13 +266,13 @@
                                                 <exclude reference="5LN-Wx-r9z"/>
                                                 <exclude reference="OVe-zV-pOu"/>
                                                 <exclude reference="gmn-ad-jBE"/>
+                                                <exclude reference="Ad9-P8-Sqa"/>
+                                                <exclude reference="H7v-Js-jmt"/>
+                                                <exclude reference="YfR-Da-Xpi"/>
                                                 <exclude reference="eIr-hS-uqB"/>
                                                 <exclude reference="fdr-t5-dpu"/>
                                                 <exclude reference="p7z-aB-CkJ"/>
                                                 <exclude reference="tpl-QD-4ln"/>
-                                                <exclude reference="Ad9-P8-Sqa"/>
-                                                <exclude reference="H7v-Js-jmt"/>
-                                                <exclude reference="YfR-Da-Xpi"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -286,13 +286,13 @@
                                                 <include reference="5LN-Wx-r9z"/>
                                                 <include reference="OVe-zV-pOu"/>
                                                 <include reference="gmn-ad-jBE"/>
+                                                <include reference="Ad9-P8-Sqa"/>
+                                                <include reference="H7v-Js-jmt"/>
+                                                <include reference="YfR-Da-Xpi"/>
                                                 <exclude reference="eIr-hS-uqB"/>
                                                 <include reference="fdr-t5-dpu"/>
                                                 <include reference="p7z-aB-CkJ"/>
                                                 <include reference="tpl-QD-4ln"/>
-                                                <include reference="Ad9-P8-Sqa"/>
-                                                <include reference="H7v-Js-jmt"/>
-                                                <include reference="YfR-Da-Xpi"/>
                                             </mask>
                                         </variation>
                                     </view>
