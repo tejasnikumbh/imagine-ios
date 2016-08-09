@@ -30,9 +30,8 @@ class OWindow: NSObject {
         // Adding story name and author
         let titleWidth = width * OConstants.Window.Scaling.Title.width
         let text = card.title
-        let font = UIFont(name: "futura",
-                                 size: height*OConstants.Window.Scaling.Title.fontSize)
-        let titleHeight = UILabel.heightForView(text, font: font!, width: titleWidth)
+        let font = UIFont.storyTitleFont(height*OConstants.Window.Scaling.Title.fontSize)
+        let titleHeight = UILabel.heightForView(text, font: font, width: titleWidth)
         let storyTitle = UILabel(frame:
             CGRect(
                 x: width * OConstants.Window.Scaling.Title.leftMargin,
@@ -50,9 +49,7 @@ class OWindow: NSObject {
                 y: height*OConstants.Window.Scaling.Author.upperMargin,
                 width: width*OConstants.Window.Scaling.Author.width,
                 height: height*OConstants.Window.Scaling.Author.height))
-        //storyAuthor.font = UIFont.italicSystemFontOfSize(height*OConstants.Window.Scaling.Author.fontSize)
-        storyAuthor.font = UIFont(name: "Futura-MediumItalic",
-                                  size: height * OConstants.Window.Scaling.Author.fontSize)
+        storyAuthor.font = UIFont.storyAuthorFont(height*OConstants.Window.Scaling.Author.fontSize)
         storyAuthor.minimumScaleFactor = 0.5
         storyAuthor.text = "by " + card.author
         storyAuthor.textColor = UIColor.whiteColor()

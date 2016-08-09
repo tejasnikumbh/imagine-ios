@@ -22,6 +22,7 @@
 		CC71A0C21D3FE7A200C85D48 /* CardExpandAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */; };
 		CCB87C901D40EC7000F4DE87 /* CardShrinkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C8F1D40EC7000F4DE87 /* CardShrinkAnimator.swift */; };
 		CCB87C931D410DD200F4DE87 /* PercentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C921D410DD200F4DE87 /* PercentInteractor.swift */; };
+		CCCF761E1D594671009F4DBA /* OStoryContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF761D1D594671009F4DBA /* OStoryContentTableViewCell.swift */; };
 		CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */; };
 		CCE4CB801D53AB3800FCC6BF /* LiquidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4CB7F1D53AB3800FCC6BF /* LiquidButton.swift */; };
 		CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCA5E41D3B4CD900050B81 /* OUtils.swift */; };
@@ -81,6 +82,7 @@
 		CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpandAnimator.swift; sourceTree = "<group>"; };
 		CCB87C8F1D40EC7000F4DE87 /* CardShrinkAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardShrinkAnimator.swift; sourceTree = "<group>"; };
 		CCB87C921D410DD200F4DE87 /* PercentInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentInteractor.swift; sourceTree = "<group>"; };
+		CCCF761D1D594671009F4DBA /* OStoryContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryContentTableViewCell.swift; sourceTree = "<group>"; };
 		CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterViewController.swift; sourceTree = "<group>"; };
 		CCE4CB7F1D53AB3800FCC6BF /* LiquidButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidButton.swift; sourceTree = "<group>"; };
 		CCFCA5E41D3B4CD900050B81 /* OUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OUtils.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */,
 				CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */,
 				CC71A0B91D3FABBA00C85D48 /* OWindow.swift */,
+				CCCF761D1D594671009F4DBA /* OStoryContentTableViewCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				CCFFE9801D39CD6600515A24 /* OStoryGridViewController.swift in Sources */,
 				CCFEEA2D1D43866600C5CC4D /* Loader.swift in Sources */,
 				CC71A0BA1D3FABBA00C85D48 /* OWindow.swift in Sources */,
+				CCCF761E1D594671009F4DBA /* OStoryContentTableViewCell.swift in Sources */,
 				CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */,
 				CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */,
 				CC0428301D4ED15F005457A8 /* OStoryFactory.swift in Sources */,

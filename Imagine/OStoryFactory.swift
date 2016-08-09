@@ -21,6 +21,7 @@ struct OStoryFactory {
                 
                 [
                 "id": "0",
+                "title": "Time Hop",
                 "images": ["time_hop"],
                     "paragraphs": ["Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’. The clock with it’s shiny glass surface showed a weird time. Or so it felt. The hands were aligned perfectly together, as if hinting towards something singular. Was the clock trying to say something? Inanimate things don’t speak. Jose was well aware of this. But then again, Jose was a hopeless creative. He always liked imagining things.",
                         
@@ -37,6 +38,7 @@ struct OStoryFactory {
             ],
             [
                 "id": "1",
+                "title": "Her",
                 "images": ["him_her"],
                 "paragraphs": ["She was arguing with him again. Their weekly squabbles had a taken a turn wherein they would end up fighting like cats and dogs, every single day. She was beginning to feel that it was breaking apart. Although they were madly in love with each other, somehow, something wasn’t working. Something didn’t feel right.",
                     
@@ -49,6 +51,7 @@ struct OStoryFactory {
                 ],
                 [
                     "id": "2",
+                    "title": "The Bridge",
                     "images": ["bridge"],
                     "paragraphs": ["Was magic real? Could it ever be? Freddy always thought, his imaginary horses flying wild in the meadows he’d created for them. Unicorns, he thought. Was there a higher power at work? Was there God? Freddy had always been an atheist, but somehow was always left wondering about the working mechanisms of the universe. No matter how many articles he’d read on science being there to justify it all, Freddy could never comprehend Why? Or even the meaning of ‘Why’ , if that made sense.",
 
@@ -61,6 +64,7 @@ struct OStoryFactory {
                 ],
                 [
                     "id": "3",
+                    "title": "Billy's Bravado",
                     "images": ["billy_bravado"],
                     "paragraphs": ["Once upon a time, there was this flock of pearl white, fluffy and healthy sheep. These sheep had the best of pastures to graze on, and hope smiled upon them with the widest of grins. The sheep had nothing to fear, were all well raised and well mannered. Their days were often spent meandering in the lawns and laying out in the sun, taking in his majesty’s offering while being totally relaxed and carefree.",
                         
@@ -82,6 +86,7 @@ struct OStoryFactory {
         
                 [
                     "id": "4",
+                    "title": "The Man in the Mirror",
                     "images": ["wine_dine"],
                     "paragraphs": ["Raymond woke up to a busy morning. He had little time left before the meeting. Today was a big day for him. He was supposed to lead his team into the meeting with their morale’s at an all time high. This was important for them. He had to convince the client of their prowess, this contract could change their life.",
                         
@@ -104,6 +109,7 @@ struct OStoryFactory {
                 ],
                 [
                     "id": "5",
+                    "title": "Rye Lane",
                     "images": ["rye_lane"],
                     "paragraphs": ["Jimmy was strolling down the the boulevard. He had his best friend with him, Ron. Jimmy lived a laid back life. So did Ron. Everybody was happy. It was a fine little world they had for themselves. Sometimes, Jimmy would feel sad. He wasn’t very attracted to the mediocre life he lived. He did not want it to be this way, but he did not think much. He loved his friends. A stroll down Peckham’s Rye Lane would always calm his mind.",
                         
@@ -122,6 +128,7 @@ struct OStoryFactory {
                 ],
                 [
                     "id": "6",
+                    "title": "Binary Black",
                     "images": ["binary_black"],
                     "paragraphs": ["With a weird beat in the backdrop, Jan was deep in thought. Numbers ran through Jan’s mind like pearls falling off a necklace’s string. Only he knew exactly where they would land, before they could, since he couldn’t help estimating it.",
                         
@@ -152,6 +159,7 @@ struct OStoryFactory {
                 ],
                 [
                     "id": "7",
+                    "title": "Fortified Remains",
                     "images": ["agauda"],
                     "paragraphs": ["The battle would go down in history as one of the most fierce ones on the costal lines. The Navy was huge, the ships sailing with all their might. This would be the end, Romaltus thought. He’d defended the fort for a long time. His lineage resided here. He wasn’t going to let go so easily. They would fight with all their might. He knew it. His army of guards, although small, was as fierce as the mightiest men.",
                         
@@ -169,6 +177,7 @@ struct OStoryFactory {
  
                 [
                     "id": "8",
+                    "title": "Purple",
                     "images": ["purple"],
                     "paragraphs": ["Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’. The clock with it’s shiny glass surface showed a weird time. Or so it felt. The hands were aligned perfectly together, as if hinting towards something singular. Was the clock trying to say something? Inanimate things don’t speak. Jose was well aware of this. But then again, Jose was a hopeless creative. He always liked imagining things.",
                         
@@ -206,6 +215,7 @@ struct OStoryFactory {
         }
         return OStory(
             id: dict["id"].stringValue,
+            title: dict["title"].stringValue,
             images: imageArray,
             paras: paraArray ,
             paraImageMap: dict["map"].dictionaryObject as! [String: String])

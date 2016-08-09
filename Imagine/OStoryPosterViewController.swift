@@ -10,6 +10,7 @@ import UIKit
 
 class OStoryPosterViewController: UIViewController {
     var card: OStoryCard!
+    var story: OStory? = nil
     var window: OWindow!
     var panDownInteractor: PercentInteractor? = nil
     var panUpInteractor = PercentInteractor()
@@ -79,6 +80,9 @@ class OStoryPosterViewController: UIViewController {
                     userInfo: nil, repeats: false)
                 // Also ask to make the pull up button visible
                 // Store the story somewhere [after it was fetched from server]
+                self.story = OStoryFactory.fetchStory(self.card.storyId, completion: {
+                    // Nil right now, but should contain error handling
+                })
             })
         })
     }
@@ -161,7 +165,7 @@ class OStoryPosterViewController: UIViewController {
             if pannedUp && readEnabled {
                 let storyContainerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OStoryContainerViewController")
                     as! OStoryContainerViewController
-                storyContainerViewController.card = card
+                storyContainerViewController.story = story
                 storyContainerViewController.transitioningDelegate = self
                 storyContainerViewController.interactor = panUpInteractor
                 storyContainerViewController.posterSnapshot = view.takeSnapshot()
@@ -171,7 +175,6 @@ class OStoryPosterViewController: UIViewController {
             }
         case .Changed:
             interactor.shouldFinish = progress > percentThreshold
-            //moveAccordingToPan()
             interactor.updateInteractiveTransition(progress)
         case .Cancelled:
             interactor.hasStarted = false
@@ -194,7 +197,6 @@ class OStoryPosterViewController: UIViewController {
         self.view.addGestureRecognizer(pan)
         self.view.userInteractionEnabled = true
     }
-    func moveAccordingToPan() {}
 }
 
 extension OStoryPosterViewController: UIViewControllerTransitioningDelegate {

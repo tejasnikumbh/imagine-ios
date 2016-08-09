@@ -12,27 +12,21 @@ import AssetsLibrary
 import LiquidFloatingActionButton
 
 class OStoryContainerViewController: UIViewController {
-    
     var posterSnapshot: UIImage? = nil
-    var card: OStoryCard? = nil
+    var story: OStory!
     var activate = false
     var interactor: PercentInteractor? = nil
-    
     var liquidButton: LiquidFloatingActionButton!
     var liquidButtonCells: [LiquidFloatingCell] = []
-    
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var contentScrollView: UIScrollView!
-    @IBOutlet weak var storyTitle: UILabel!
-    @IBOutlet weak var storyContent: UILabel!
+
+    @IBOutlet weak var tableView: UITableView!
+    var panGestureRecognizerForDismiss: UIPanGestureRecognizer? = nil
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        addStory()
         addPanDownGesture()
-        addLongPressGesture()
+        //addLongPressGesture()
     }
     override func viewDidAppear(animated: Bool)
     {
@@ -40,20 +34,8 @@ class OStoryContainerViewController: UIViewController {
         if liquidButton == nil {
             addLiquidButton()
         }
-        let margins = OConstants.Margin.extraBigTop + OConstants.Margin.bigTop + OConstants.Margin.extraBigBottom
-        let height = storyContent.bounds.height + storyTitle.bounds.height + margins
-        contentViewHeightConstraint.constant = height
     }
     
-    func addStory()
-    {
-        guard let card = card else { return }
-        guard let story = OStoryFactory.fetchStory(card.storyId, completion: nil) else { return }
-        storyTitle.text = card.title
-        storyContent.text = story.text()
-        storyContent.font = UIFont(name: OConstants.Fonts.appleSDGothicNeoRegular,
-                                   size: OConstants.Screen.width * 0.048)
-    }
     func addLiquidButton()
     {
         addLiquidButtonCells()
@@ -72,12 +54,14 @@ class OStoryContainerViewController: UIViewController {
         liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("fb"))
         liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("twitter"))
     }
+    
     func addPanDownGesture()
     {
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.panDownGesture(_:)))
-        pan.delegate = self
-        contentView.addGestureRecognizer(pan)
+        panGestureRecognizerForDismiss = UIPanGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.panDownGesture(_:)))
+        panGestureRecognizerForDismiss!.delegate = self
+        tableView.addGestureRecognizer(panGestureRecognizerForDismiss!)
     }
+    /*
     func addLongPressGesture()
     {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.longPressGesture(_:)))
@@ -106,7 +90,7 @@ class OStoryContainerViewController: UIViewController {
         default:
             break
         }
-    }
+    }*/
     func panDownGesture(sender: UIPanGestureRecognizer)
     {
         let percentThreshold:CGFloat = 0.1
@@ -138,6 +122,7 @@ class OStoryContainerViewController: UIViewController {
     }
 }
 
+
 extension OStoryContainerViewController: UIGestureRecognizerDelegate {
     // MARK:- UIGestureRecognizer Delegate Methods
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer,shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
@@ -146,11 +131,9 @@ extension OStoryContainerViewController: UIGestureRecognizerDelegate {
     }
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
     {
-        if gestureRecognizer.isKindOfClass(UILongPressGestureRecognizer) {
-            return true
-        } else { // Pan Down Gesture Recognizer
-            return contentScrollView.contentOffset.y <= 0
-        }
+        if gestureRecognizer == panGestureRecognizerForDismiss! {
+            return tableView.contentOffset.y <= 0
+        } else { return true }
     }
 }
 
@@ -193,4 +176,36 @@ extension OStoryContainerViewController: UIScrollViewDelegate {
         }
         liquidButton.alpha = 1.0
     }
+}
+
+extension OStoryContainerViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Extra 1 for Title
+        return story.paras.count + 1
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("OStoryContentTableViewCell") as! OStoryContentTableViewCell
+        
+        if indexPath.row == 0 {
+            cell.contentLabel.text = story.title
+            cell.contentLabel.font = UIFont.storyTitleFont(48.0)
+            cell.contentLabel.adjustsFontSizeToFitWidth = true
+            cell.contentLabel.minimumScaleFactor = 0.75
+            cell.contentLabel.textAlignment = .Center
+            cell.contentLabel.textColor = UIColor.storyTitleGray()
+        } else {
+            cell.contentLabel.font = UIFont.storyContentFont(OConstants.Screen.width * 0.048)
+            cell.contentLabel.text = "          " + story.paras[indexPath.row - 1]
+            cell.contentLabel.textColor = UIColor.storyContentGray()
+            cell.contentLabel.textAlignment = .Left
+        }
+        cell.contentLabel.numberOfLines = 0
+        return cell
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 { return 100 }
+        let height = UILabel.heightForView("          " + story.paras[indexPath.row - 1], font: UIFont.storyContentFont(OConstants.Screen.width * 0.048), width: OConstants.Screen.width - OConstants.Margin.bigLeft - OConstants.Margin.bigRight)
+        return height + OConstants.Margin.mediumTop + OConstants.Margin.mediumBottom
+    }
+    
 }

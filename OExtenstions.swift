@@ -96,6 +96,26 @@ extension UIColor {
     static func linkedInBlue() -> UIColor {
         return UIColor(red: 0/255.0, green: 115/255.0, blue: 179/255.0, alpha: 1.0)
     }
+    static func storyContentGray() -> UIColor {
+        return UIColor(red: 120/255.0, green: 120/255.0, blue: 120/255.0, alpha: 1.0)
+    }
+    static func storyTitleGray() -> UIColor {
+        return UIColor.darkGrayColor()
+    }
+}
+extension UIFont {
+    static func storyContentFont(size: CGFloat? = 12.0) -> UIFont {
+        return UIFont(name: OConstants.Fonts.appleSDGothicNeoRegular,
+                      size: size!)!
+    }
+    static func storyTitleFont(size: CGFloat? = 12.0) -> UIFont {
+        return  UIFont(name: "futura",
+                       size: size!)!
+    }
+    static func storyAuthorFont(size: CGFloat? = 12.0) -> UIFont {
+        return UIFont(name: "Futura-MediumItalic",
+                      size: size!)!
+    }
 }
 extension UIViewController {
     func openShareSheet(image: UIImage) {
