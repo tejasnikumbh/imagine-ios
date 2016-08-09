@@ -43,7 +43,9 @@ class OStoryContainerViewController: UIViewController {
             x: OConstants.Margin.bigLeft,
             y: view.frame.height - OConstants.LiquidButton.height - OConstants.Margin.bigBottom,
             width: OConstants.LiquidButton.width, height: OConstants.LiquidButton.height)
-        liquidButton = LiquidButtonViewUtils.createButton(frame, style: .Up, color: UIColor.linkedInBlue(), image: UIImage(named: "share")!, datasource: self, delegate: self)
+        liquidButton = LiquidButtonViewUtils.createButton(
+            frame, style: .Up, color: UIColor.linkedInBlue(),
+            image: UIImage(named: "share")!, datasource: self, delegate: self)
         liquidButton.alpha = 0.0
         view.addSubview(liquidButton)
     }
@@ -54,43 +56,12 @@ class OStoryContainerViewController: UIViewController {
         liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("fb"))
         liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("twitter"))
     }
-    
     func addPanDownGesture()
     {
         panGestureRecognizerForDismiss = UIPanGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.panDownGesture(_:)))
         panGestureRecognizerForDismiss!.delegate = self
         tableView.addGestureRecognizer(panGestureRecognizerForDismiss!)
     }
-    /*
-    func addLongPressGesture()
-    {
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.longPressGesture(_:)))
-        longPress.delegate = self
-        storyContent.addGestureRecognizer(longPress)
-        storyContent.userInteractionEnabled = true
-    }
-    func longPressGesture(sender: UILongPressGestureRecognizer)
-    {
-        switch sender.state {
-        case .Began:
-            let scene = UIImageView(frame: self.view.frame)
-            scene.image = card?.image
-            scene.contentMode = .ScaleAspectFill
-            scene.alpha = 0.0
-            scene.userInteractionEnabled = true
-            view.addSubview(scene)
-            scene.bringToLife()
-            break
-        case .Ended:
-            let scene = view.subviews.last
-            scene!.kill(0.4, completion: {
-                scene!.removeFromSuperview()
-            })
-            break
-        default:
-            break
-        }
-    }*/
     func panDownGesture(sender: UIPanGestureRecognizer)
     {
         let percentThreshold:CGFloat = 0.1
@@ -125,11 +96,15 @@ class OStoryContainerViewController: UIViewController {
 
 extension OStoryContainerViewController: UIGestureRecognizerDelegate {
     // MARK:- UIGestureRecognizer Delegate Methods
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer,shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    func gestureRecognizer(
+        gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
     {
         return true
     }
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
+    func gestureRecognizer(
+        gestureRecognizer: UIGestureRecognizer,
+        shouldReceiveTouch touch: UITouch) -> Bool
     {
         if gestureRecognizer == panGestureRecognizerForDismiss! {
             return tableView.contentOffset.y <= 0
@@ -148,7 +123,9 @@ extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, L
         return liquidButtonCells.count
     }
     // MARK:- Liquid Floating Action Button Delegate Methods
-    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int)
+    func liquidFloatingActionButton(
+        liquidFloatingActionButton: LiquidFloatingActionButton,
+        didSelectItemAtIndex index: Int)
     {
         guard let posterSnapshot = posterSnapshot else { return }
         if index == 0 { self.openShareSheet(posterSnapshot) }
@@ -178,34 +155,87 @@ extension OStoryContainerViewController: UIScrollViewDelegate {
     }
 }
 
-extension OStoryContainerViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Extra 1 for Title
-        return story.paras.count + 1
+extension OStoryContainerViewController: OSceneShowProtocol {
+    func showScene(image: UIImage)
+    {
+        let sceneView = UIImageView(frame: view.frame)
+        sceneView.image = image
+        sceneView.contentMode = .ScaleAspectFill
+        sceneView.alpha = 0.0
+        sceneView.userInteractionEnabled = true
+        view.addSubview(sceneView)
+        sceneView.bringToLife()
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("OStoryContentTableViewCell") as! OStoryContentTableViewCell
-        
+    func killScene()
+    {
+        let scene = view.subviews.last
+        scene!.kill(0.4, completion: {
+            scene!.removeFromSuperview()
+        })
+    }
+}
+
+extension OStoryContainerViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        // Extra 1 for Title and 1 for blank view
+        return story.paras.count + 2
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("OStoryContentTableViewCell")
+            as! OStoryContentTableViewCell
+        var paraMargin = "          "
+        var alignment = NSTextAlignment.Left
+        if indexPath.row > 0 && indexPath.row < story.paras.count + 1 {
+            if story.paras[indexPath.row - 1] == "..." { // Three dots case
+                paraMargin = ""
+                alignment = .Center
+            }
+        }
+        // Attach scenes to Scenic Paragraphs
+        for (key, value) in story.paraImageMap {
+            if String(indexPath.row - 1) == key {
+                cell.attachScene(story.images[Int(value)!])
+                cell.actionDelegate = self
+                //21B3 also good choice
+                //21E5 also good choice
+                paraMargin = "\u{21B3}        "
+                
+            }
+        }
+        // Populate the current cell [Make use of Cell Factory later]
         if indexPath.row == 0 {
             cell.contentLabel.text = story.title
             cell.contentLabel.font = UIFont.storyTitleFont(48.0)
             cell.contentLabel.adjustsFontSizeToFitWidth = true
-            cell.contentLabel.minimumScaleFactor = 0.75
             cell.contentLabel.textAlignment = .Center
             cell.contentLabel.textColor = UIColor.storyTitleGray()
+        } else if indexPath.row == story.paras.count + 1 { // Last Index
+            cell.contentLabel.text = ""
         } else {
             cell.contentLabel.font = UIFont.storyContentFont(OConstants.Screen.width * 0.048)
-            cell.contentLabel.text = "          " + story.paras[indexPath.row - 1]
+            cell.contentLabel.text = paraMargin + story.paras[indexPath.row - 1]
             cell.contentLabel.textColor = UIColor.storyContentGray()
-            cell.contentLabel.textAlignment = .Left
+            cell.contentLabel.textAlignment = alignment
         }
         cell.contentLabel.numberOfLines = 0
         return cell
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 { return 100 }
-        let height = UILabel.heightForView("          " + story.paras[indexPath.row - 1], font: UIFont.storyContentFont(OConstants.Screen.width * 0.048), width: OConstants.Screen.width - OConstants.Margin.bigLeft - OConstants.Margin.bigRight)
-        return height + OConstants.Margin.mediumTop + OConstants.Margin.mediumBottom
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        let cellWidth = OConstants.Screen.width - OConstants.Margin.bigLeft - OConstants.Margin.bigRight
+        if indexPath.row == 0 {
+            let height = UILabel.heightForView(story.title, font: UIFont.storyTitleFont(48.0), width: cellWidth)
+            return height + OConstants.Margin.bigTop * 2
+        } else if indexPath.row == story.paras.count + 1 { // Last Index
+            return 48.0
+        } else {
+            let height = UILabel.heightForView(
+                "          " + story.paras[indexPath.row - 1],
+                font: UIFont.storyContentFont(OConstants.Screen.width * 0.048),
+                width: cellWidth)
+            return height + OConstants.Margin.mediumTop + OConstants.Margin.mediumBottom
+        }
     }
-    
 }

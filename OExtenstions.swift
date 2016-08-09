@@ -19,6 +19,19 @@ extension String
             NSCharacterSet.whitespaceCharacterSet())
     }
 }
+extension NSMutableAttributedString {
+    func bold(text:String) -> NSMutableAttributedString {
+        let attrs:[String:AnyObject] = [NSFontAttributeName : UIFont(name: "AvenirNext-Medium", size: 12)!]
+        let boldString = NSMutableAttributedString(string:"\(text)", attributes:attrs)
+        self.appendAttributedString(boldString)
+        return self
+    }
+    func normal(text:String)->NSMutableAttributedString {
+        let normal =  NSAttributedString(string: text)
+        self.appendAttributedString(normal)
+        return self
+    }
+}
 extension UILabel {
     static func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
         let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
@@ -31,7 +44,7 @@ extension UILabel {
     }
 }
 extension UIView {
-    static func blankView(color: UIColor, frame: CGRect) -> UIView
+    static func viewWithColor(color: UIColor, frame: CGRect) -> UIView
     {
         let view = UIView(frame: frame)
         view.backgroundColor = color
@@ -93,8 +106,11 @@ extension UIColor {
     static func algaeGreen() -> UIColor {
         return UIColor(red: 105/255.0, green: 210/255.0, blue: 153/255.0, alpha: 1.0)
     }
-    static func linkedInBlue() -> UIColor {
-        return UIColor(red: 0/255.0, green: 115/255.0, blue: 179/255.0, alpha: 1.0)
+    static func linkedInBlue(alpha: CGFloat? = 1.0) -> UIColor {
+        return UIColor(red: 0/255.0, green: 115/255.0, blue: 179/255.0, alpha: alpha!)
+    }
+    static func glowYellow() -> UIColor {
+        return UIColor(red: 255/255.0, green: 248/255.0, blue: 162/255.0, alpha: 1.0)
     }
     static func storyContentGray() -> UIColor {
         return UIColor(red: 120/255.0, green: 120/255.0, blue: 120/255.0, alpha: 1.0)

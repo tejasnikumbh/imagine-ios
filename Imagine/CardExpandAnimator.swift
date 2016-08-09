@@ -35,7 +35,7 @@ class CardExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         )
         toView.clipsToBounds = true
         // Add a white view
-        containerView.addSubview(UIView.blankView(
+        containerView.addSubview(UIView.viewWithColor(
             UIColor.whiteColor(),frame: initialFrame))
         containerView.addSubview(toView)
         

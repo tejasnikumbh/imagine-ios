@@ -34,20 +34,24 @@ struct OStoryFactory {
                         "The night was close. Jose started looking at the starry night sky. He thanked God for blessing him with the mind that he had, with the skill that he had, and with the life that he had. The sky had a lot of secrets, he thought. “Oh how insignificant am I, sitting on the terrace of this calm bungalow at the outskirts of the city, amidst nature, on a tiny little dot called earth”, he thought. Just then, out of the blue, he saw a shooting star. “These are very rare”, he thought. Jose was excited. “Let’s make a wish”, he said to himself. Foolish as though it might sound to the rational mind, Jose thought magic exists.  “Oh lord”, he said, “Let all days be like this one. And let me be happy forever”, Jose said, as he wished nothing more in life. With a smile on his face, Jose went off to sleep.",
                         
                         "Jose woke up the next morning. Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…"],
-                "map": ["0": "0"],
-            ],
-            [
-                "id": "1",
-                "title": "Her",
-                "images": ["him_her"],
-                "paragraphs": ["She was arguing with him again. Their weekly squabbles had a taken a turn wherein they would end up fighting like cats and dogs, every single day. She was beginning to feel that it was breaking apart. Although they were madly in love with each other, somehow, something wasn’t working. Something didn’t feel right.",
-                    
-                    "Their fights at night would not let him sleep now. Raging thoughts and disturbances ran through his mind like a storm. This was also affecting his performance at work. David was pissed off now. Half his mind said quit it, the other half wanted it to work.",
-        
-                    "One fateful night, as they were squabbling yet again, she got off the bed, and stormed off. The bedroom door shut with a loud ‘THUD’. David pondered what he’d done this time. This wasn’t needed, he thought. He convinced himself to get up and convince her this time. He wanted to make it all right.",
-        
-                    "He got off the bed, and as he began walking towards the door. Suddenly, David heard a whimpering noise coming out of the space underneath the bed. He thought it was some sort of an animal. As he picked up the sheet to look beneath, he was horrified. There she was, his wife, scared as a mouse. He could hear her squealing… “W-Wh-Who was she?”"],
-                    "map": ["0": "0"],
+                "map": ["1": "0"],
+                ],
+                [
+                    "id": "1",
+                    "title": "Fortified Remains",
+                    "images": ["agauda"],
+                    "paragraphs": ["The battle would go down in history as one of the most fierce ones on the costal lines. The Navy was huge, the ships sailing with all their might. This would be the end, Romaltus thought. He’d defended the fort for a long time. His lineage resided here. He wasn’t going to let go so easily. They would fight with all their might. He knew it. His army of guards, although small, was as fierce as the mightiest men.",
+                        
+                        "The big tower overlooked the sea like a guardian. It could protect them against the might of the Navy today. Romaltus drew the Malin sigil on a little brick at the bottom of the tower. He placed it inside a carefully crafted socket, so as to secure it tightly at the foot of the tower. A secret. A superstition. As long as the brick stays hidden with the sigil on it, the clan lives. Or so the Malins thought.",
+                        
+                        "Everyone had their hearts pounding heavily. They would fight hard tonight. They were here to make history. Romaltus had a strategy in place should the army invade. They would lure them inside the fort into the open grounds. Romaltus’ army would stand on the high platform to kill them with spears. This should dampen their spirits, he thought.",
+                        
+                        "The first of their ships hit the shores with a loud thud. Out came hundreds of men, with the finest of armor and battle gear. They were thirsty for blood. One could see it in their eyes and war cries. Romaltus gathered his finest men and secured the gates. The strongest of gates couldn’t hold the men with their huge Battering Rams. The gate was broken wide open. The army gushed inside through the narrow entrance.",
+                        
+                        "The plan was to get to the high platform now. May be this could work, Romaltus thought. “Oh Lord, save us all tonight. We shall serve you with all our might”, he prayed. God had other plans for the Malins. The Navy crushed the Malins, and took the fort. Romaltus died with no tears in his eyes. He was the bravest of the Malins. But there was only so much he could do.",
+                        
+                        "It almost felt as if he’d woken up from a dream. Ron quickly lifted his hand off the brick. The Malin sigil lit up. The Malins were right. The clan had lived. The brick had a story to tell."],
+                    "map": ["1": "0"],
                 ],
                 [
                     "id": "2",
@@ -60,7 +64,7 @@ struct OStoryFactory {
                         "Freddy tried to define magic. In his mind, calling advanced science magic was an insult to magic. Science is derived from a logical set of rules. Magic is something the mind cannot comprehend. Something so weird that it should not exist in the rational world. What if there was a giant black hole that opened up right now, right there, providing him a portal to another universe? A place where the laws would be different, another big vast world to explore altogether.",
                         
                         "Freddy looked up to find his way again, fearing he had the wrong directions, half wondering why he’d not reached the supermarket yet. And there it was, a big Black Hole with a starlit inside, a portal to another world. Freddy had his mouth wide open."],
-                    "map": ["0": "0"],
+                    "map": ["0": "0", "1": "0", "2":"0", "3": "0"],
                 ],
                 [
                     "id": "3",
@@ -105,7 +109,7 @@ struct OStoryFactory {
                         "As he was brushing his teeth, looking at the mirror, Raymond thought, why did all of this happen? What happened to all those relationships I’d formed over the years? Why aren’t they worked out? Why is it that when he needs them the most, all the important people in his life have backed out of helping him? He was trying to recollect ONE person who would help him in this time of need. Someone who was a guardian angel. Someone who thought he mattered and was important enough to be taken care of.",
                         
                         "Just then, he realized something important. He stared deep into the mirror, and smiled with a wide grin on his face. The Man in the Mirror grinned back. He’d found his guardian angel."],
-                    "map": ["0": "0"],
+                    "map": ["1": "0"],
                 ],
                 [
                     "id": "5",
@@ -124,7 +128,7 @@ struct OStoryFactory {
                         "“True”, said Ron. But I’m not a beetle and I really liked her. “Fuck it Jimmy , you won’t understand. ” Ron felt like Jimmy was not able to understand him at all. He was not at all consoling and Ron thought Jimmy was in a way happy about what had happened to him.",
                     
                         "“Fuck you, Jimmy”. Ron said. An older woman passed by. “Who are you talking to, young man?”, she said."],
-                    "map": ["0": "0"],
+                    "map": ["1": "0"],
                 ],
                 [
                     "id": "6",
@@ -140,7 +144,7 @@ struct OStoryFactory {
                         
                         "Jan shot up like a firework, leaving all other candidates behind. Jan was no candidate, he was the future of the firm. They had to give him an offer. An year into the Job, Jan was bored with life. Splurging money became the norm, and he had no idea why he was doing what he was doing. His mind had begun seeking thrill, than victory, and he was constantly trying to do things now that stimulated his mind. “Is this ‘goose-bumpy’?” , was now his decision philosophy.",
                     
-                        "@@_@@DotChar@@_@@",
+                        "...",
                         
                         "The betting odds were 80 to 20. The gamblers were of the opinion that the more they bet on the favorable outcome, the more they would earn. Although margins were very, very small this time. The outcome was heavily predicted in favor of one position as opposed to the other. Jan knew what to do in such a situation, his experience had taught him to err on the side of the risk. Greater risk, greater reward.",
                         
@@ -148,33 +152,28 @@ struct OStoryFactory {
                         
                         "On Judgement Day, Jan raised his brow to type in a command. He was placing his bets. As the last signal was transferred, Jan began scratching his chin with his signature raised brow, deep in thought. As the sun went down, so did the firm.",
                         
-                        "@@_@@DotChar@@_@@",
+                        "...",
                         
                         "Jan owned a yacht now, he’d named it Grin. The European markets had a new leader now, and legend was that it was formed out of the gains of Judgement Day. Jan’s nameplate said - “Director of Strategy, Blackwater.”"
 
                         
                     ],
 
-                    "map": ["0": "0"],
+                    "map": ["1": "0"],
                 ],
                 [
                     "id": "7",
-                    "title": "Fortified Remains",
-                    "images": ["agauda"],
-                    "paragraphs": ["The battle would go down in history as one of the most fierce ones on the costal lines. The Navy was huge, the ships sailing with all their might. This would be the end, Romaltus thought. He’d defended the fort for a long time. His lineage resided here. He wasn’t going to let go so easily. They would fight with all their might. He knew it. His army of guards, although small, was as fierce as the mightiest men.",
+                    "title": "Her",
+                    "images": ["him_her"],
+                    "paragraphs": ["She was arguing with him again. Their weekly squabbles had a taken a turn wherein they would end up fighting like cats and dogs, every single day. She was beginning to feel that it was breaking apart. Although they were madly in love with each other, somehow, something wasn’t working. Something didn’t feel right.",
                         
-                        "The big tower overlooked the sea like a guardian. It could protect them against the might of the Navy today. Romaltus drew the Malin sigil on a little brick at the bottom of the tower. He placed it inside a carefully crafted socket, so as to secure it tightly at the foot of the tower. A secret. A superstition. As long as the brick stays hidden with the sigil on it, the clan lives. Or so the Malins thought.",
+                        "Their fights at night would not let him sleep now. Raging thoughts and disturbances ran through his mind like a storm. This was also affecting his performance at work. David was pissed off now. Half his mind said quit it, the other half wanted it to work.",
                         
-                        "Everyone had their hearts pounding heavily. They would fight hard tonight. They were here to make history. Romaltus had a strategy in place should the army invade. They would lure them inside the fort into the open grounds. Romaltus’ army would stand on the high platform to kill them with spears. This should dampen their spirits, he thought.",
+                        "One fateful night, as they were squabbling yet again, she got off the bed, and stormed off. The bedroom door shut with a loud ‘THUD’. David pondered what he’d done this time. This wasn’t needed, he thought. He convinced himself to get up and convince her this time. He wanted to make it all right.",
                         
-                        "The first of their ships hit the shores with a loud thud. Out came hundreds of men, with the finest of armor and battle gear. They were thirsty for blood. One could see it in their eyes and war cries. Romaltus gathered his finest men and secured the gates. The strongest of gates couldn’t hold the men with their huge Battering Rams. The gate was broken wide open. The army gushed inside through the narrow entrance.",
-                        
-                        "The plan was to get to the high platform now. May be this could work, Romaltus thought. “Oh Lord, save us all tonight. We shall serve you with all our might”, he prayed. God had other plans for the Malins. The Navy crushed the Malins, and took the fort. Romaltus died with no tears in his eyes. He was the bravest of the Malins. But there was only so much he could do.",
-                    
-                        "It almost felt as if he’d woken up from a dream. Ron quickly lifted his hand off the brick. The Malin sigil lit up. The Malins were right. The clan had lived. The brick had a story to tell."],
-                    "map": ["0": "0"],
+                        "He got off the bed, and as he began walking towards the door. Suddenly, David heard a whimpering noise coming out of the space underneath the bed. He thought it was some sort of an animal. As he picked up the sheet to look beneath, he was horrified. There she was, his wife, scared as a mouse. He could hear her squealing… “W-Wh-Who was she?”"],
+                    "map": ["3": "0"],
                 ],
- 
                 [
                     "id": "8",
                     "title": "Purple",

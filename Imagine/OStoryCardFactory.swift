@@ -27,13 +27,12 @@ struct OStoryCardFactory {
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
-        
         [
             "story_id": "1",
-            "image": "him_her",
-            "title": "Her",
-            "author": "Nina J Lu",
-            "summary": "        Their relationship has come to a breaking point. Him and Her are always fighting. He tries to give it one last shot. An everyday story not for the faint of heart.",
+            "image": "agauda",
+            "title": "Fortified remains",
+            "author": "Rumi",
+            "summary": "        Romaltus stands at a pivotal point in his life. He wants to save his legacy, his army, his people. The Golcondas have a huge Navy, and it's might is very visible. Will the Malins survive?",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
@@ -90,14 +89,15 @@ struct OStoryCardFactory {
             ],
         [
             "story_id": "7",
-            "image": "agauda",
-            "title": "Fortified remains",
-            "author": "Rumi",
-            "summary": "        Romaltus stands at a pivotal point in his life. He wants to save his legacy, his army, his people. The Golcondas have a huge Navy, and it's might is very visible. Will the Malins survive?",
+            "image": "him_her",
+            "title": "Her",
+            "author": "Nina J Lu",
+            "summary": "        Their relationship has come to a breaking point. Him and Her are always fighting. He tries to give it one last shot. An everyday story not for the faint of heart.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
             ],
+        
         [
             "story_id": "8",
             "image": "purple",
