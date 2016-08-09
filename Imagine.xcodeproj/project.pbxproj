@@ -16,6 +16,9 @@
 		CC5260421D3C56F6008C4F38 /* OStoryCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260411D3C56F6008C4F38 /* OStoryCardFactory.swift */; };
 		CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260451D3CA7A3008C4F38 /* OConstants.swift */; };
 		CC5260481D3CDC21008C4F38 /* OStoryGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */; };
+		CC6AECD11D5A5FEF00C1FC53 /* CircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6AECD01D5A5FEF00C1FC53 /* CircleLayer.swift */; };
+		CC6AECD31D5A62F400C1FC53 /* OnboardDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6AECD21D5A62F400C1FC53 /* OnboardDialog.swift */; };
+		CC6AECD51D5A67E800C1FC53 /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6AECD41D5A67E800C1FC53 /* RectangleLayer.swift */; };
 		CC71A0BA1D3FABBA00C85D48 /* OWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0B91D3FABBA00C85D48 /* OWindow.swift */; };
 		CC71A0BC1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */; };
 		CC71A0BF1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */; };
@@ -77,6 +80,9 @@
 		CC5260411D3C56F6008C4F38 /* OStoryCardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryCardFactory.swift; sourceTree = "<group>"; };
 		CC5260451D3CA7A3008C4F38 /* OConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OConstants.swift; sourceTree = "<group>"; };
 		CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryGrid.swift; sourceTree = "<group>"; };
+		CC6AECD01D5A5FEF00C1FC53 /* CircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLayer.swift; sourceTree = "<group>"; };
+		CC6AECD21D5A62F400C1FC53 /* OnboardDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardDialog.swift; sourceTree = "<group>"; };
+		CC6AECD41D5A67E800C1FC53 /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
 		CC71A0B91D3FABBA00C85D48 /* OWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWindow.swift; sourceTree = "<group>"; };
 		CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryGridTableViewCell.swift; sourceTree = "<group>"; };
 		CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterPresentationProtocol.swift; sourceTree = "<group>"; };
@@ -194,6 +200,16 @@
 				CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */,
 			);
 			name = cells;
+			sourceTree = "<group>";
+		};
+		CC6AECCF1D5A5FD100C1FC53 /* onboard */ = {
+			isa = PBXGroup;
+			children = (
+				CC6AECD01D5A5FEF00C1FC53 /* CircleLayer.swift */,
+				CC6AECD21D5A62F400C1FC53 /* OnboardDialog.swift */,
+				CC6AECD41D5A67E800C1FC53 /* RectangleLayer.swift */,
+			);
+			name = onboard;
 			sourceTree = "<group>";
 		};
 		CC71A0BD1D3FD09B00C85D48 /* protocols */ = {
@@ -350,6 +366,7 @@
 		CCFFE9B21D39D30900515A24 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				CC6AECCF1D5A5FD100C1FC53 /* onboard */,
 				CC59FEDB1D59B302006AC568 /* cells */,
 				CCE4CB7E1D53AB0A00FCC6BF /* liquidButton */,
 				CCFEEA361D47AE8C00C5CC4D /* loader */,
@@ -601,6 +618,7 @@
 			files = (
 				CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */,
 				CC52603F1D3C5672008C4F38 /* OStoryCard.swift in Sources */,
+				CC6AECD51D5A67E800C1FC53 /* RectangleLayer.swift in Sources */,
 				CCFEEA271D425B3300C5CC4D /* OStory.swift in Sources */,
 				CCE4CB801D53AB3800FCC6BF /* LiquidButton.swift in Sources */,
 				CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */,
@@ -618,11 +636,13 @@
 				CCCF76201D597902009F4DBA /* OStoryContentCellFactory.swift in Sources */,
 				CC71A0BC1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift in Sources */,
 				CC19D4491D3CE03300BE3E2D /* OUser.swift in Sources */,
+				CC6AECD31D5A62F400C1FC53 /* OnboardDialog.swift in Sources */,
 				CCFFE9801D39CD6600515A24 /* OStoryGridViewController.swift in Sources */,
 				CCFEEA2D1D43866600C5CC4D /* Loader.swift in Sources */,
 				CC71A0BA1D3FABBA00C85D48 /* OWindow.swift in Sources */,
 				CCCF761E1D594671009F4DBA /* OStoryContentTableViewCell.swift in Sources */,
 				CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */,
+				CC6AECD11D5A5FEF00C1FC53 /* CircleLayer.swift in Sources */,
 				CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */,
 				CC0428301D4ED15F005457A8 /* OStoryFactory.swift in Sources */,
 				CCFEEA351D46874E00C5CC4D /* PullDownAnimator.swift in Sources */,

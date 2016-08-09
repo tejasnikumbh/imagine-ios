@@ -16,8 +16,24 @@ class OStoryGridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        showOnboardDialog()
+    }
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
+    }
+    
+    func showOnboardDialog()
+    {
+        let dialogWidth = 160.0
+        let dialogHeight = 32.0
+        let dialogX = Double(view.frame.width * 0.5)
+        let dialogY = Double(view.frame.height) - dialogHeight - 32.0
+        let frame = CGRect(x: dialogX, y: dialogY, width: dialogWidth, height: dialogHeight)
+        let shortStoryDialog = OnboardDialog(frame: frame)
+        view.addSubview(shortStoryDialog)
+        shortStoryDialog.expand("SHORT STORIES")
     }
 }
 

@@ -26,7 +26,6 @@ class OStoryContainerViewController: UIViewController {
     {
         super.viewDidLoad()
         addPanDownGesture()
-        //addLongPressGesture()
     }
     override func viewDidAppear(animated: Bool)
     {
@@ -93,88 +92,6 @@ class OStoryContainerViewController: UIViewController {
     }
 }
 
-
-extension OStoryContainerViewController: UIGestureRecognizerDelegate {
-    // MARK:- UIGestureRecognizer Delegate Methods
-    func gestureRecognizer(
-        gestureRecognizer: UIGestureRecognizer,
-        shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
-    {
-        return true
-    }
-    func gestureRecognizer(
-        gestureRecognizer: UIGestureRecognizer,
-        shouldReceiveTouch touch: UITouch) -> Bool
-    {
-        if gestureRecognizer == panGestureRecognizerForDismiss! {
-            return tableView.contentOffset.y <= 0
-        } else { return true }
-    }
-}
-
-extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate {
-    // MARK:- Liquid Floating Action Button Datasource methods
-    func cellForIndex(index: Int) -> LiquidFloatingCell
-    {
-        return liquidButtonCells[index]
-    }
-    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int
-    {
-        return liquidButtonCells.count
-    }
-    // MARK:- Liquid Floating Action Button Delegate Methods
-    func liquidFloatingActionButton(
-        liquidFloatingActionButton: LiquidFloatingActionButton,
-        didSelectItemAtIndex index: Int)
-    {
-        guard let posterSnapshot = posterSnapshot else { return }
-        if index == 0 { self.openShareSheet(posterSnapshot) }
-        if index == 1 { self.shareToInstagram(posterSnapshot) }
-        if index == 2 { self.shareToFacebook(posterSnapshot) }
-        if index == 3 { self.shareToTwitter(posterSnapshot) }
-    }
-}
-
-extension OStoryContainerViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView)
-    {
-        guard let liquidButton = liquidButton else { return }
-        let contentOffSet = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let screenHeight = view.frame.height
-        let fadeInRange = CGFloat(150.0)
-        if contentOffSet < fadeInRange {
-            liquidButton.alpha = fmin(contentOffSet/fadeInRange, 1.0)
-            return
-        }
-        if contentOffSet + screenHeight > contentHeight - fadeInRange {
-            liquidButton.alpha = fmin((contentHeight - contentOffSet - screenHeight)/fadeInRange, 1.0)
-            return
-        }
-        liquidButton.alpha = 1.0
-    }
-}
-
-extension OStoryContainerViewController: OSceneShowProtocol {
-    func showScene(image: UIImage)
-    {
-        let sceneView = UIImageView(frame: view.frame)
-        sceneView.image = image
-        sceneView.contentMode = .ScaleAspectFill
-        sceneView.alpha = 0.0
-        sceneView.userInteractionEnabled = true
-        view.addSubview(sceneView)
-        sceneView.bringToLife()
-    }
-    func killScene()
-    {
-        let scene = view.subviews.last
-        scene!.kill(0.4, completion: {
-            scene!.removeFromSuperview()
-        })
-    }
-}
-
 extension OStoryContainerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -198,10 +115,8 @@ extension OStoryContainerViewController: UITableViewDataSource, UITableViewDeleg
             if String(indexPath.row - 1) == key {
                 cell.attachScene(story.images[Int(value)!])
                 cell.actionDelegate = self
-                //21B3 also good choice
                 //21E5 also good choice
                 paraMargin = "\u{21B3}        "
-                
             }
         }
         // Populate the current cell [Make use of Cell Factory later]
@@ -237,5 +152,86 @@ extension OStoryContainerViewController: UITableViewDataSource, UITableViewDeleg
                 width: cellWidth)
             return height + OConstants.Margin.mediumTop + OConstants.Margin.mediumBottom
         }
+    }
+}
+
+extension OStoryContainerViewController: UIGestureRecognizerDelegate {
+    // MARK:- UIGestureRecognizer Delegate Methods
+    func gestureRecognizer(
+        gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
+    {
+        return true
+    }
+    func gestureRecognizer(
+        gestureRecognizer: UIGestureRecognizer,
+        shouldReceiveTouch touch: UITouch) -> Bool
+    {
+        if gestureRecognizer == panGestureRecognizerForDismiss! {
+            return tableView.contentOffset.y <= 0
+        } else { return true }
+    }
+}
+
+extension OStoryContainerViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView)
+    {
+        guard let liquidButton = liquidButton else { return }
+        let contentOffSet = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let screenHeight = view.frame.height
+        let fadeInRange = CGFloat(150.0)
+        if contentOffSet < fadeInRange {
+            liquidButton.alpha = fmin(contentOffSet/fadeInRange, 1.0)
+            return
+        }
+        if contentOffSet + screenHeight > contentHeight - fadeInRange {
+            liquidButton.alpha = fmin((contentHeight - contentOffSet - screenHeight)/fadeInRange, 1.0)
+            return
+        }
+        liquidButton.alpha = 1.0
+    }
+}
+
+extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate {
+    // MARK:- Liquid Floating Action Button Datasource methods
+    func cellForIndex(index: Int) -> LiquidFloatingCell
+    {
+        return liquidButtonCells[index]
+    }
+    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int
+    {
+        return liquidButtonCells.count
+    }
+    // MARK:- Liquid Floating Action Button Delegate Methods
+    func liquidFloatingActionButton(
+        liquidFloatingActionButton: LiquidFloatingActionButton,
+        didSelectItemAtIndex index: Int)
+    {
+        guard let posterSnapshot = posterSnapshot else { return }
+        if index == 0 { self.openShareSheet(posterSnapshot) }
+        if index == 1 { self.shareToInstagram(posterSnapshot) }
+        if index == 2 { self.shareToFacebook(posterSnapshot) }
+        if index == 3 { self.shareToTwitter(posterSnapshot) }
+    }
+}
+
+extension OStoryContainerViewController: OSceneShowProtocol {
+    func showScene(image: UIImage)
+    {
+        let sceneView = UIImageView(frame: view.frame)
+        sceneView.image = image
+        sceneView.contentMode = .ScaleAspectFill
+        sceneView.alpha = 0.0
+        sceneView.userInteractionEnabled = true
+        view.addSubview(sceneView)
+        sceneView.bringToLife()
+    }
+    func killScene()
+    {
+        let scene = view.subviews.last
+        scene!.kill(0.4, completion: {
+            scene!.removeFromSuperview()
+        })
     }
 }

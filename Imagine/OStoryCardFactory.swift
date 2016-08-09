@@ -101,9 +101,9 @@ struct OStoryCardFactory {
         [
             "story_id": "8",
             "image": "purple",
-            "title": "Purple",
+            "title": "Purple Street",
             "author": "Chaudhari Noam",
-            "summary": "        Selfish yuppie Charlie Babbitt's father left a fortune to his savant brother Raymond and a pittance to Charlie.Rain man is a story about their adventures cross country. Rated and viwed by more than 100 people",
+            "summary": "        Jason is an 11 year old boy. His father David takes him to the Purple Street for the very first time, where he sees wonders he's never seen before.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"

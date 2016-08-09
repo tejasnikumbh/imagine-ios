@@ -154,7 +154,6 @@ class OStoryPosterViewController: UIViewController {
                        progress: progress, percentThreshold: percentThreshold)
         return
     }
-    
     func runInteraction(
         state: UIGestureRecognizerState, interactor: PercentInteractor,
         pannedUp: Bool, progress: CGFloat, percentThreshold: CGFloat, completion: EmptyCompletionBlock? = nil)
