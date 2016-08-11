@@ -12,6 +12,7 @@ import Foundation
 class OUser {
     static var isSignedIn: Bool!
     static var email: String!
+    static var shouldShowOnboardDialog = true
     static func fetchDetailsFromServer() -> Bool
     {
         // Fetching details for stories from server task.

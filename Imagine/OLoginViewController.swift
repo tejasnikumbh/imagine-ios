@@ -17,8 +17,6 @@ class OLoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: OPaddedTextField!
     @IBOutlet weak var signUpButtonBottomConstraint: NSLayoutConstraint!
     
-    var audioPlayer: AVAudioPlayer!
-    
     // MARK:- IB Actions
     @IBAction func signUpTapped(sender: UIButton)
     {
@@ -43,7 +41,6 @@ class OLoginViewController: UIViewController {
         setupStoryGridModel()
         setupGestureRecognizers()
         setupObservers()
-        playRainSound()
     }
     override func viewDidAppear(animated: Bool)
     {
@@ -51,7 +48,6 @@ class OLoginViewController: UIViewController {
     }
     override func viewWillDisappear(animated: Bool)
     {
-        stopRainSound()
         removeObservers()
     }
     override func preferredStatusBarStyle() -> UIStatusBarStyle
@@ -113,6 +109,7 @@ class OLoginViewController: UIViewController {
         view.endEditing(true)
     }
     // MARK:- App Effects
+    /*var audioPlayer: AVAudioPlayer!
     func playRainSound()
     {
         guard let audioFilePath = NSBundle.mainBundle().pathForResource("rain", ofType: "mp3") else { return }
@@ -127,7 +124,7 @@ class OLoginViewController: UIViewController {
     func stopRainSound()
     {
         audioPlayer.stop()
-    }
+    }*/
     func fadeInAppName()
     {
         UIView.animateWithDuration(3, animations: {

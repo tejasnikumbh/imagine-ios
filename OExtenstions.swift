@@ -106,8 +106,8 @@ extension UIColor {
     static func algaeGreen() -> UIColor {
         return UIColor(red: 105/255.0, green: 210/255.0, blue: 153/255.0, alpha: 1.0)
     }
-    static func linkedInBlue(alpha: CGFloat? = 1.0) -> UIColor {
-        return UIColor(red: 0/255.0, green: 115/255.0, blue: 179/255.0, alpha: alpha!)
+    static func linkedInBlue() -> UIColor {
+        return UIColor(red: 0/255.0, green: 115/255.0, blue: 179/255.0, alpha: 1.0)
     }
     static func glowYellow() -> UIColor {
         return UIColor(red: 255/255.0, green: 248/255.0, blue: 162/255.0, alpha: 1.0)
@@ -130,6 +130,14 @@ extension UIFont {
     }
     static func storyAuthorFont(size: CGFloat? = 12.0) -> UIFont {
         return UIFont(name: "Futura-MediumItalic",
+                      size: size!)!
+    }
+    static func dialogTitleFont(size: CGFloat? = 12.0) -> UIFont {
+        return UIFont(name: OConstants.Fonts.appleSDGothicNeoSemiBold,
+                      size: size!)!
+    }
+    static func dialogContentFont(size: CGFloat? = 12.0) -> UIFont {
+        return UIFont(name: OConstants.Fonts.appleSDGothicNeoRegular,
                       size: size!)!
     }
 }

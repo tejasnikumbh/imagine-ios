@@ -17,14 +17,17 @@
 		CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260451D3CA7A3008C4F38 /* OConstants.swift */; };
 		CC5260481D3CDC21008C4F38 /* OStoryGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */; };
 		CC6AECD11D5A5FEF00C1FC53 /* CircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6AECD01D5A5FEF00C1FC53 /* CircleLayer.swift */; };
-		CC6AECD31D5A62F400C1FC53 /* OnboardDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6AECD21D5A62F400C1FC53 /* OnboardDialog.swift */; };
+		CC6AECD31D5A62F400C1FC53 /* Strip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6AECD21D5A62F400C1FC53 /* Strip.swift */; };
 		CC6AECD51D5A67E800C1FC53 /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6AECD41D5A67E800C1FC53 /* RectangleLayer.swift */; };
 		CC71A0BA1D3FABBA00C85D48 /* OWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0B91D3FABBA00C85D48 /* OWindow.swift */; };
 		CC71A0BC1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */; };
 		CC71A0BF1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */; };
 		CC71A0C21D3FE7A200C85D48 /* CardExpandAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */; };
+		CCAD27141D5CBFAA00A3CC19 /* OnboardDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD27131D5CBFAA00A3CC19 /* OnboardDialog.swift */; };
 		CCB87C901D40EC7000F4DE87 /* CardShrinkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C8F1D40EC7000F4DE87 /* CardShrinkAnimator.swift */; };
 		CCB87C931D410DD200F4DE87 /* PercentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C921D410DD200F4DE87 /* PercentInteractor.swift */; };
+		CCCA14B31D5D1BBD00FE31A9 /* HighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA14B21D5D1BBD00FE31A9 /* HighlightView.swift */; };
+		CCCA14B51D5D2B6E00FE31A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCA14B41D5D2B6E00FE31A9 /* Assets.xcassets */; };
 		CCCF761E1D594671009F4DBA /* OStoryContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF761D1D594671009F4DBA /* OStoryContentTableViewCell.swift */; };
 		CCCF76201D597902009F4DBA /* OStoryContentCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF761F1D597902009F4DBA /* OStoryContentCellFactory.swift */; };
 		CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */; };
@@ -39,7 +42,6 @@
 		CCFFE97E1D39CD6600515A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */; };
 		CCFFE9801D39CD6600515A24 /* OStoryGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE97F1D39CD6600515A24 /* OStoryGridViewController.swift */; };
 		CCFFE9831D39CD6600515A24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCFFE9811D39CD6600515A24 /* Main.storyboard */; };
-		CCFFE9851D39CD6600515A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFFE9841D39CD6600515A24 /* Assets.xcassets */; };
 		CCFFE9881D39CD6600515A24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCFFE9861D39CD6600515A24 /* LaunchScreen.storyboard */; };
 		CCFFE9931D39CD6600515A24 /* ImagineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE9921D39CD6600515A24 /* ImagineTests.swift */; };
 		CCFFE99E1D39CD6600515A24 /* ImagineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFFE99D1D39CD6600515A24 /* ImagineUITests.swift */; };
@@ -81,14 +83,17 @@
 		CC5260451D3CA7A3008C4F38 /* OConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OConstants.swift; sourceTree = "<group>"; };
 		CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryGrid.swift; sourceTree = "<group>"; };
 		CC6AECD01D5A5FEF00C1FC53 /* CircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLayer.swift; sourceTree = "<group>"; };
-		CC6AECD21D5A62F400C1FC53 /* OnboardDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardDialog.swift; sourceTree = "<group>"; };
+		CC6AECD21D5A62F400C1FC53 /* Strip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strip.swift; sourceTree = "<group>"; };
 		CC6AECD41D5A67E800C1FC53 /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
 		CC71A0B91D3FABBA00C85D48 /* OWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWindow.swift; sourceTree = "<group>"; };
 		CC71A0BB1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryGridTableViewCell.swift; sourceTree = "<group>"; };
 		CC71A0BE1D3FD0D000C85D48 /* OStoryPosterPresentationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterPresentationProtocol.swift; sourceTree = "<group>"; };
 		CC71A0C11D3FE7A200C85D48 /* CardExpandAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpandAnimator.swift; sourceTree = "<group>"; };
+		CCAD27131D5CBFAA00A3CC19 /* OnboardDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardDialog.swift; sourceTree = "<group>"; };
 		CCB87C8F1D40EC7000F4DE87 /* CardShrinkAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardShrinkAnimator.swift; sourceTree = "<group>"; };
 		CCB87C921D410DD200F4DE87 /* PercentInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentInteractor.swift; sourceTree = "<group>"; };
+		CCCA14B21D5D1BBD00FE31A9 /* HighlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightView.swift; sourceTree = "<group>"; };
+		CCCA14B41D5D2B6E00FE31A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCCF761D1D594671009F4DBA /* OStoryContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryContentTableViewCell.swift; sourceTree = "<group>"; };
 		CCCF761F1D597902009F4DBA /* OStoryContentCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryContentCellFactory.swift; sourceTree = "<group>"; };
 		CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +109,6 @@
 		CCFFE97D1D39CD6600515A24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Imagine/AppDelegate.swift; sourceTree = "<group>"; };
 		CCFFE97F1D39CD6600515A24 /* OStoryGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OStoryGridViewController.swift; sourceTree = "<group>"; };
 		CCFFE9821D39CD6600515A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CCFFE9841D39CD6600515A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCFFE9871D39CD6600515A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCFFE9891D39CD6600515A24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Imagine/Info.plist; sourceTree = "<group>"; };
 		CCFFE98E1D39CD6600515A24 /* ImagineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,14 +206,14 @@
 			name = cells;
 			sourceTree = "<group>";
 		};
-		CC6AECCF1D5A5FD100C1FC53 /* onboard */ = {
+		CC6AECCF1D5A5FD100C1FC53 /* strip */ = {
 			isa = PBXGroup;
 			children = (
 				CC6AECD01D5A5FEF00C1FC53 /* CircleLayer.swift */,
-				CC6AECD21D5A62F400C1FC53 /* OnboardDialog.swift */,
+				CC6AECD21D5A62F400C1FC53 /* Strip.swift */,
 				CC6AECD41D5A67E800C1FC53 /* RectangleLayer.swift */,
 			);
-			name = onboard;
+			name = strip;
 			sourceTree = "<group>";
 		};
 		CC71A0BD1D3FD09B00C85D48 /* protocols */ = {
@@ -229,6 +233,24 @@
 				CCFEEA341D46874E00C5CC4D /* PullDownAnimator.swift */,
 			);
 			name = animators;
+			sourceTree = "<group>";
+		};
+		CCAD27101D5CBF3E00A3CC19 /* onboard_dialog */ = {
+			isa = PBXGroup;
+			children = (
+				CCAD27131D5CBFAA00A3CC19 /* OnboardDialog.swift */,
+				CCCA14B21D5D1BBD00FE31A9 /* HighlightView.swift */,
+			);
+			name = onboard_dialog;
+			sourceTree = "<group>";
+		};
+		CCAD27111D5CBF5B00A3CC19 /* core_elements */ = {
+			isa = PBXGroup;
+			children = (
+				CC59FEDB1D59B302006AC568 /* cells */,
+				CC71A0B91D3FABBA00C85D48 /* OWindow.swift */,
+			);
+			name = core_elements;
 			sourceTree = "<group>";
 		};
 		CCB87C911D410DBC00F4DE87 /* interactors */ = {
@@ -308,6 +330,7 @@
 		CCFFE97C1D39CD6600515A24 /* Imagine */ = {
 			isa = PBXGroup;
 			children = (
+				CCCA14B41D5D2B6E00FE31A9 /* Assets.xcassets */,
 				CCE4CB7B1D53A6F800FCC6BF /* extensions */,
 				CCB87C911D410DBC00F4DE87 /* interactors */,
 				CC71A0C01D3FE74B00C85D48 /* animators */,
@@ -318,7 +341,6 @@
 				CCFFE9B21D39D30900515A24 /* views */,
 				CCFFE9AE1D39CE6600515A24 /* controllers */,
 				CCFFE9811D39CD6600515A24 /* Main.storyboard */,
-				CCFFE9841D39CD6600515A24 /* Assets.xcassets */,
 			);
 			path = Imagine;
 			sourceTree = "<group>";
@@ -366,12 +388,12 @@
 		CCFFE9B21D39D30900515A24 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				CC6AECCF1D5A5FD100C1FC53 /* onboard */,
-				CC59FEDB1D59B302006AC568 /* cells */,
+				CCAD27111D5CBF5B00A3CC19 /* core_elements */,
+				CCAD27101D5CBF3E00A3CC19 /* onboard_dialog */,
+				CC6AECCF1D5A5FD100C1FC53 /* strip */,
 				CCE4CB7E1D53AB0A00FCC6BF /* liquidButton */,
 				CCFEEA361D47AE8C00C5CC4D /* loader */,
 				CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */,
-				CC71A0B91D3FABBA00C85D48 /* OWindow.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -496,8 +518,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCFFE9881D39CD6600515A24 /* LaunchScreen.storyboard in Resources */,
-				CCFFE9851D39CD6600515A24 /* Assets.xcassets in Resources */,
 				CCFFE9831D39CD6600515A24 /* Main.storyboard in Resources */,
+				CCCA14B51D5D2B6E00FE31A9 /* Assets.xcassets in Resources */,
 				CC02CED41D3A414E0098B333 /* rain.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,6 +641,8 @@
 				CCFCA5E51D3B4CD900050B81 /* OUtils.swift in Sources */,
 				CC52603F1D3C5672008C4F38 /* OStoryCard.swift in Sources */,
 				CC6AECD51D5A67E800C1FC53 /* RectangleLayer.swift in Sources */,
+				CCCA14B31D5D1BBD00FE31A9 /* HighlightView.swift in Sources */,
+				CCAD27141D5CBFAA00A3CC19 /* OnboardDialog.swift in Sources */,
 				CCFEEA271D425B3300C5CC4D /* OStory.swift in Sources */,
 				CCE4CB801D53AB3800FCC6BF /* LiquidButton.swift in Sources */,
 				CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */,
@@ -636,7 +660,7 @@
 				CCCF76201D597902009F4DBA /* OStoryContentCellFactory.swift in Sources */,
 				CC71A0BC1D3FAD4E00C85D48 /* OStoryGridTableViewCell.swift in Sources */,
 				CC19D4491D3CE03300BE3E2D /* OUser.swift in Sources */,
-				CC6AECD31D5A62F400C1FC53 /* OnboardDialog.swift in Sources */,
+				CC6AECD31D5A62F400C1FC53 /* Strip.swift in Sources */,
 				CCFFE9801D39CD6600515A24 /* OStoryGridViewController.swift in Sources */,
 				CCFEEA2D1D43866600C5CC4D /* Loader.swift in Sources */,
 				CC71A0BA1D3FABBA00C85D48 /* OWindow.swift in Sources */,

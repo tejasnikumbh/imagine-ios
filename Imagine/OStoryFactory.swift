@@ -136,7 +136,7 @@ struct OStoryFactory {
                     "images": ["binary_black"],
                     "paragraphs": ["With a weird beat in the backdrop, Jan was deep in thought. Numbers ran through Jan’s mind like pearls falling off a necklace’s string. Only he knew exactly where they would land, before they could, since he couldn’t help estimating it.",
                         
-                        "There was something weird about Jan, everybody knew it. A normal person saw the symbols for 23 and 13 and a multiplication sign when they were asked - “What is 23 times 13 ?”. Jan saw images. Superimposed images. 3 plus 3 was not 6 for him. It was a star with 6 sides. 2 triangles superimposed on one another with opposite orientations.",
+                        "There was something weird about Jan, everybody knew it. A normal person saw the symbols for 23 and 13 & a multiplication sign when they were asked - “What is 23 times 13 ?”. Jan saw images. Superimposed images. 3 plus 3 was not 6 for him. It was a star with 6 sides. 2 triangles superimposed on one another with opposite orientations.",
                         
                         "If calculations were images, patterns felt like a movie. And who doesn’t like a good story? Jan always liked finding patterns, although his confidence would break in a jiffy if asked to explain his thought process. He was getting tired of it.",
                         

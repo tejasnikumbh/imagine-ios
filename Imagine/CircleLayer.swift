@@ -19,7 +19,6 @@ class CircleLayer: CAShapeLayer {
         // Default circlePath
         circlePath = UIBezierPath(ovalInRect:
             CGRect(x: 0, y: 0, width: 50.0, height: 50.0))
-        fillColor = UIColor.blackColor().CGColor
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

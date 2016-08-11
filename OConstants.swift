@@ -18,6 +18,7 @@ class OConstants {
     }
     struct Fonts {
         static let appleSDGothicNeoRegular = "AppleSDGothicNeo-Regular"
+        static let appleSDGothicNeoSemiBold = "AppleSDGothicNeo-SemiBold"
     }
     struct LiquidButton {
         static let width = (60/320.0)*UIScreen.mainScreen().bounds.size.width

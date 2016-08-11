@@ -75,7 +75,7 @@ class OStoryPosterViewController: UIViewController {
             self.loader = ovalLoader
             OStoryFactory.storyWithId(self.card.storyId, completion: {
                 // Stop loader here in completion block
-                NSTimer.scheduledTimerWithTimeInterval(2.5, target: self,
+                NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,
                     selector: #selector(OStoryPosterViewController.storyFetched),
                     userInfo: nil, repeats: false)
                 // Also ask to make the pull up button visible

@@ -14,11 +14,12 @@ import LiquidFloatingActionButton
 class OStoryContainerViewController: UIViewController {
     var posterSnapshot: UIImage? = nil
     var story: OStory!
+    var scenicParagraphIndicesInTableView: [Int] = []
     var activate = false
     var interactor: PercentInteractor? = nil
     var liquidButton: LiquidFloatingActionButton!
     var liquidButtonCells: [LiquidFloatingCell] = []
-
+    
     @IBOutlet weak var tableView: UITableView!
     var panGestureRecognizerForDismiss: UIPanGestureRecognizer? = nil
     
@@ -33,28 +34,16 @@ class OStoryContainerViewController: UIViewController {
         if liquidButton == nil {
             addLiquidButton()
         }
+        if let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: scenicParagraphIndicesInTableView[0], inSection: 0)) {
+            if OUser.shouldShowOnboardDialog {
+                let isVisible = cell.frame.origin.y < OConstants.Screen.height - OConstants.Margin.bigBottom
+                let element = isVisible ? Element.Circle : Element.IndicatorBox
+                showOnboardDialog(element)
+                OUser.shouldShowOnboardDialog = false
+            }
+        }
     }
     
-    func addLiquidButton()
-    {
-        addLiquidButtonCells()
-        let frame = CGRect(
-            x: OConstants.Margin.bigLeft,
-            y: view.frame.height - OConstants.LiquidButton.height - OConstants.Margin.bigBottom,
-            width: OConstants.LiquidButton.width, height: OConstants.LiquidButton.height)
-        liquidButton = LiquidButtonViewUtils.createButton(
-            frame, style: .Up, color: UIColor.linkedInBlue(),
-            image: UIImage(named: "share")!, datasource: self, delegate: self)
-        liquidButton.alpha = 0.0
-        view.addSubview(liquidButton)
-    }
-    func addLiquidButtonCells()
-    {
-        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("share"))
-        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("insta"))
-        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("fb"))
-        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("twitter"))
-    }
     func addPanDownGesture()
     {
         panGestureRecognizerForDismiss = UIPanGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.panDownGesture(_:)))
@@ -92,6 +81,7 @@ class OStoryContainerViewController: UIViewController {
     }
 }
 
+// MARK:- StoryContainer TableView Methods
 extension OStoryContainerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -117,6 +107,7 @@ extension OStoryContainerViewController: UITableViewDataSource, UITableViewDeleg
                 cell.actionDelegate = self
                 //21E5 also good choice
                 paraMargin = "\u{21B3}        "
+                scenicParagraphIndicesInTableView.append(indexPath.row)
             }
         }
         // Populate the current cell [Make use of Cell Factory later]
@@ -155,8 +146,8 @@ extension OStoryContainerViewController: UITableViewDataSource, UITableViewDeleg
     }
 }
 
+// MARK:- UIGestureRecognizer Delegate Methods
 extension OStoryContainerViewController: UIGestureRecognizerDelegate {
-    // MARK:- UIGestureRecognizer Delegate Methods
     func gestureRecognizer(
         gestureRecognizer: UIGestureRecognizer,
         shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool
@@ -173,26 +164,17 @@ extension OStoryContainerViewController: UIGestureRecognizerDelegate {
     }
 }
 
+// MARK:- ScrollViewDelegate Methods
 extension OStoryContainerViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView)
-    {
-        guard let liquidButton = liquidButton else { return }
-        let contentOffSet = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let screenHeight = view.frame.height
-        let fadeInRange = CGFloat(150.0)
-        if contentOffSet < fadeInRange {
-            liquidButton.alpha = fmin(contentOffSet/fadeInRange, 1.0)
-            return
+    {   // Liquid Button Scroll In
+        if liquidButton != nil {
+            showLiquidButton(scrollView)
         }
-        if contentOffSet + screenHeight > contentHeight - fadeInRange {
-            liquidButton.alpha = fmin((contentHeight - contentOffSet - screenHeight)/fadeInRange, 1.0)
-            return
-        }
-        liquidButton.alpha = 1.0
     }
 }
 
+// MARK:- Liquid Button Methods
 extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate {
     // MARK:- Liquid Floating Action Button Datasource methods
     func cellForIndex(index: Int) -> LiquidFloatingCell
@@ -214,8 +196,45 @@ extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, L
         if index == 2 { self.shareToFacebook(posterSnapshot) }
         if index == 3 { self.shareToTwitter(posterSnapshot) }
     }
+    // MARK:- Liquid Button View Helper Methods
+    func addLiquidButton()
+    {
+        addLiquidButtonCells()
+        let frame = CGRect(
+            x: OConstants.Margin.bigLeft,
+            y: view.frame.height - OConstants.LiquidButton.height - OConstants.Margin.bigBottom,
+            width: OConstants.LiquidButton.width, height: OConstants.LiquidButton.height)
+        liquidButton = LiquidButtonViewUtils.createButton(
+            frame, style: .Up, color: UIColor.linkedInBlue(),
+            image: UIImage(named: "share")!, datasource: self, delegate: self)
+        liquidButton.alpha = 0.0
+        view.addSubview(liquidButton)
+    }
+    func addLiquidButtonCells()
+    {
+        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("share"))
+        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("insta"))
+        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("fb"))
+        liquidButtonCells.append(LiquidButtonViewUtils.cellFactory("twitter"))
+    }
+    func showLiquidButton(scrollView: UIScrollView) {
+        let contentOffSet = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let screenHeight = view.frame.height
+        let fadeInRange = CGFloat(150.0)
+        if contentOffSet < fadeInRange {
+            liquidButton.alpha = fmin(contentOffSet/fadeInRange, 1.0)
+            return
+        }
+        if contentOffSet + screenHeight > contentHeight - fadeInRange {
+            liquidButton.alpha = fmin((contentHeight - contentOffSet - screenHeight)/fadeInRange, 1.0)
+            return
+        }
+        liquidButton.alpha = 1.0
+    }
 }
 
+// MARK:- Scene show protocol
 extension OStoryContainerViewController: OSceneShowProtocol {
     func showScene(image: UIImage)
     {
@@ -233,5 +252,72 @@ extension OStoryContainerViewController: OSceneShowProtocol {
         scene!.kill(0.4, completion: {
             scene!.removeFromSuperview()
         })
+    }
+}
+
+// MARK:- Onboarding Dialog Methods
+extension OStoryContainerViewController {
+    func showOnboardDialog(element: Element)
+    {
+        var elementFrame: CGRect? = nil
+        var dialogFrame: CGRect!
+        switch element {
+        case .Circle:
+            elementFrame = highlightCircleFrame()
+            dialogFrame = onboardDialogFrame(elementFrame)
+            break
+        case .IndicatorBox:
+            elementFrame = highlightIndicatorFrame()
+            dialogFrame = onboardDialogFrame(nil)
+            break
+        default:
+            dialogFrame = onboardDialogFrame(nil)
+            break
+        }
+        let highlightView = HighlightView(frame: view.frame, backgroundSnapshot: view.takeSnapshot(),
+                                          highlightElement: element, highlightElementFrame: elementFrame)
+        let dialogView = OnboardDialog(frame: dialogFrame)
+        highlightView.addSubview(dialogView)
+        highlightView.alpha = 0.0
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(OStoryContainerViewController.dismissOnboardDialog(_:)))
+        highlightView.addGestureRecognizer(tapGestureRecognizer)
+        highlightView.userInteractionEnabled = true
+        
+        view.addSubview(highlightView)
+        highlightView.bringToLife()
+    }
+    func dismissOnboardDialog(sender: UITapGestureRecognizer) {
+        let view = sender.view
+        view?.kill()
+    }
+    func highlightCircleFrame() -> CGRect
+    {
+        let indexPathOne = NSIndexPath(forRow: scenicParagraphIndicesInTableView[0], inSection: 0)
+        let yPosition = CGFloat(tableView.cellForRowAtIndexPath(indexPathOne)!.frame.origin.y)
+        let onboardCirclePosition = CGPointMake(4.0, yPosition)
+        let circleFrame = CGRect(x: onboardCirclePosition.x, y: onboardCirclePosition.y, width: 32.0, height: 32.0)
+        return circleFrame
+    }
+    func highlightIndicatorFrame() -> CGRect
+    {
+        let width = CGFloat(75.0)
+        let height = CGFloat(75.0)
+        let x = view.frame.width*0.5 - width*0.5
+        let y = view.frame.height*0.5 - height - 75.0 - OConstants.Margin.bigBottom
+        let elementFrame = CGRect(x: x, y: y, width: width, height: height)
+        return elementFrame
+    }
+    func onboardDialogFrame(circleFrame: CGRect? = nil) -> CGRect
+    {
+        let width = CGFloat(200.0)
+        let height = CGFloat(150.0)
+        let x = view.frame.width*0.5 - width*0.5
+        let y = view.frame.height*0.5 - height*0.5
+        var dialogFrame = CGRect(x: x, y: y, width: width, height: height)
+        if let circleFrame = circleFrame {
+            dialogFrame = CGRect(x: circleFrame.origin.x + circleFrame.width + OConstants.Margin.bigLeft, y: circleFrame.origin.y, width: 200, height: 150)
+        }
+        return dialogFrame
     }
 }

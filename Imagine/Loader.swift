@@ -88,7 +88,7 @@ class Loader: UIView {
     private func addBackgroundView() {
         let blackView = UIView(frame: CGRect(
             x: 0,y: 0, width: self.width, height: self.height))
-        blackView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.65)
+        blackView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.85)
         blackView.roundCorners([.AllCorners], radius: self.height * 0.4)
         self.addSubview(blackView)
     }

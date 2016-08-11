@@ -12,28 +12,58 @@ class OStoryGridViewController: UIViewController {
     var selectedWindow: UIView!
     var selectedWindowFrame: CGRect!
     var interactor = PercentInteractor()
+    var dialogView: Strip!
+    var dialogText: UILabel!
+    
     // MARK:- View Lifecycle + View Base Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        showOnboardDialog()
+        showStrip()
     }
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let dialog = dialogView {
+            dialog.kill(0.4, completion: {
+                dialog.removeFromSuperview()
+            })
+        }
+        if let dialog = dialogText {
+            dialog.kill(0.4, completion: {
+                dialog.removeFromSuperview()
+            })
+        }
+    }
     
-    func showOnboardDialog()
+    func showStrip()
     {
-        let dialogWidth = 160.0
+        let dialogWidth = 100.0
         let dialogHeight = 32.0
         let dialogX = Double(view.frame.width * 0.5)
-        let dialogY = Double(view.frame.height) - dialogHeight - 32.0
-        let frame = CGRect(x: dialogX, y: dialogY, width: dialogWidth, height: dialogHeight)
-        let shortStoryDialog = OnboardDialog(frame: frame)
+        let dialogY = 20.0
+        let initialFrame = CGRect(x: dialogX, y: dialogY, width: dialogWidth, height: dialogHeight)
+        let finalFrame = CGRect(x: dialogX - dialogWidth * 0.5, y: dialogY, width: dialogWidth, height: dialogHeight)
+        let shortStoryDialog = Strip(frame: initialFrame, color: UIColor.linkedInBlue().CGColor)
         view.addSubview(shortStoryDialog)
-        shortStoryDialog.expand("SHORT STORIES")
+        shortStoryDialog.expand({
+            let dialogLabel = UILabel(frame: finalFrame)
+            dialogLabel.text = "Short Stories"
+            dialogLabel.textAlignment = .Center
+            dialogLabel.textColor = UIColor.whiteColor()
+            dialogLabel.font = UIFont.storyContentFont(16.0)
+            dialogLabel.minimumScaleFactor = 0.85
+            dialogLabel.adjustsFontSizeToFitWidth = true
+            dialogLabel.alpha = 0.0
+            self.view.addSubview(dialogLabel)
+            dialogLabel.bringToLife()
+            self.dialogText = dialogLabel
+        })
+        dialogView = shortStoryDialog
     }
 }
 
