@@ -141,7 +141,8 @@ class OLoginViewController: UIViewController {
     {
         UIView.animateWithDuration(3, animations: {
             self.appName.alpha = 1.0
-            self.appNameBackground.alpha = 1
+            self.appNameBackground.alpha = 0.65
+            self.signUpButton.alpha = 1.0
         }) { (Bool) in
             self.appName.hidden = false
         }

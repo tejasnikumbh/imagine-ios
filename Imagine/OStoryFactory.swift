@@ -197,7 +197,17 @@ struct OStoryFactory {
                         
                         "David knew about the story. After giving it a little thought, he decided not to narrate it. He wanted the Old Hag to narrate the story. The Old Hag was the owner of the 'Flipping Coin Store', and the coin belonged to him. His style of narration was great, David thought. “Let’s ask the Old Hag”, exclaimed David, after a pause. Off they went inside the store. A fiery purple colored ‘Flipping Coin Store’ decorated the entrance.",
                         
-                        "“What brings you here today?”, asked the Old Hag, in a husky and old voice. “I hope you’re not here just for the story, young lad”, he said. “We’ll take 2 flip tanks”, David said. “Oh nice”, said the Old Hag. “But I’d also like you to tell this little chap here the story of the Flipping Coin.”, said David. “Oh why not! That would be 2 doniese”. David didn't mind." ,
+                        "“What brings you here today?”, asked the Old Hag, in a husky and old voice.",
+                        
+                        "“I hope you’re not here just for the story, young lad”, he said.",
+                       
+                        "“We’ll take 2 flip tanks”, David said.",
+                        
+                        "“Oh nice”, said the Old Hag.",
+                        
+                        "“But I’d also like you to tell this little chap here the story of the Flipping Coin.”, said David.",
+                        
+                        "“Oh why not! That would be 2 doniese”. David didn't mind." ,
                         
                         "“So listen to this young lad. There was once a woman, enchanted with powers only the wise ones had. She was bestowed with the finest of honors and magical powers. She could turn Kings into Paupers and Paupers into Kings. But she was vain. Her vanity made her commit a folly.”",
                         
