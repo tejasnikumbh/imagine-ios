@@ -12,6 +12,7 @@ import AVFoundation
 
 class OLoginViewController: UIViewController {
     @IBOutlet weak var appName: UILabel!
+    @IBOutlet weak var appNameSublabel: UILabel!
     @IBOutlet weak var appNameBackground: UIView!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var emailTextField: OPaddedTextField!
@@ -65,6 +66,10 @@ class OLoginViewController: UIViewController {
         //self.view.addSubview(g)
         //self.view.bringSubviewToFront(g)
         //self.view.setNeedsDisplay()
+        self.appName.alpha = 0.0
+        self.appNameBackground.alpha = 0.0
+        self.signUpButton.alpha = 0.0
+        self.appNameSublabel.alpha = 0.0
     }
     
     func setupStoryGridModel() {
@@ -143,6 +148,7 @@ class OLoginViewController: UIViewController {
             self.appName.alpha = 1.0
             self.appNameBackground.alpha = 0.65
             self.signUpButton.alpha = 1.0
+            self.appNameSublabel.alpha = 1.0
         }) { (Bool) in
             self.appName.hidden = false
         }

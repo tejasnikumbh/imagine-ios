@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wine_dine" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-C7-aeX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="billy_bravado" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-C7-aeX">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RPK-w1-cU9" customClass="OPaddedTextField" customModule="Imagine" customModuleProvider="target">
@@ -60,7 +60,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSX-Ou-HY0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSX-Ou-HY0">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.45098039220000002" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -92,12 +92,12 @@
                                     <action selector="signUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rR6-t8-nLG"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-cP-f2y" userLabel="AppNameBack">
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-cP-f2y" userLabel="AppNameBack">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="151" id="1wM-EG-Q19">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="151"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="176"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
@@ -111,10 +111,16 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imagine " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sHp-f0-aT0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imagine " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sHp-f0-aT0">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="72"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- for Stories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0H-X6-czp">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -130,7 +136,13 @@
                             <constraint firstAttribute="trailing" secondItem="OQw-cP-f2y" secondAttribute="trailing" id="Kel-si-uxD"/>
                             <constraint firstItem="kSX-Ou-HY0" firstAttribute="top" secondItem="RPK-w1-cU9" secondAttribute="bottom" constant="15" id="Uak-Cz-Zrk"/>
                             <constraint firstItem="OQw-cP-f2y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="V9B-YB-J1H"/>
+                            <constraint firstItem="w0H-X6-czp" firstAttribute="leading" secondItem="sHp-f0-aT0" secondAttribute="leading" id="aWX-l3-ALA">
+                                <variation key="heightClass=regular-widthClass=compact" constant="160"/>
+                            </constraint>
                             <constraint firstItem="sHp-f0-aT0" firstAttribute="centerY" secondItem="OQw-cP-f2y" secondAttribute="centerY" id="hkF-Wg-lU7"/>
+                            <constraint firstItem="w0H-X6-czp" firstAttribute="top" secondItem="sHp-f0-aT0" secondAttribute="bottom" constant="213" id="imH-Od-BY3">
+                                <variation key="heightClass=regular-widthClass=compact" constant="4"/>
+                            </constraint>
                             <constraint firstItem="FUM-C7-aeX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="np0-xc-8Hl">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
                             </constraint>
@@ -143,6 +155,7 @@
                                 <exclude reference="kSX-Ou-HY0"/>
                                 <exclude reference="OQw-cP-f2y"/>
                                 <exclude reference="sHp-f0-aT0"/>
+                                <exclude reference="w0H-X6-czp"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4eN-Vo-9CT"/>
@@ -153,6 +166,8 @@
                                 <exclude reference="V9B-YB-J1H"/>
                                 <exclude reference="7y9-17-5wp"/>
                                 <exclude reference="hkF-Wg-lU7"/>
+                                <exclude reference="aWX-l3-ALA"/>
+                                <exclude reference="imH-Od-BY3"/>
                                 <exclude reference="tzF-x6-sX0"/>
                                 <exclude reference="AaG-jf-xok"/>
                                 <exclude reference="Uak-Cz-Zrk"/>
@@ -181,6 +196,7 @@
                             <mask key="subviews">
                                 <include reference="OQw-cP-f2y"/>
                                 <include reference="sHp-f0-aT0"/>
+                                <include reference="w0H-X6-czp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="JEl-V6-Mmq"/>
@@ -188,12 +204,15 @@
                                 <include reference="V9B-YB-J1H"/>
                                 <include reference="7y9-17-5wp"/>
                                 <include reference="hkF-Wg-lU7"/>
+                                <include reference="aWX-l3-ALA"/>
+                                <include reference="imH-Od-BY3"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="appName" destination="sHp-f0-aT0" id="dFp-Vv-4ep"/>
                         <outlet property="appNameBackground" destination="OQw-cP-f2y" id="TWb-8q-xqU"/>
+                        <outlet property="appNameSublabel" destination="w0H-X6-czp" id="PzW-tN-zhI"/>
                         <outlet property="emailTextField" destination="RPK-w1-cU9" id="D9i-Cv-cFS"/>
                         <outlet property="signUpButton" destination="kSX-Ou-HY0" id="KQ5-NF-paD"/>
                         <outlet property="signUpButtonBottomConstraint" destination="E4r-OU-jvb" id="8cW-6u-W9W"/>
@@ -552,6 +571,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="wine_dine" width="540" height="540"/>
+        <image name="billy_bravado" width="540" height="540"/>
     </resources>
 </document>
