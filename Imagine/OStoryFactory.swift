@@ -23,7 +23,7 @@ struct OStoryFactory {
                 "id": "0",
                 "title": "Time Hop",
                 "images": ["time_hop"],
-                    "paragraphs": ["Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’. The clock with it’s shiny glass surface showed a weird time. Or so it felt. The hands were aligned perfectly together, as if hinting towards something singular. Was the clock trying to say something? Inanimate things don’t speak. Jose was well aware of this. But then again, Jose was a hopeless creative. He always liked imagining things.",
+                    "paragraphs": ["Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’. The clock with it’s shiny glass surface showed a weird time. Or so it felt. The hands were aligned perfectly together, as if hinting towards something peculiar. Was the clock trying to say something? Inanimate things don’t speak. Jose was well aware of this. But then again, Jose was a hopeless creative. He always liked imagining things.",
                         
                         "Off he went to make his morning cup of black coffee. It raised his metabolism, it would help him be slim. Jose knew exactly where the cup would be, it was washed and kept at exactly the place it should have been. It was almost as if Jose’s hand knew where to find it. “Routine, meh” Jose justified, though a weird part of his brain was spiking off yet again, trying to find hidden meaning in the uncanny perfectness of the organization of this process. It almost seemed as though it had been ages since he had tried something different.",
                         
@@ -31,26 +31,30 @@ struct OStoryFactory {
                         
                         "The day went by and Jose decided to work again. “The client would want this to be over in a week”, he reminded himself. He looked at the painting with an examining eye. Somehow he knew exactly what part he wanted painted today. He had a very clear picture of what it would look like when it was over. This was partly due to skill, partly due to his imagination. Jose was proud of himself. He finished with the day’s work and the part looked exactly as he had pictured it in his head. He was a genius at this. Or so he felt.",
                         
-                        "The night was close. Jose started looking at the starry night sky. He thanked God for blessing him with the mind that he had, with the skill that he had, and with the life that he had. The sky had a lot of secrets, he thought. “Oh how insignificant am I, sitting on the terrace of this calm bungalow at the outskirts of the city, amidst nature, on a tiny little dot called earth”, he thought. Just then, out of the blue, he saw a shooting star. “These are very rare”, he thought. Jose was excited. “Let’s make a wish”, he said to himself. Foolish as though it might sound to the rational mind, Jose thought magic exists.  “Oh lord”, he said, “Let all days be like this one. And let me be happy forever”, Jose said, as he wished nothing more in life. With a smile on his face, Jose went off to sleep.",
+                        "The night was close. Jose started looking at the starry night sky. He thanked God for blessing him with the mind that he had, with the skill that he had, and with the life that he had. The sky had a lot of secrets, he thought. “Oh how insignificant am I, sitting on the terrace of this calm bungalow at the outskirts of the city, amidst nature, on a tiny little dot called earth”, he thought. Just then, out of the blue, he saw a shooting star. “These are very rare”, he thought. Jose was excited. “Let’s make a wish”, he said to himself. Foolish as though it might sound, Jose thought magic exists.  “Oh lord, Let all days be like this one. And let me be happy forever”, Jose said, wishing nothing more in life. With a smile on his face, Jose went off to sleep.",
                         
-                        "Jose woke up the next morning. Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…"],
+                        "Jose woke up the next morning. Something was off today. The sheets were all messed up, but somehow they felt very ‘in place’…",
+                    
+                        "END"],
                 "map": ["1": "0"],
                 ],
                 [
                     "id": "1",
                     "title": "Fortified Remains",
                     "images": ["agauda"],
-                    "paragraphs": ["The battle would go down in history as one of the most fierce ones on the costal lines. The Navy was huge, the ships sailing with all their might. This would be the end, Romaltus thought. He’d defended the fort for a long time. His lineage resided here. He wasn’t going to let go so easily. They would fight with all their might. He knew it. His army of guards, although small, was as fierce as the mightiest men.",
+                    "paragraphs": ["The battle would go down in history as one of the most fierce ones on the costal lines. The Navy was huge, the ships sailing with all their might. This would be the end, Romaltus thought. He’d defended the fort for a long time. His lineage resided here. He wasn’t going to let go so easily. They would fight with all their might. He knew it. His army of guards, although small, was a fierce force to reckong with.",
                         
                         "The big tower overlooked the sea like a guardian. It could protect them against the might of the Navy today. Romaltus drew the Malin sigil on a little brick at the bottom of the tower. He placed it inside a carefully crafted socket, so as to secure it tightly at the foot of the tower. A secret. A superstition. As long as the brick stays hidden with the sigil on it, the clan lives. Or so the Malins thought.",
                         
                         "Everyone had their hearts pounding heavily. They would fight hard tonight. They were here to make history. Romaltus had a strategy in place should the army invade. They would lure them inside the fort into the open grounds. Romaltus’ army would stand on the high platform to kill them with spears. This should dampen their spirits, he thought.",
                         
-                        "The first of their ships hit the shores with a loud thud. Out came hundreds of men, with the finest of armor and battle gear. They were thirsty for blood. One could see it in their eyes and war cries. Romaltus gathered his finest men and secured the gates. The strongest of gates couldn’t hold the men with their huge Battering Rams. The gate was broken wide open. The army gushed inside through the narrow entrance.",
+                        "The first of their ships hit the shores with a loud 'GUSH'. Out came hundreds of men, with the finest of armor and battle gear. They were thirsty for blood. One could see it in their eyes. Romaltus gathered his finest men and secured the gates. The strongest of gates couldn’t hold the men with their huge Battering Rams. The gate was broken wide open. The army gushed inside through the narrow entrance, cutting through it like water.",
                         
                         "The plan was to get to the high platform now. May be this could work, Romaltus thought. “Oh Lord, save us all tonight. We shall serve you with all our might”, he prayed. God had other plans for the Malins. The Navy crushed the Malins, and took the fort. Romaltus died with no tears in his eyes. He was the bravest of the Malins. But there was only so much he could do.",
                         
-                        "It almost felt as if he’d woken up from a dream. Ron quickly lifted his hand off the brick. The Malin sigil lit up. The Malins were right. The clan had lived. The brick had a story to tell."],
+                        "It almost felt as if he’d woken up from a dream. Ron quickly lifted his hand off the brick. The Malin sigil lit up. The Malins were right. The clan had lived. The brick had a story to tell.",
+                        
+                        "END"],
                     "map": ["1": "0"],
                 ],
                 [
@@ -63,14 +67,16 @@ struct OStoryFactory {
                         
                         "Freddy tried to define magic. In his mind, calling advanced science magic was an insult to magic. Science is derived from a logical set of rules. Magic is something the mind cannot comprehend. Something so weird that it should not exist in the rational world. What if there was a giant black hole that opened up right now, right there, providing him a portal to another universe? A place where the laws would be different, another big vast world to explore altogether.",
                         
-                        "Freddy looked up to find his way again, fearing he had the wrong directions, half wondering why he’d not reached the supermarket yet. And there it was, a big Black Hole with a starlit inside, a portal to another world. Freddy had his mouth wide open."],
-                    "map": ["0": "0", "1": "0", "2":"0", "3": "0"],
+                        "Freddy looked up to find his way again, fearing he had the wrong directions, half wondering why he’d not reached the supermarket yet. And there it was, a big Black Hole with a starlit inside, a portal to another world. Freddy had his mouth wide open.",
+                        
+                        "END"],
+                    "map": ["3": "0"],
                 ],
                 [
                     "id": "3",
                     "title": "Billy's Bravado",
                     "images": ["billy_bravado"],
-                    "paragraphs": ["Once upon a time, there was this flock of pearl white, fluffy and healthy sheep. These sheep had the best of pastures to graze on, and hope smiled upon them with the widest of grins. The sheep had nothing to fear, were all well raised and well mannered. Their days were often spent meandering in the lawns and laying out in the sun, taking in his majesty’s offering while being totally relaxed and carefree.",
+                    "paragraphs": ["Once upon a time, there was this flock of pearl white, fluffy and healthy sheep. These sheep had the best of pastures to graze on, and hope smiled upon them with the widest of grins. The sheep had nothing to fear, and were all well raised and well mannered. Their days were often spent meandering in the lawns and laying out in the sun, taking in his majesty’s offering while being totally relaxed and carefree.",
                         
                         "The herd had it’s own problems though. These problems came in the form of a few eccentric thinkers. One of these was our protagonist, Billy. Billy was supposed to be a genius, an ‘out of the box’ thinker, but people considered him borderline paranoid.",
                         
@@ -84,7 +90,9 @@ struct OStoryFactory {
         
                         "Billy packed his bags and decided to leave. That fateful night, as he was leaving, he saw his vision turn into reality. Each of the sheep in his flock was being lured into what would be a slaughterhouse. It wasn’t a dream this time, it was real. Billy was right, the sheep would be slayed today. “Nice time to leave” , he thought to himself. “Only if they would’ve listened to me”, he said. Billy could not see the sight of his friends being sheared and slaughtered. He was sweating profusely through his well covered skin. Fearing for his dear life, Billy fled the scene. His Bravado and paranoia had served him well.",
         
-                        "As he entered the woods he began rejoicing in his decision making prowess, his genius. He was finally free from the too-good-to-be-true pastures. He was free,or so he thought. All this running had made Billy hungry. He figured he’d have a snack. He unpacked some grass salad he’d bought, and began having it. Suddenly, he heard something behind him. He turned back. It was the wild woods now, not the cared for pastures. Billy was horrified yet again as he stared into the eyes of death, a dire wolf now waiting for it’s fluffy white dinner"],
+                        "As he entered the woods he began rejoicing in his decision making prowess, his genius. He was finally free from the too-good-to-be-true pastures. He was free,or so he thought. All this running had made Billy hungry. He figured he’d have a snack. He unpacked some grass salad he’d bought, and began having it. Suddenly, he heard something behind him. He turned back. It was the wild woods now, not the cared for pastures. Billy was horrified yet again as he stared into the eyes of death, a dire wolf now waiting for it’s fluffy white dinner",
+                        
+                        "END"],
                     "map": ["0": "0"],
                 ],
         
@@ -102,13 +110,15 @@ struct OStoryFactory {
                         
                         "But this story is not about the contract. Raymond had a mortgage to pay, and being out of a job didn’t help. He’d decided to move into his parent’s house for some time, since it was time for him to save up a bit.",
                         
-                        "To his disappointment , however, he realized that he wasn’t wanted there. His girlfriend dumped him, his friends started hanging out less with him. He was beginning to feel alone. He somehow felt that all the relationships he’d formed through his life were very artificial.",
+                        "To his disappointment , however, he realized that he wasn’t very welcome. His girlfriend dumped him. His friends started hanging out less with him. He was beginning to feel alone. He somehow felt that all the relationships he’d formed through all these years were very artificial.",
                         
                         "He left his parent’s house and began living in his car. He would go to the nearby gym to shower and brush. This was awkward and new, but it was better than the other options, Raymond thought.",
                         
-                        "As he was brushing his teeth, looking at the mirror, Raymond thought, why did all of this happen? What happened to all those relationships I’d formed over the years? Why aren’t they worked out? Why is it that when he needs them the most, all the important people in his life have backed out of helping him? He was trying to recollect ONE person who would help him in this time of need. Someone who was a guardian angel. Someone who thought he mattered and was important enough to be taken care of.",
+                        "As he was brushing his teeth, looking at the mirror, Raymond thought, why did all of this happen? What happened to all those relationships I’d formed over the years? Why aren’t they working out? Why is it that when he needs them the most, all the important people in his life have backed out of helping him? He was trying to remember ONE person who would help him in this time of need. Someone who was a guardian angel. Someone who thought he mattered and was important enough to be taken care of.",
                         
-                        "Just then, he realized something important. He stared deep into the mirror, and smiled with a wide grin on his face. The Man in the Mirror grinned back. He’d found his guardian angel."],
+                        "Just then, he realized something important. He stared deep into the mirror. Raymond grinned at the Man in the mirror. The Man grinned back. He’d found his guardian angel.",
+                        
+                        "END"],
                     "map": ["1": "0"],
                 ],
                 [
@@ -123,11 +133,13 @@ struct OStoryFactory {
                     
                         "“Well, shit happens. She’s not the only one”, said Jimmy. The lane was pretty empty today. The pathway was clear, and it felt good to be lonely in the streets somehow. Jimmy began feeling good about himself. He began enjoying the whistling sound the winds produced.",
                     
-                        "He saw a can of beer straight up ahead. Jimmy gave it a small nudge. Out came a beetle. Or some insect that looked like a beetle. “Look at it”, Jimmy said. “Do you think it is happy? It was living in a fucking can. Do you think these things matter to it at all?  Sometime I wonder, if animals have better lives than us. Less things to think about, less worries.”",
+                        "He saw a can of beer straight up ahead. Jimmy gave it a small nudge. Out came a beetle. Or some insect that looked like a beetle. “Look at it”, Jimmy said. “Do you think it is happy? It was living in a fucking can. Do you think these things matter to it at all?  Sometimes I wonder, if animals have better lives than us. Less things to think about, less worries.”",
                     
-                        "“True”, said Ron. But I’m not a beetle and I really liked her. “Fuck it Jimmy , you won’t understand. ” Ron felt like Jimmy was not able to understand him at all. He was not at all consoling and Ron thought Jimmy was in a way happy about what had happened to him.",
+                        "“True”, said Ron. But I’m not a beetle and I really liked her. “Fuck it Jimmy , you won’t understand. ” Ron felt like Jimmy was not able to understand him at all. He was not at all consoling and Ron thought Jimmy was happy about what had happened to him.",
                     
-                        "“Fuck you, Jimmy”. Ron said. An older woman passed by. “Who are you talking to, young man?”, she said."],
+                        "“Fuck you, Jimmy”. Ron said. An older woman passed by. “Who are you talking to, young man?”, she said.",
+                        
+                        "END"],
                     "map": ["1": "0"],
                 ],
                 [
@@ -154,10 +166,9 @@ struct OStoryFactory {
                         
                         "...",
                         
-                        "Jan owned a yacht now, he’d named it Grin. The European markets had a new leader now, and legend was that it was formed out of the gains of Judgement Day. Jan’s nameplate said - “Director of Strategy, Blackwater.”"
-
+                        "Jan owned a yacht now, he’d named it Grin. The European markets had a new leader now, and legend was that it was formed out of the gains of Judgement Day. Jan’s nameplate said - “Director of Strategy, Blackwater",
                         
-                    ],
+                        "END"],
 
                     "map": ["1": "0"],
                 ],
@@ -171,36 +182,40 @@ struct OStoryFactory {
                         
                         "One fateful night, as they were squabbling yet again, she got off the bed, and stormed off. The bedroom door shut with a loud ‘THUD’. David pondered what he’d done this time. This wasn’t needed, he thought. He convinced himself to get up and convince her this time. He wanted to make it all right.",
                         
-                        "He got off the bed, and as he began walking towards the door. Suddenly, David heard a whimpering noise coming out of the space underneath the bed. He thought it was some sort of an animal. As he picked up the sheet to look beneath, he was horrified. There she was, his wife, scared as a mouse. He could hear her squealing… “W-Wh-Who was she?”"],
+                        "He got off the bed, and as he began walking towards the door. Suddenly, David heard a whimpering noise coming out of the space underneath the bed. He thought it was some sort of an animal. As he picked up the sheet to look beneath, he was horrified. There she was, his wife, scared as a mouse. He could hear her squealing… “W-Wh-Who was she?”",
+                        
+                        "END"],
                     "map": ["3": "0"],
                 ],
                 [
                     "id": "8",
                     "title": "Purple Street",
                     "images": ["purple"],
-                    "paragraphs": ["Jason was walking along the Purple Street. It was his first visit here. And his father was keen on making him understand the nuances of their universe. Every shop in Purple Street had a monument attached to it. Each shop had a story to tell. Suddenly, 11 year old Jason saw a flipping coin.",
+                    "paragraphs": ["Jason was walking along Purple Street. It was his first visit there. His father, David, was keen on making him understand the nuances of their universe. Every shop in Purple Street had a monument attached to it. Each shop had a story to tell. Suddenly, 11 year old Jason saw a flipping coin. Jason was awed by the fact that the coin was floating in mid air, spinning around it's axis, without any support.",
                         
-                        "The coin was floating in mid air, flipping around it’s diameter, covered by a glass. “Why and how is that coin floating in mid air?”, Jason asked his dad. Dad was eager to explain. David never had a supporting father, and was left to explore the world on his own. Although this might have been a good thing, David was inclined to show his son all the wonders the world beheld.",
+                        "“Why and how is that coin floating in mid air?”, Jason asked his dad. Dad was eager to explain. David never had a supporting father, and was left to explore the world on his own. Although this might have been a good thing, David was inclined to show his son all the wonders the world beheld.",
                         
-                        "David knew about the story, but he wanted the Old Hag to narrate the story. His style of narration was great, David thought. “Let’s ask the Old Hag”, exclaimed David, after a pause. Off they went inside the store. A fiery purple colored ‘Old Hag Store’ title decorated the entrance.",
+                        "David knew about the story. After giving it a little thought, he decided not to narrate it. He wanted the Old Hag to narrate the story. The Old Hag was the owner of the 'Flipping Coin Store', and the coin belonged to him. His style of narration was great, David thought. “Let’s ask the Old Hag”, exclaimed David, after a pause. Off they went inside the store. A fiery purple colored ‘Flipping Coin Store’ decorated the entrance.",
                         
-                        "“What brings you here today?”, asked the Old Hag, in a husky voice. “I hope you’re not here just for the story, young lad”, he said. “We’ll take 2 flip tanks”, David said. “Oh nice”, said the Old Hag. “ But I’d also like you to tell this little guy here the story of the Flipping Coin. You can charge us extra for that.”, said David. “Oh don’t worry it’s for free. At least until people stop buying from my store.”, he said.",
+                        "“What brings you here today?”, asked the Old Hag, in a husky and old voice. “I hope you’re not here just for the story, young lad”, he said. “We’ll take 2 flip tanks”, David said. “Oh nice”, said the Old Hag. “But I’d also like you to tell this little chap here the story of the Flipping Coin.”, said David. “Oh why not! That would be 2 doniese”. David didn't mind." ,
                         
-                        "“So listen to this young lad. There was once a woman, enchanted with powers only the wise ones had. She was bestowed with the finest of honors and held the highest of regards. But alas, she made a folly.”",
+                        "“So listen to this young lad. There was once a woman, enchanted with powers only the wise ones had. She was bestowed with the finest of honors and magical powers. She could turn Kings into Paupers and Paupers into Kings. But she was vain. Her vanity made her commit a folly.”",
                         
                         "“And what was that?”, asked Jason, eagerly awaiting a response.",
                         
-                        "“Well she had a coin. She would flip it every time she wanted a correct answer to something. And…”",
+                        "“Well, of the many magical assets she had, there was this coin. She would flip it every time she wanted a YES or NO answer to something. And…”",
                         
                         "“And…?”",
                         
-                        "“And one day, someone challenged her to answer a very very deep question. She, being as vain as she was, agreed without listening to the question. The coin was tossed in mid air.”",
+                        "“And one day, someone challenged her to answer a very very deep question. The challenger said she couldn't do it, even with all her magical powers. She, being as vain as she was, agreed without listening to the question. The coin was tossed in mid air.”",
                         
                         "The suspense was now building up. Jason was eager to know what happened next.",
                         
-                        "“The questioner exclaimed, ‘What came first, the chicken or the egg?’”, said the Old Hag.",
+                        "“Now, the questioner was wise. He wanted to get rid of the woman. Or her vanity at the very least. The questioner, thus quickly asked, ‘What came first, the chicken or the egg?”, said the Old Hag.",
                         
-                        "“Ha ha ha ha”, Jason and David both had a good laugh. Off they went, to explore another shop, with the 2 flip tanks in their pockets. "],
+                        "“Ha ha ha ha”, Jason and David both had a good laugh. The Old Hag joined them. Off they went, to explore another shop, with 2 flip tanks in their pockets. ",
+                        
+                        "END"],
                     "map": ["0": "0"],
                 ]
                 

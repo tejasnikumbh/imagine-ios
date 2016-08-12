@@ -59,11 +59,30 @@ extension UIView {
         mask.path = path.CGPath
         self.layer.mask = mask
     }
-    func takeSnapshot() -> UIImage
+    func takeSnapshot(withWatermark: Bool) -> UIImage
     {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.mainScreen().scale)
         drawViewHierarchyInRect(self.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
+        if withWatermark {
+            let imageWithWatermark = UIImageView(image: image)
+            let watermarkBackground = UIView(frame: CGRect(x: 16, y: 16, width: 200, height: 40))
+            watermarkBackground.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.75)
+            watermarkBackground.layer.cornerRadius = 8.0
+            watermarkBackground.clipsToBounds = true
+            
+            let watermark = UILabel(frame: CGRect(x: 8, y: 4, width: 192, height: 32))
+            watermark.text = "Shared via Imagine App"
+            watermark.textAlignment = .Center
+            watermark.font = UIFont.storyContentFont(16.0)
+            watermark.adjustsFontSizeToFitWidth = true
+            watermark.minimumScaleFactor = 0.5
+            watermark.textColor = UIColor.whiteColor()
+            
+            watermarkBackground.addSubview(watermark)
+            imageWithWatermark.addSubview(watermarkBackground)
+            return imageWithWatermark.takeSnapshot(false)
+        }
         UIGraphicsEndImageContext()
         return image
     }

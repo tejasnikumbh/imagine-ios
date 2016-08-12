@@ -14,7 +14,6 @@ import LiquidFloatingActionButton
 class OStoryContainerViewController: UIViewController {
     var posterSnapshot: UIImage? = nil
     var story: OStory!
-    var scenicParagraphIndicesInTableView: [Int] = []
     var activate = false
     var interactor: PercentInteractor? = nil
     var liquidButton: LiquidFloatingActionButton!
@@ -34,7 +33,8 @@ class OStoryContainerViewController: UIViewController {
         if liquidButton == nil {
             addLiquidButton()
         }
-        if let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: scenicParagraphIndicesInTableView[0], inSection: 0)) {
+        let indexPath = getFirstScenicParagraphIndexPath()
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
             if OUser.shouldShowOnboardDialog {
                 let isVisible = cell.frame.origin.y < OConstants.Screen.height - OConstants.Margin.bigBottom
                 let element = isVisible ? Element.Circle : Element.IndicatorBox
@@ -95,7 +95,8 @@ extension OStoryContainerViewController: UITableViewDataSource, UITableViewDeleg
         var paraMargin = "          "
         var alignment = NSTextAlignment.Left
         if indexPath.row > 0 && indexPath.row < story.paras.count + 1 {
-            if story.paras[indexPath.row - 1] == "..." { // Three dots case
+            if story.paras[indexPath.row - 1] == "..." || story.paras[indexPath.row - 1] == "END"
+            { // Three dots case or END case
                 paraMargin = ""
                 alignment = .Center
             }
@@ -107,7 +108,6 @@ extension OStoryContainerViewController: UITableViewDataSource, UITableViewDeleg
                 cell.actionDelegate = self
                 //21E5 also good choice
                 paraMargin = "\u{21B3}        "
-                scenicParagraphIndicesInTableView.append(indexPath.row)
             }
         }
         // Populate the current cell [Make use of Cell Factory later]
@@ -135,7 +135,7 @@ extension OStoryContainerViewController: UITableViewDataSource, UITableViewDeleg
             let height = UILabel.heightForView(story.title, font: UIFont.storyTitleFont(48.0), width: cellWidth)
             return height + OConstants.Margin.bigTop * 2
         } else if indexPath.row == story.paras.count + 1 { // Last Index
-            return 48.0
+            return 32.0
         } else {
             let height = UILabel.heightForView(
                 "          " + story.paras[indexPath.row - 1],
@@ -219,17 +219,19 @@ extension OStoryContainerViewController: LiquidFloatingActionButtonDataSource, L
     }
     func showLiquidButton(scrollView: UIScrollView) {
         let contentOffSet = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let screenHeight = view.frame.height
-        let fadeInRange = CGFloat(150.0)
+        //let contentHeight = scrollView.contentSize.height
+        //let screenHeight = view.frame.height
+        let fadeInRange = CGFloat(100.0)
         if contentOffSet < fadeInRange {
             liquidButton.alpha = fmin(contentOffSet/fadeInRange, 1.0)
             return
         }
-        if contentOffSet + screenHeight > contentHeight - fadeInRange {
+        /*  Fading out the liquid button at the bottom */
+        /* 
+         if contentOffSet + screenHeight > contentHeight - fadeInRange {
             liquidButton.alpha = fmin((contentHeight - contentOffSet - screenHeight)/fadeInRange, 1.0)
             return
-        }
+        }*/
         liquidButton.alpha = 1.0
     }
 }
@@ -274,7 +276,7 @@ extension OStoryContainerViewController {
             dialogFrame = onboardDialogFrame(nil)
             break
         }
-        let highlightView = HighlightView(frame: view.frame, backgroundSnapshot: view.takeSnapshot(),
+        let highlightView = HighlightView(frame: view.frame, backgroundSnapshot: view.takeSnapshot(false),
                                           highlightElement: element, highlightElementFrame: elementFrame)
         let dialogView = OnboardDialog(frame: dialogFrame)
         highlightView.addSubview(dialogView)
@@ -293,8 +295,9 @@ extension OStoryContainerViewController {
     }
     func highlightCircleFrame() -> CGRect
     {
-        let indexPathOne = NSIndexPath(forRow: scenicParagraphIndicesInTableView[0], inSection: 0)
-        let yPosition = CGFloat(tableView.cellForRowAtIndexPath(indexPathOne)!.frame.origin.y)
+        let indexPath =
+            getFirstScenicParagraphIndexPath()
+        let yPosition = CGFloat(tableView.cellForRowAtIndexPath(indexPath)!.frame.origin.y)
         let onboardCirclePosition = CGPointMake(4.0, yPosition)
         let circleFrame = CGRect(x: onboardCirclePosition.x, y: onboardCirclePosition.y, width: 32.0, height: 32.0)
         return circleFrame
@@ -319,5 +322,14 @@ extension OStoryContainerViewController {
             dialogFrame = CGRect(x: circleFrame.origin.x + circleFrame.width + OConstants.Margin.bigLeft, y: circleFrame.origin.y, width: 200, height: 150)
         }
         return dialogFrame
+    }
+    func getFirstScenicParagraphIndexPath() -> NSIndexPath
+    {
+        var firstKey = ""
+        for (key, _) in story.paraImageMap {
+            firstKey = key
+        }
+        let paraKey = Int(firstKey)! + 1
+        return NSIndexPath(forRow: paraKey, inSection: 0)
     }
 }

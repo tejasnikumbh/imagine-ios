@@ -91,9 +91,24 @@
                                     <action selector="signUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rR6-t8-nLG"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-cP-f2y" userLabel="AppNameBack">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-cP-f2y" userLabel="AppNameBack" customClass="OCircleGradientView" customModule="Imagine" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="1wM-EG-Q19">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="231"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1wM-EG-Q19"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1wM-EG-Q19"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once Upon a Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sHp-f0-aT0">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -107,7 +122,9 @@
                             <constraint firstItem="FUM-C7-aeX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4eN-Vo-9CT"/>
                             <constraint firstAttribute="trailing" secondItem="FUM-C7-aeX" secondAttribute="trailing" id="6Ml-EH-xsQ"/>
                             <constraint firstItem="kSX-Ou-HY0" firstAttribute="centerX" secondItem="FUM-C7-aeX" secondAttribute="centerX" id="AaG-jf-xok"/>
-                            <constraint firstItem="OQw-cP-f2y" firstAttribute="top" secondItem="sHp-f0-aT0" secondAttribute="top" id="DkV-bt-pPl"/>
+                            <constraint firstItem="OQw-cP-f2y" firstAttribute="top" secondItem="sHp-f0-aT0" secondAttribute="top" id="DkV-bt-pPl">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-40"/>
+                            </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kSX-Ou-HY0" secondAttribute="bottom" constant="32" id="E4r-OU-jvb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FUM-C7-aeX" secondAttribute="bottom" id="Fw1-83-OSw"/>
                             <constraint firstAttribute="trailing" secondItem="OQw-cP-f2y" secondAttribute="trailing" id="Kel-si-uxD"/>
@@ -184,7 +201,7 @@
                                 <include reference="Kel-si-uxD"/>
                                 <include reference="V9B-YB-J1H"/>
                                 <exclude reference="XOO-aw-r1Z"/>
-                                <include reference="qZB-dg-vXe"/>
+                                <exclude reference="qZB-dg-vXe"/>
                             </mask>
                         </variation>
                     </view>

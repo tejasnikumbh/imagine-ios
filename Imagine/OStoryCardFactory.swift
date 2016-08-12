@@ -62,7 +62,7 @@ struct OStoryCardFactory {
             "image": "wine_dine",
             "title": "The Man in the Mirror",
             "author": "Tejas Nikumbh",
-            "summary": "        Raymond is confused as to why what happened, happened. He tries to reconsider his decisions in life as he makes a life changing discovery. A story of self realization of an important fact of life.",
+            "summary": "        Raymond is confused as to why what happened, happened. He tries to reconsider his decisions in life as he makes a life changing discovery.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"
@@ -72,7 +72,7 @@ struct OStoryCardFactory {
             "image": "rye_lane",
             "title": "Rye Lane",
             "author": "Old Woman",
-            "summary": "        Jimmy and Ron are the best of friends. On a chilly Winter afternoon, they decide to take a walk on their favorite part of the neighborhood, Rye Lane. Watch them live their ordinary life. Or not.",
+            "summary": "        Jimmy and Ron are the best of friends. On a chilly Winter afternoon, they decide to take a walk down their favorite part of the neighborhood, Rye Lane. Watch them live their ordinary life. Or not.",
             "genre": "Life",
             "sound_name": "rain",
             "sound_type": "mp3"

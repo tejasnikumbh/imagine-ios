@@ -28,6 +28,7 @@
 		CCB87C931D410DD200F4DE87 /* PercentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB87C921D410DD200F4DE87 /* PercentInteractor.swift */; };
 		CCCA14B31D5D1BBD00FE31A9 /* HighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA14B21D5D1BBD00FE31A9 /* HighlightView.swift */; };
 		CCCA14B51D5D2B6E00FE31A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCA14B41D5D2B6E00FE31A9 /* Assets.xcassets */; };
+		CCCA14BA1D5D623A00FE31A9 /* OCircleGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA14B91D5D623A00FE31A9 /* OCircleGradientView.swift */; };
 		CCCF761E1D594671009F4DBA /* OStoryContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF761D1D594671009F4DBA /* OStoryContentTableViewCell.swift */; };
 		CCCF76201D597902009F4DBA /* OStoryContentCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF761F1D597902009F4DBA /* OStoryContentCellFactory.swift */; };
 		CCDC96E31D3E204A0078CBA2 /* OStoryPosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */; };
@@ -94,6 +95,7 @@
 		CCB87C921D410DD200F4DE87 /* PercentInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentInteractor.swift; sourceTree = "<group>"; };
 		CCCA14B21D5D1BBD00FE31A9 /* HighlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightView.swift; sourceTree = "<group>"; };
 		CCCA14B41D5D2B6E00FE31A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCCA14B91D5D623A00FE31A9 /* OCircleGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCircleGradientView.swift; sourceTree = "<group>"; };
 		CCCF761D1D594671009F4DBA /* OStoryContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryContentTableViewCell.swift; sourceTree = "<group>"; };
 		CCCF761F1D597902009F4DBA /* OStoryContentCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryContentCellFactory.swift; sourceTree = "<group>"; };
 		CCDC96E21D3E204A0078CBA2 /* OStoryPosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OStoryPosterViewController.swift; sourceTree = "<group>"; };
@@ -180,21 +182,20 @@
 			isa = PBXGroup;
 			children = (
 				CCFEEA281D425B5300C5CC4D /* structs */,
-				CC5260401D3C56BF008C4F38 /* stores */,
 				CC5260471D3CDC21008C4F38 /* OStoryGrid.swift */,
 				CC19D4481D3CE03300BE3E2D /* OUser.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
 		};
-		CC5260401D3C56BF008C4F38 /* stores */ = {
+		CC5260401D3C56BF008C4F38 /* factories */ = {
 			isa = PBXGroup;
 			children = (
 				CC04282F1D4ED15F005457A8 /* OStoryFactory.swift */,
 				CC5260411D3C56F6008C4F38 /* OStoryCardFactory.swift */,
 				CCCF761F1D597902009F4DBA /* OStoryContentCellFactory.swift */,
 			);
-			name = stores;
+			name = factories;
 			sourceTree = "<group>";
 		};
 		CC59FEDB1D59B302006AC568 /* cells */ = {
@@ -337,6 +338,7 @@
 				CC71A0BD1D3FD09B00C85D48 /* protocols */,
 				CC19D44C1D3CF3E500BE3E2D /* constants */,
 				CCFCA5E31D3B4CC500050B81 /* utils */,
+				CC5260401D3C56BF008C4F38 /* factories */,
 				CC52603D1D3C565F008C4F38 /* models */,
 				CCFFE9B21D39D30900515A24 /* views */,
 				CCFFE9AE1D39CE6600515A24 /* controllers */,
@@ -394,6 +396,7 @@
 				CCE4CB7E1D53AB0A00FCC6BF /* liquidButton */,
 				CCFEEA361D47AE8C00C5CC4D /* loader */,
 				CCFFE9B31D39D33300515A24 /* OPaddedTextField.swift */,
+				CCCA14B91D5D623A00FE31A9 /* OCircleGradientView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				CCAD27141D5CBFAA00A3CC19 /* OnboardDialog.swift in Sources */,
 				CCFEEA271D425B3300C5CC4D /* OStory.swift in Sources */,
 				CCE4CB801D53AB3800FCC6BF /* LiquidButton.swift in Sources */,
+				CCCA14BA1D5D623A00FE31A9 /* OCircleGradientView.swift in Sources */,
 				CC5260461D3CA7A3008C4F38 /* OConstants.swift in Sources */,
 				CCFFE9B41D39D33300515A24 /* OPaddedTextField.swift in Sources */,
 				CCFEEA2B1D43646500C5CC4D /* OvalLayer.swift in Sources */,

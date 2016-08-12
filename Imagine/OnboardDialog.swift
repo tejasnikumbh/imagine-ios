@@ -11,7 +11,7 @@ import UIKit
 
 class OnboardDialog: UIView {
     var title: String = "Once Upon a Time"
-    var message: String = "Lookout for the \u{21B3} marks at the start of paragraphs. LONG PRESS on them to see scenes they describe"
+    var message: String = "Lookout for the \u{21B3} marked paragraphs. LONG PRESS on the PARAGRAPHS to see scenes they describe"
     var dialogWidth: CGFloat!
     var dialogHeight: CGFloat!
     var dialogCornerRadius: CGFloat!

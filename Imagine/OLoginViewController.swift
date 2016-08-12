@@ -38,6 +38,7 @@ class OLoginViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        setupViews()
         setupStoryGridModel()
         setupGestureRecognizers()
         setupObservers()
@@ -55,6 +56,17 @@ class OLoginViewController: UIViewController {
         return .LightContent
     }
     // MARK:- Setup Methods
+    func setupViews()
+    {
+//        let gradient = OUtils.UI.gradient(self.appNameBackground.frame, topColor: UIColor.blackColor().CGColor, bottomColor: UIColor.clearColor().CGColor, opacity: 1.0)
+//        self.appNameBackground.layer.addSublayer(gradient)
+//        
+       // let g = OCircleGradientView()
+        //self.view.addSubview(g)
+        //self.view.bringSubviewToFront(g)
+        //self.view.setNeedsDisplay()
+    }
+    
     func setupStoryGridModel() {
         // Do work to fetch stories from server.
         // Preferably call a fetcher method on the OStoryGrid model
@@ -129,7 +141,7 @@ class OLoginViewController: UIViewController {
     {
         UIView.animateWithDuration(3, animations: {
             self.appName.alpha = 1.0
-            self.appNameBackground.alpha = 0.4
+            self.appNameBackground.alpha = 1
         }) { (Bool) in
             self.appName.hidden = false
         }

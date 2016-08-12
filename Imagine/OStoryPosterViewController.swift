@@ -45,48 +45,62 @@ class OStoryPosterViewController: UIViewController {
         return .LightContent
     }
     
-    func slideInSummaryFromBottom() {
+    func addPanGesture() {
+        let pan = UIPanGestureRecognizer(
+            target: self, action: #selector(OStoryPosterViewController.panGesture(_:)))
+        self.view.addGestureRecognizer(pan)
+        self.view.userInteractionEnabled = true
+    }
+}
+
+// MARK: - View Utils 
+extension OStoryPosterViewController {
+    func startAnimatingLoader()
+    {
+        let ovalLoader = Loader()
+        ovalLoader.alpha = 0.0
+        ovalLoader.frame = CGRect(
+            x: CGRectGetMidX(self.view.frame) - ovalLoader.width * 0.5,
+            y: CGRectGetMidY(self.view.frame) * 0.75 - ovalLoader.height * 0.5,
+            width: ovalLoader.width ,
+            height: ovalLoader.height)
+        self.view.addSubview(ovalLoader)
+        ovalLoader.bringToLife(0.3)
+        ovalLoader.startAnimating()
+        self.loader = ovalLoader
+    }
+    func slideInSummaryFromBottom()
+    {
         // Creating the summary label
         summaryLabel = createSummaryLabel()
         view.addSubview(summaryLabel)
         // Animating Summary label
         UIView.animateWithDuration(
-        0.4, animations: {
-            self.summaryLabel.frame.origin.y -=
-                OConstants.Screen.height * OConstants.Window.Scaling.Summary.height
-            self.window.storyTitle.frame.origin.y -=
-                OConstants.Screen.height * OConstants.Window.Scaling.Title.slideUpOnCardExpand
-            self.window.storyAuthor.frame.origin.y -=
-                OConstants.Screen.height * OConstants.Window.Scaling.Author.slideUpOnCardExpand
-        }, completion: { _ in
-            self.summaryVisible = true
-            // Start the loader here
-            let ovalLoader = Loader()
-            ovalLoader.alpha = 0.0
-            ovalLoader.frame = CGRect(
-                x: CGRectGetMidX(self.view.frame) - ovalLoader.width * 0.5,
-                y: CGRectGetMidY(self.view.frame) * 0.75 - ovalLoader.height * 0.5,
-                width: ovalLoader.width ,
-                height: ovalLoader.height)
-            self.view.addSubview(ovalLoader)
-            
-            ovalLoader.bringToLife(0.3)
-            ovalLoader.startAnimating()
-            self.loader = ovalLoader
-            OStoryFactory.storyWithId(self.card.storyId, completion: {
-                // Stop loader here in completion block
-                NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,
-                    selector: #selector(OStoryPosterViewController.storyFetched),
-                    userInfo: nil, repeats: false)
-                // Also ask to make the pull up button visible
-                // Store the story somewhere [after it was fetched from server]
-                self.story = OStoryFactory.fetchStory(self.card.storyId, completion: {
-                    // Nil right now, but should contain error handling
+            0.4, animations: {
+                self.summaryLabel.frame.origin.y -=
+                    OConstants.Screen.height * OConstants.Window.Scaling.Summary.height
+                self.window.storyTitle.frame.origin.y -=
+                    OConstants.Screen.height * OConstants.Window.Scaling.Title.slideUpOnCardExpand
+                self.window.storyAuthor.frame.origin.y -=
+                    OConstants.Screen.height * OConstants.Window.Scaling.Author.slideUpOnCardExpand
+            }, completion: { _ in
+                self.summaryVisible = true
+                //self.startAnimatingLoader()
+                OStoryFactory.storyWithId(self.card.storyId, completion: {
+                    // Stop loader here in completion block
+                    NSTimer.scheduledTimerWithTimeInterval(0.0, target: self,
+                        selector: #selector(OStoryPosterViewController.storyFetched),
+                        userInfo: nil, repeats: false)
+                    // Also ask to make the pull up button visible
+                    // Store the story somewhere [after it was fetched from server]
+                    self.story = OStoryFactory.fetchStory(self.card.storyId, completion: {
+                        // Nil right now, but should contain error handling
+                    })
                 })
-            })
         })
     }
-    func createSummaryLabel() -> UILabel {
+    func createSummaryLabel() -> UILabel
+    {
         let summaryLabel = UILabel(frame: CGRect(
             x: OConstants.Margin.bigLeft,
             y: view.frame.size.height,
@@ -103,8 +117,9 @@ class OStoryPosterViewController: UIViewController {
         summaryLabel.adjustsFontSizeToFitWidth = true
         return summaryLabel
     }
-    func storyFetched() {
-        loader.stopAnimating()
+    func storyFetched()
+    {
+        //loader.stopAnimating()
         view.userInteractionEnabled = true
         // Setup and pull up the read view
         pullUpView.roundCorners([.TopLeft, .TopRight], radius: 10)
@@ -113,9 +128,14 @@ class OStoryPosterViewController: UIViewController {
             self.view.layoutIfNeeded()
             }, completion:  { _ in
                 self.readEnabled = true
-            })
+        })
     }
-    func panGesture(sender: UIPanGestureRecognizer) {
+}
+
+// MARK: - Gesture Handlers
+extension OStoryPosterViewController {
+    func panGesture(sender: UIPanGestureRecognizer)
+    {
         let percentThresholdForPanDown:CGFloat = 0.25
         let percentThresholdForPanUp: CGFloat = 0.1
         // convert y-position to downward pull progress (percentage)
@@ -154,6 +174,10 @@ class OStoryPosterViewController: UIViewController {
                        progress: progress, percentThreshold: percentThreshold)
         return
     }
+}
+
+// MARK: - Interaction Methods
+extension OStoryPosterViewController {
     func runInteraction(
         state: UIGestureRecognizerState, interactor: PercentInteractor,
         pannedUp: Bool, progress: CGFloat, percentThreshold: CGFloat, completion: EmptyCompletionBlock? = nil)
@@ -167,7 +191,7 @@ class OStoryPosterViewController: UIViewController {
                 storyContainerViewController.story = story
                 storyContainerViewController.transitioningDelegate = self
                 storyContainerViewController.interactor = panUpInteractor
-                storyContainerViewController.posterSnapshot = view.takeSnapshot()
+                storyContainerViewController.posterSnapshot = view.takeSnapshot(true)
                 presentViewController(storyContainerViewController, animated: true, completion: nil)
             } else {
                 dismissViewControllerAnimated(true, completion: nil)
@@ -190,14 +214,9 @@ class OStoryPosterViewController: UIViewController {
             completion()
         }
     }
-    func addPanGesture() {
-        let pan = UIPanGestureRecognizer(
-            target: self, action: #selector(OStoryPosterViewController.panGesture(_:)))
-        self.view.addGestureRecognizer(pan)
-        self.view.userInteractionEnabled = true
-    }
 }
 
+// MARK: - View Controller Transition Delegate Methods
 extension OStoryPosterViewController: UIViewControllerTransitioningDelegate {
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
