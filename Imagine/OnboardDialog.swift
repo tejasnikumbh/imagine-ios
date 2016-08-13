@@ -10,7 +10,7 @@
 import UIKit
 
 class OnboardDialog: UIView {
-    var title: String = "Imagine"
+    var title: String = "Live Paragraphs"
     var message: String = "Lookout for the \u{21B3} marked paragraphs. LONG PRESS on the PARAGRAPHS to see scenes they describe"
     var dialogWidth: CGFloat!
     var dialogHeight: CGFloat!

@@ -35,6 +35,7 @@ class OStoryPosterViewController: UIViewController {
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
+        setupInitialStates()
         if !summaryVisible {
             self.view.userInteractionEnabled = false
             slideInSummaryFromBottom()
@@ -44,7 +45,11 @@ class OStoryPosterViewController: UIViewController {
     {
         return .LightContent
     }
-    
+    // This is because of the twice running interaction bug.
+    func setupInitialStates()
+    {
+        nextInteractor = nil
+    }
     func addPanGesture() {
         let pan = UIPanGestureRecognizer(
             target: self, action: #selector(OStoryPosterViewController.panGesture(_:)))
