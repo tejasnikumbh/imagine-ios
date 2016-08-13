@@ -59,13 +59,6 @@ class OLoginViewController: UIViewController {
     // MARK:- Setup Methods
     func setupViews()
     {
-//        let gradient = OUtils.UI.gradient(self.appNameBackground.frame, topColor: UIColor.blackColor().CGColor, bottomColor: UIColor.clearColor().CGColor, opacity: 1.0)
-//        self.appNameBackground.layer.addSublayer(gradient)
-//        
-       // let g = OCircleGradientView()
-        //self.view.addSubview(g)
-        //self.view.bringSubviewToFront(g)
-        //self.view.setNeedsDisplay()
         self.appName.alpha = 0.0
         self.appNameBackground.alpha = 0.0
         self.signUpButton.alpha = 0.0
@@ -144,7 +137,7 @@ class OLoginViewController: UIViewController {
     }*/
     func fadeInAppName()
     {
-        UIView.animateWithDuration(3, animations: {
+        UIView.animateWithDuration(1, animations: {
             self.appName.alpha = 1.0
             self.appNameBackground.alpha = 0.65
             self.signUpButton.alpha = 1.0

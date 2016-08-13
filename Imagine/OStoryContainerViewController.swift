@@ -33,14 +33,15 @@ class OStoryContainerViewController: UIViewController {
         if liquidButton == nil {
             addLiquidButton()
         }
-        let indexPath = getFirstScenicParagraphIndexPath()
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            if OUser.shouldShowOnboardDialog {
-                let isVisible = cell.frame.origin.y < OConstants.Screen.height - OConstants.Margin.bigBottom
-                let element = isVisible ? Element.Circle : Element.IndicatorBox
-                showOnboardDialog(element)
-                OUser.shouldShowOnboardDialog = false
-            }
+        guard let indexPath = getFirstScenicParagraphIndexPath() else { return }
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        var isVisible: Bool = false
+        if cell == nil { isVisible = false }
+        else { isVisible = cell!.frame.origin.y < OConstants.Screen.height - OConstants.Margin.bigBottom }
+        if OUser.shouldShowOnboardDialog {
+            let element = isVisible ? Element.Circle : Element.IndicatorBox
+            showOnboardDialog(element)
+            OUser.shouldShowOnboardDialog = false
         }
     }
     
@@ -297,7 +298,7 @@ extension OStoryContainerViewController {
     {
         let indexPath =
             getFirstScenicParagraphIndexPath()
-        let yPosition = CGFloat(tableView.cellForRowAtIndexPath(indexPath)!.frame.origin.y)
+        let yPosition = CGFloat(tableView.cellForRowAtIndexPath(indexPath!)!.frame.origin.y)
         let onboardCirclePosition = CGPointMake(4.0, yPosition)
         let circleFrame = CGRect(x: onboardCirclePosition.x, y: onboardCirclePosition.y, width: 32.0, height: 32.0)
         return circleFrame
@@ -323,12 +324,13 @@ extension OStoryContainerViewController {
         }
         return dialogFrame
     }
-    func getFirstScenicParagraphIndexPath() -> NSIndexPath
+    func getFirstScenicParagraphIndexPath() -> NSIndexPath?
     {
         var firstKey = ""
         for (key, _) in story.paraImageMap {
             firstKey = key
         }
+        guard firstKey != "" else { return nil }
         let paraKey = Int(firstKey)! + 1
         return NSIndexPath(forRow: paraKey, inSection: 0)
     }
