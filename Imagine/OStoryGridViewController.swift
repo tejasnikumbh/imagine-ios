@@ -14,10 +14,12 @@ class OStoryGridViewController: UIViewController {
     var interactor = PercentInteractor()
     var dialogView: Strip!
     var dialogText: UILabel!
+    @IBOutlet weak var storyGridTableView: UITableView!
     
     // MARK:- View Lifecycle + View Base Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -40,12 +42,17 @@ class OStoryGridViewController: UIViewController {
         }
     }
     
+    func setupViews()
+    {
+        let gradientView = OUtils.UI.statusBarGradient()
+        self.storyGridTableView.addSubview(gradientView)
+    }
     func showStrip()
     {
         let dialogWidth = 100.0
         let dialogHeight = 32.0
         let dialogX = Double(view.frame.width * 0.5)
-        let dialogY = 20.0
+        let dialogY = Double(OConstants.Screen.height - OConstants.Margin.bigBottom) - dialogHeight
         let initialFrame = CGRect(x: dialogX, y: dialogY, width: dialogWidth, height: dialogHeight)
         let finalFrame = CGRect(x: dialogX - dialogWidth * 0.5, y: dialogY, width: dialogWidth, height: dialogHeight)
         let shortStoryDialog = Strip(frame: initialFrame, color: UIColor.linkedInBlue().CGColor)

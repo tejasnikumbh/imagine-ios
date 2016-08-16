@@ -158,21 +158,21 @@
                                 <exclude reference="w0H-X6-czp"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="E4r-OU-jvb"/>
+                                <exclude reference="Fw1-83-OSw"/>
+                                <exclude reference="tzF-x6-sX0"/>
+                                <exclude reference="AaG-jf-xok"/>
+                                <exclude reference="Uak-Cz-Zrk"/>
+                                <exclude reference="7y9-17-5wp"/>
+                                <exclude reference="hkF-Wg-lU7"/>
+                                <exclude reference="aWX-l3-ALA"/>
+                                <exclude reference="imH-Od-BY3"/>
                                 <exclude reference="4eN-Vo-9CT"/>
                                 <exclude reference="6Ml-EH-xsQ"/>
                                 <exclude reference="np0-xc-8Hl"/>
                                 <exclude reference="JEl-V6-Mmq"/>
                                 <exclude reference="Kel-si-uxD"/>
                                 <exclude reference="V9B-YB-J1H"/>
-                                <exclude reference="7y9-17-5wp"/>
-                                <exclude reference="hkF-Wg-lU7"/>
-                                <exclude reference="aWX-l3-ALA"/>
-                                <exclude reference="imH-Od-BY3"/>
-                                <exclude reference="tzF-x6-sX0"/>
-                                <exclude reference="AaG-jf-xok"/>
-                                <exclude reference="Uak-Cz-Zrk"/>
-                                <exclude reference="E4r-OU-jvb"/>
-                                <exclude reference="Fw1-83-OSw"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -182,14 +182,14 @@
                                 <include reference="kSX-Ou-HY0"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4eN-Vo-9CT"/>
-                                <include reference="6Ml-EH-xsQ"/>
-                                <include reference="np0-xc-8Hl"/>
+                                <include reference="E4r-OU-jvb"/>
+                                <include reference="Fw1-83-OSw"/>
                                 <include reference="tzF-x6-sX0"/>
                                 <include reference="AaG-jf-xok"/>
                                 <include reference="Uak-Cz-Zrk"/>
-                                <include reference="E4r-OU-jvb"/>
-                                <include reference="Fw1-83-OSw"/>
+                                <include reference="4eN-Vo-9CT"/>
+                                <include reference="6Ml-EH-xsQ"/>
+                                <include reference="np0-xc-8Hl"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -199,13 +199,13 @@
                                 <include reference="w0H-X6-czp"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="JEl-V6-Mmq"/>
-                                <include reference="Kel-si-uxD"/>
-                                <include reference="V9B-YB-J1H"/>
                                 <include reference="7y9-17-5wp"/>
                                 <include reference="hkF-Wg-lU7"/>
                                 <include reference="aWX-l3-ALA"/>
                                 <include reference="imH-Od-BY3"/>
+                                <include reference="JEl-V6-Mmq"/>
+                                <include reference="Kel-si-uxD"/>
+                                <include reference="V9B-YB-J1H"/>
                             </mask>
                         </variation>
                     </view>
@@ -214,6 +214,7 @@
                         <outlet property="appNameBackground" destination="OQw-cP-f2y" id="TWb-8q-xqU"/>
                         <outlet property="appNameSublabel" destination="w0H-X6-czp" id="PzW-tN-zhI"/>
                         <outlet property="emailTextField" destination="RPK-w1-cU9" id="D9i-Cv-cFS"/>
+                        <outlet property="homeBackgroundImageView" destination="FUM-C7-aeX" id="BHx-Sy-sxJ"/>
                         <outlet property="signUpButton" destination="kSX-Ou-HY0" id="KQ5-NF-paD"/>
                         <outlet property="signUpButtonBottomConstraint" destination="E4r-OU-jvb" id="8cW-6u-W9W"/>
                     </connections>
@@ -374,7 +375,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7DN-JW-tkc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7DN-JW-tkc">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -459,6 +460,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="storyGridTableView" destination="7DN-JW-tkc" id="k4G-Ho-uu4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1T-Ue-YYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

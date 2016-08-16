@@ -48,6 +48,7 @@ class CardShrinkAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                     fromViewController.window.storyTitle.frame.origin.y += OConstants.Screen.height*OConstants.Window.Scaling.Title.slideUpOnCardExpand
                     fromViewController.window.storyAuthor.frame.origin.y += OConstants.Screen.height*OConstants.Window.Scaling.Author.slideUpOnCardExpand
                     fromViewController.summaryLabel.frame.origin.y += OConstants.Screen.height*OConstants.Window.Scaling.Summary.height
+                    fromViewController.statusBarGradient.alpha = 0.0
                 })
                 UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 3/4, animations: {
                     fromViewController.summaryLabel.alpha = 0.0

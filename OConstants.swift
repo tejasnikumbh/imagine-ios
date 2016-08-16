@@ -21,8 +21,8 @@ class OConstants {
         static let appleSDGothicNeoSemiBold = "AppleSDGothicNeo-SemiBold"
     }
     struct LiquidButton {
-        static let width = (60/320.0)*UIScreen.mainScreen().bounds.size.width
-        static let height = (60/320.0)*UIScreen.mainScreen().bounds.size.width
+        static let width = (54/320.0)*UIScreen.mainScreen().bounds.size.width
+        static let height = (54/320.0)*UIScreen.mainScreen().bounds.size.width
     }
     struct Margin {
         static let smallLeft = CGFloat(4.0)

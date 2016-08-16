@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Imagine/OStoryGridViewController.swift"
-            timestampString = "492478056.62505"
+            timestampString = "493052349.592017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "showStrip()"
             landmarkType = "5">
          </BreakpointContent>
@@ -344,11 +344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Imagine/OStoryGridViewController.swift"
-            timestampString = "492478056.62505"
+            timestampString = "493052349.592017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "showStrip()"
             landmarkType = "5">
          </BreakpointContent>
@@ -479,54 +479,6 @@
             endingLineNumber = "71"
             landmarkName = "setupView()"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Imagine/OLoginViewController.swift"
-            timestampString = "492739881.722171"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "fadeInAppName()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Imagine.OLoginViewController.fadeInAppName () -&gt; ()"
-                  moduleName = "Imagine"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tejasnikumbh/dream/Imagine/Imagine/OLoginViewController.swift"
-                  timestampString = "492650958.928245"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "532">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Imagine.OLoginViewController.(fadeInAppName () -&gt; ()).(closure #2)"
-                  moduleName = "Imagine"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tejasnikumbh/dream/Imagine/Imagine/OLoginViewController.swift"
-                  timestampString = "492650958.928511"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "444">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -792,11 +744,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Imagine/OStoryPosterViewController.swift"
-            timestampString = "492748157.093431"
+            timestampString = "493053082.310987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "runInteraction(_:interactor:pannedUp:progress:percentThreshold:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -856,11 +808,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Imagine/OStoryPosterViewController.swift"
-            timestampString = "492747957.902063"
+            timestampString = "493053082.310987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -872,12 +824,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Imagine/OStoryPosterViewController.swift"
-            timestampString = "492748157.093431"
+            timestampString = "493053082.310987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Imagine/OLoginViewController.swift"
+            timestampString = "493052112.261852"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "setupViews()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

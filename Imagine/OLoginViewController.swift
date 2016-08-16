@@ -11,6 +11,7 @@ import AVFoundation
 
 
 class OLoginViewController: UIViewController {
+    @IBOutlet weak var homeBackgroundImageView: UIImageView!
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var appNameSublabel: UILabel!
     @IBOutlet weak var appNameBackground: UIView!
@@ -63,6 +64,8 @@ class OLoginViewController: UIViewController {
         self.appNameBackground.alpha = 0.0
         self.signUpButton.alpha = 0.0
         self.appNameSublabel.alpha = 0.0
+        let gradientView = OUtils.UI.statusBarGradient()
+        self.homeBackgroundImageView.addSubview(gradientView)
     }
     
     func setupStoryGridModel() {
@@ -142,9 +145,7 @@ class OLoginViewController: UIViewController {
             self.appNameBackground.alpha = 0.65
             self.signUpButton.alpha = 1.0
             self.appNameSublabel.alpha = 1.0
-        }) { (Bool) in
-            self.appName.hidden = false
-        }
+        })
     }
 }
 

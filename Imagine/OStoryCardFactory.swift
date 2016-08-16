@@ -91,7 +91,7 @@ struct OStoryCardFactory {
             "story_id": "7",
             "image": "him_her",
             "title": "Her",
-            "author": "Nina J Lu",
+            "author": "Old Woman",
             "summary": "        Their relationship has come to a breaking point. Him and Her are always fighting. He tries to give it one last shot. An everyday story not for the faint of heart.",
             "genre": "Life",
             "sound_name": "rain",

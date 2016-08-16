@@ -21,6 +21,7 @@ class OStoryPosterViewController: UIViewController {
     var summaryLabel: UILabel! = nil
     var loader:Loader! = nil
     var blankViewForStoryPoster: UIView! = nil
+    var statusBarGradient: UIView!
     
     @IBOutlet weak var pullUpView: UIView!
     @IBOutlet weak var pullUpViewBottomConstraint: NSLayoutConstraint!
@@ -30,12 +31,12 @@ class OStoryPosterViewController: UIViewController {
     {
         self.storyCoverScrollView.addSubview(window.view)
         super.viewDidLoad()
+        setupViews()
         addPanGesture()
     }
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
-        setupInitialStates()
         if !summaryVisible {
             self.view.userInteractionEnabled = false
             slideInSummaryFromBottom()
@@ -45,10 +46,13 @@ class OStoryPosterViewController: UIViewController {
     {
         return .LightContent
     }
-    // This is because of the twice running interaction bug.
-    func setupInitialStates()
+    
+    func setupViews()
     {
-        nextInteractor = nil
+        let gradientView = OUtils.UI.statusBarGradient()
+        gradientView.alpha = 0.0
+        self.statusBarGradient = gradientView
+        self.storyCoverScrollView.addSubview(gradientView)
     }
     func addPanGesture() {
         let pan = UIPanGestureRecognizer(

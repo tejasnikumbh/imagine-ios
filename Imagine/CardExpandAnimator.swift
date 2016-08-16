@@ -19,7 +19,7 @@ class CardExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     {
         let containerView = transitionContext.containerView()!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
-        
+        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! OStoryPosterViewController
         let initialFrame = originFrame
         let finalFrame = toView.frame
         
@@ -44,6 +44,7 @@ class CardExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             delay: 0.0,
             options: .CalculationModeCubic,
             animations: {
+                
                 UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1/3, animations: {
                     toView.transform = scaleShrinkTransform
                     toView.center = CGPoint(
@@ -51,10 +52,11 @@ class CardExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                         y: CGRectGetMidY(initialFrame))
                 })
                 UIView.addKeyframeWithRelativeStartTime(1/3, relativeDuration: 2/3, animations: {
-                                        toView.transform = CGAffineTransformIdentity
+                    toView.transform = CGAffineTransformIdentity
                     toView.center = CGPoint(
                         x: CGRectGetMidX(finalFrame),
                         y: CGRectGetMidY(finalFrame))
+                    toViewController.statusBarGradient.alpha = 1.0
                 })
             })
         { _ in

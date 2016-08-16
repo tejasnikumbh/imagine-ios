@@ -50,8 +50,20 @@ class OUtils {
             gradient.opacity = opacity!
             return gradient
         }
+        static func statusBarGradient() -> UIView
+        {
+            let frame = CGRect(x: 0, y: 0, width: OConstants.Screen.width, height: 100.0)
+            let gradient = OUtils.UI.gradient(
+                frame,
+                topColor:  UIColor.blackColor().CGColor,
+                bottomColor: UIColor.clearColor().CGColor,
+                opacity: 0.40)
+            let gradientView = UIView(frame: frame)
+            gradientView.layer.addSublayer(gradient)
+            return gradientView
+        }
         class Dialog {
-            static func displayBox(title: String? = "Once Upon a Time",
+            static func displayBox(title: String? = "Imagine",
                                    message: String?) -> UIAlertController
             {
                 let alertDialog = UIAlertController(
