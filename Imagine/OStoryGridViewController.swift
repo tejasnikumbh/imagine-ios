@@ -30,16 +30,7 @@ class OStoryGridViewController: UIViewController {
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        if let dialog = dialogView {
-            dialog.kill(0.4, completion: {
-                dialog.removeFromSuperview()
-            })
-        }
-        if let dialog = dialogText {
-            dialog.kill(0.4, completion: {
-                dialog.removeFromSuperview()
-            })
-        }
+        hideStrip()
     }
     
     func setupViews()
@@ -56,21 +47,31 @@ class OStoryGridViewController: UIViewController {
         let initialFrame = CGRect(x: dialogX, y: dialogY, width: dialogWidth, height: dialogHeight)
         let finalFrame = CGRect(x: dialogX - dialogWidth * 0.5, y: dialogY, width: dialogWidth, height: dialogHeight)
         let shortStoryDialog = Strip(frame: initialFrame, color: UIColor.linkedInBlue().CGColor)
-        view.addSubview(shortStoryDialog)
-        shortStoryDialog.expand({
-            let dialogLabel = UILabel(frame: finalFrame)
-            dialogLabel.text = "Short Stories"
-            dialogLabel.textAlignment = .Center
-            dialogLabel.textColor = UIColor.whiteColor()
-            dialogLabel.font = UIFont.storyContentFont(16.0)
-            dialogLabel.minimumScaleFactor = 0.85
-            dialogLabel.adjustsFontSizeToFitWidth = true
-            dialogLabel.alpha = 0.0
-            self.view.addSubview(dialogLabel)
-            dialogLabel.bringToLife()
-            self.dialogText = dialogLabel
-        })
         dialogView = shortStoryDialog
+        let dialogLabel = UILabel(frame: finalFrame)
+        dialogLabel.text = "Short Stories"
+        dialogLabel.textAlignment = .Center
+        dialogLabel.textColor = UIColor.whiteColor()
+        dialogLabel.font = UIFont.storyContentFont(16.0)
+        dialogLabel.minimumScaleFactor = 0.85
+        dialogLabel.adjustsFontSizeToFitWidth = true
+        dialogLabel.alpha = 0.0
+        dialogText = dialogLabel
+        
+        view.addSubview(dialogView)
+        view.addSubview(dialogText)
+        dialogView.expand({
+            self.dialogText.bringToLife(0.4)
+        })
+    }
+    func hideStrip()
+    {
+        dialogView.kill(0.4, completion: {
+            self.dialogView.removeFromSuperview()
+        })
+        dialogText.kill(0.4, completion: {
+            self.dialogText.removeFromSuperview()
+        })
     }
 }
 

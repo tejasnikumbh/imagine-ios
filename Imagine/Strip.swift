@@ -33,7 +33,6 @@ class Strip: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     func addstripLayers() {
         centerRect = RectangleLayer()
         centerRect.fillColor = color
